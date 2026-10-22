@@ -399,6 +399,11 @@ section[id]{scroll-margin-top:82px}
   box-shadow:0 3px 8px rgba(0,0,0,.12);
 }
 .model .vid::before{content:"▶";font-size:7px}
+.model .novo{
+  position:absolute;right:14px;top:38px;z-index:5;font-size:8.5px;font-weight:800;letter-spacing:.1em;
+  background:linear-gradient(135deg,#ffd166,#ff8fb1);color:#5a1230;padding:4px 7px;border-radius:999px;
+  box-shadow:0 3px 8px rgba(0,0,0,.14);
+}
 .card-fx{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden;border-radius:12px}
 .card-fx i{position:absolute;font-style:normal;font-size:10px;opacity:0;animation:cardUp linear infinite}
 @keyframes cardUp{0%{transform:translateY(120%) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translateY(-40%) scale(1);opacity:0}}
@@ -841,6 +846,108 @@ section[id]{scroll-margin-top:82px}
 .inv.t17 .kick{color:#b08d4f;letter-spacing:.46em}
 .inv.t17 .nump{top:3%;right:9%;font-size:10cqw;-webkit-text-stroke:1px rgba(176,141,79,.7)}
 .inv.t17 .cta{background:#b08d4f;color:#fff}
+
+/* ===== t18 Selo Real (casamento) ===== */
+.inv.t18{background:linear-gradient(170deg,#fffaf2,#f3e6d2)}
+.inv.t18 .in{position:absolute;inset:7% 8%;border:1px solid rgba(140,100,60,.35);padding:8% 6%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.inv.t18 .sealbig{
+  width:26cqw;height:26cqw;border-radius:50%;display:grid;place-items:center;margin-bottom:3cqw;
+  background:radial-gradient(circle at 34% 28%,#b8323a,#6f1218 70%);
+  box-shadow:0 1.4cqw 3cqw rgba(80,20,20,.35), inset 0 0 0 .5cqw rgba(255,220,190,.35);
+  color:#ffeeda;font-family:"Playfair Display",serif;font-size:8cqw;letter-spacing:.02em;
+  animation:sealPulse2 3.2s ease-in-out infinite;
+}
+@keyframes sealPulse2{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.inv.t18 .nm{font-family:"Playfair Display",serif;color:#5a2b2b;font-size:8.6cqw}
+.inv.t18 .nm em{font-family:"Great Vibes",cursive;color:#a3543f;font-size:.55em}
+.inv.t18 .kick{color:#a3543f;letter-spacing:.36em}
+.inv.t18 .cta{background:#7a2b2f;color:#ffeede}
+
+/* ===== t19 Borboletas (15) ===== */
+.inv.t19{background:
+  radial-gradient(circle at 12% 12%,#d9f7ef,transparent 55%),
+  radial-gradient(circle at 88% 88%,#f0e2ff,transparent 55%),#fffdfa}
+.inv.t19 .bf{position:absolute;font-size:7cqw;animation:bfFlap 4s ease-in-out infinite;z-index:2}
+.inv.t19 .bf.b1{left:10%;top:12%;animation-delay:-.6s}
+.inv.t19 .bf.b2{right:12%;top:22%;animation-delay:-1.8s;font-size:5.4cqw}
+.inv.t19 .bf.b3{left:18%;bottom:16%;animation-delay:-2.6s;font-size:5cqw}
+@keyframes bfFlap{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-1.6cqw) rotate(10deg)}}
+.inv.t19 .in{position:relative;z-index:3;padding:10% 8%}
+.inv.t19 .nm{font-family:"Great Vibes",cursive;font-size:12.5cqw;color:#2c7a6a}
+.inv.t19 .kick{color:#7a5ea8;letter-spacing:.4em}
+.inv.t19 .pill2{
+  display:inline-block;margin-top:2.6cqw;font-size:2.8cqw;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;padding:1.8cqw 3.4cqw;border-radius:99px;background:#eafaf4;color:#23695c;
+  border:1px solid #b8e6d8;
+}
+.inv.t19 .cta{background:#2c7a6a;color:#fff}
+
+/* ===== t20 Kinetic (18) ===== */
+.inv.t20{background:linear-gradient(150deg,#0a0710,#1a0b2e 60%,#0a0710);color:#fff;overflow:hidden}
+.inv.t20 .ghost{
+  position:absolute;left:-8%;top:2%;font-family:"Baloo 2",sans-serif;font-weight:800;
+  font-size:52cqw;line-height:.8;color:transparent;-webkit-text-stroke:.6cqw rgba(255,255,255,.08);
+  z-index:0;
+}
+.inv.t20 .marquee{
+  position:absolute;left:-20%;right:-20%;top:68%;height:7cqw;transform:rotate(-8deg);
+  background:linear-gradient(90deg,#ff2d95,#a855f7,#00e5ff,#ff2d95);
+  display:flex;align-items:center;overflow:hidden;z-index:1;opacity:.9;
+}
+.inv.t20 .marquee span{
+  white-space:nowrap;font-size:3.2cqw;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#0a0710;
+  animation:marq 6s linear infinite;
+}
+@keyframes marq{to{transform:translateX(-50%)}}
+.inv.t20 .in{position:relative;z-index:3;padding:8% 7%}
+.inv.t20 .nm{font-family:"Baloo 2",sans-serif;font-weight:800;text-transform:uppercase;font-size:10.5cqw;letter-spacing:-.01em;line-height:.92}
+.inv.t20 .kick{color:#00e5ff;letter-spacing:.42em}
+.inv.t20 .cta{background:#fff;color:#14061f}
+
+/* ===== t21 Brinquedos (infantil) ===== */
+.inv.t21{background:linear-gradient(165deg,#ffe98a,#ffd166 45%,#7dd3fc)}
+.inv.t21 .blocks{display:flex;gap:1.4cqw;justify-content:center;margin-bottom:2.6cqw;z-index:2;position:relative}
+.inv.t21 .blocks i{
+  font-style:normal;width:9cqw;height:9cqw;border-radius:1.6cqw;display:grid;place-items:center;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:4.6cqw;border:.5cqw solid #141414;
+  box-shadow:0 .6cqw 0 rgba(20,20,20,.25);
+}
+.inv.t21 .blocks i:nth-child(1){background:#ff6aa8;transform:rotate(-6deg)}
+.inv.t21 .blocks i:nth-child(2){background:#7ed957;transform:rotate(4deg)}
+.inv.t21 .blocks i:nth-child(3){background:#a855f7;color:#fff;transform:rotate(-3deg)}
+.inv.t21 .in{position:relative;z-index:2;padding:8% 7%}
+.inv.t21 .nm{font-family:"Baloo 2",sans-serif;font-weight:800;color:#1d4f74;font-size:9.6cqw;text-transform:none}
+.inv.t21 .kick{color:#b3266e;letter-spacing:.3em}
+.inv.t21 .cta{background:#ff6aa8;color:#fff;box-shadow:0 .8cqw 0 #d13b7c}
+.inv.t21 .toy{position:absolute;font-size:6cqw;z-index:1;animation:float 5s ease-in-out infinite}
+
+/* ===== t22 Laço de Fita (casamento premium) ===== */
+.inv.t22{background:#1a0d12;color:#fff}
+.inv.t22 .ph{position:absolute;inset:0;overflow:hidden}
+.inv.t22 .ph img{width:100%;height:100%;object-fit:cover;animation:kb 18s ease-in-out infinite alternate;filter:saturate(.92) brightness(.92)}
+.inv.t22 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,8,12,.55) 0 25%,rgba(20,8,12,.15) 50%,rgba(20,8,12,.92) 100%)}
+.inv.t22 .bow{
+  position:absolute;left:50%;top:12%;transform:translateX(-50%);z-index:5;width:26cqw;height:16cqw;
+}
+.inv.t22 .bow i,.inv.t22 .bow b{position:absolute;top:0;width:11cqw;height:14cqw;background:linear-gradient(160deg,#f7d9c4,#d9a087);border:.4cqw solid #b9775c}
+.inv.t22 .bow i{left:0;border-radius:60% 40% 55% 45%/60% 55% 45% 40%;transform:rotate(-16deg)}
+.inv.t22 .bow b{right:0;border-radius:40% 60% 45% 55%/55% 60% 40% 45%;transform:rotate(16deg)}
+.inv.t22 .bow::after{content:"";position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:4.6cqw;height:4.6cqw;border-radius:50%;background:#e8b49b;border:.4cqw solid #b9775c;z-index:2}
+.inv.t22 .bow span{position:absolute;left:50%;top:62%;transform:translateX(-50%);width:.7cqw;height:9cqw;background:#d9a087}
+.inv.t22 .in{position:absolute;left:7%;right:7%;bottom:8%;z-index:4;padding:0}
+.inv.t22 .nm{font-family:"Great Vibes",cursive;font-size:13.5cqw;color:#f7e2c8;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.inv.t22 .nm em{display:none}
+.inv.t22 .kick{color:#e8c9a0;letter-spacing:.44em;font-size:2.8cqw}
+.inv.t22 .sub,.inv.t22 .place{color:#efdfc8}
+.inv.t22 .cta{background:#f7e2c8;color:#5a2b2b}
+.inv.t22 .orn::before,.inv.t22 .orn::after{background:#e8c9a0;opacity:.7}
+.inv.t22 .orn span{color:#e8c9a0}
+
+/* Lenny viva */
+#mascot .who img{transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
+#mascot.pop .who img{animation:mascotPop .6s cubic-bezier(.2,1.5,.4,1)}
+@keyframes mascotPop{0%{transform:scale(.86) rotate(-4deg)}55%{transform:scale(1.08) rotate(3deg)}100%{transform:scale(1)}}
+.demo-cap img{transition:opacity .3s}
 
 /* animações */
 .inv .nm em, .inv .cta{will-change:transform}
@@ -1475,7 +1582,12 @@ footer b{color:var(--ink)}
     {id:14, nome:"18 Black & Gold",    tipo:"Interativo",feat:["Preto e dourado com brilho","Foto com zoom cinematográfico","Número 18 em destaque"]},
     {id:15, nome:"18 Neon",            tipo:"Animado",    feat:["Moldura neon pulsante","Foto com halo de luz","Tipografia impactante"]},
     {id:16, nome:"18 Midnight",        tipo:"Animado",    feat:["Foto em tela cheia azul-noite","Tipografia fina e elegante","Clima de festa premium"]},
-    {id:17, nome:"18 Champagne",       tipo:"Simples",    feat:["Paleta champanhe e dourado","Foto circular com moldura","Acabamento clássico"]}
+    {id:17, nome:"18 Champagne",       tipo:"Simples",    feat:["Paleta champanhe e dourado","Foto circular com moldura","Acabamento clássico"]},
+    {id:18, nome:"Selo Real",          tipo:"Interativo", feat:["Convite lacrado com selo de cera","Revelação cinematográfica","Inspirado nos convites de luxo"]},
+    {id:19, nome:"Borboletas",         tipo:"Animado",    feat:["Borboletas voando","Contagem regressiva no convite","Identidade delicada e cultural"]},
+    {id:20, nome:"Kinetic",            tipo:"Animado",    feat:["Tipografia em movimento","Faixa animada e profundidade","Estética jovem e urbana"]},
+    {id:21, nome:"Mundo dos Brinquedos",tipo:"Interativo",feat:["Blocos e brinquedos animados","Nome e idade da criança","Clima de festa e diversão"]},
+    {id:22, nome:"Laço de Fita",        tipo:"Interativo", feat:["Abertura com laço que se desfaz","Foto em tela cheia estilo cinema","Revelação dos nomes em caligrafia"]}
   ];
 
   var NOMES = {
@@ -1741,8 +1853,20 @@ footer b{color:var(--ink)}
     var extra = "";
     if (m.tpl >= 10 && m.tpl <= 13){
       extra = '<div class="ph"><img src="foto-debut.webp" alt="Debutante"></div><div class="nump">15</div>';
-    } else if (m.tpl >= 14){
+    } else if (m.tpl >= 14 && m.tpl <= 17){
       extra = '<div class="ph"><img src="foto-18.webp" alt="18 anos"></div><div class="nump">18</div>';
+    } else if (m.tpl === 18){
+      extra = '<div class="sealbig">' + (nomeA ? nomeA.charAt(0) : "L") + '</div>';
+    } else if (m.tpl === 19){
+      extra = '<span class="bf b1">🦋</span><span class="bf b2">🦋</span><span class="bf b3">🦋</span>';
+    } else if (m.tpl === 20){
+      extra = '<div class="ghost">18</div><div class="marquee"><span>18 · party · 18 · party · 18 · party · 18 · party · 18 · party ·&nbsp;</span></div>';
+    } else if (m.tpl === 22){
+      extra = '<div class="ph"><img src="foto-1.webp" alt=""></div>' +
+              '<div class="bow"><i></i><b></b><span></span></div>';
+    } else if (m.tpl === 21){
+      extra = '<div class="toy" style="right:8%;top:12%">🎈</div><div class="toy" style="left:6%;bottom:14%;animation-delay:-2s">🧸</div>' +
+              '<div class="blocks"><i>' + (nomeA ? nomeA.charAt(0) : "L") + '</i><i>★</i><i>!</i></div>';
     }
     return '<div class="' + cls + '" style="--c1:' + p.c1 + ';--c2:' + p.c2 + ';--c3:' + p.c3 + ';--c4:' + p.c4 + ';--c5:' + p.c5 + '">' +
       extra +
@@ -1773,8 +1897,21 @@ footer b{color:var(--ink)}
   var OFFSET = { casamento:0, bodas:1, aniversario:2, reunioes:5, eventos:7 };
 
   var SETS = {
-    "15": { tpls:[10,11,12,13], pals:[0,1,5,2] },
-    "18": { tpls:[14,15,16,17], pals:[5,6,1,0] }
+    "15": { tpls:[19,10,11,12,13], pals:[0,1,5,2] },
+    "18": { tpls:[20,14,15,16,17], pals:[5,6,1,0] }
+  };
+  var FEATURED = {
+    casamento: 22,
+    "15": 19,
+    "18": 20,
+    infantil: 21
+  };
+  var LENNY_SAY = {
+    22: "Esse é o <b>Laço de Fita</b>: o convite chega com um laço, o convidado desfaz e os nomes aparecem sobre a foto — inspirado nos convites cinematográficos que você viu.",
+    18: "Esse é o <b>Selo Real</b>: o convite chega lacrado e o convidado toca no selo para abrir — aquele clima de cinema dos convites de luxo.",
+    19: "Olha as <b>Borboletas</b>! Elas voam pelo convite, tem contagem regressiva e um toque cultural delicado — perfeito pra debutante.",
+    20: "O <b>Kinetic</b> é pra quem quer atitude: tipografia em movimento, faixa animada e profundidade. Cara de festa jovem.",
+    21: "O <b>Mundo dos Brinquedos</b>: blocos com a inicial da criança, brinquedos flutuando e muita cor. A criançada ama."
   };
 
   function modelsFor(){
@@ -1792,6 +1929,10 @@ footer b{color:var(--ink)}
       } else {
         t = TPLS[(i + off) % TPLS.length];
       }
+      if (i === 0){
+        var featId = FEATURED[(s && s.id) || current.cat];
+        if (featId !== undefined && (t.id < 10 || featId >= 18)) t = TPLS[featId];
+      }
       var pIx = set ? (i + Math.floor(i / set.tpls.length)) % pool.length : (i % pool.length);
       var p = PALETTES[pool[pIx]];
       var anim = t.id >= 10 ? (t.id === 11 || t.id === 14 ? "a-shine" : "a-blink") :
@@ -1800,6 +1941,8 @@ footer b{color:var(--ink)}
       return {
         tpl: t.id, pal: p, nome: nomes[i] || ("Modelo " + (i + 1)),
         tipo: t.tipo, feat: t.feat, anim: anim,
+        lenny: LENNY_SAY[t.id] || "",
+        novo: t.id >= 18,
         kicker: s ? s.kicker : (COPY[current.cat] ? COPY[current.cat].kicker : "Convite"),
         nomeA: s ? (s.nomeA || "Seu nome") : (COPY[current.cat] ? COPY[current.cat].nomeA : "Seu nome"),
         nomeB: s && s.nomeB ? s.nomeB : (COPY[current.cat] ? COPY[current.cat].nomeB : ""),
@@ -1854,6 +1997,7 @@ footer b{color:var(--ink)}
       return '<article class="model" data-i="' + i + '" tabindex="0" role="button" aria-label="Ver modelo ' + m.nome + '">' +
         '<span class="badge ' + badge + '">' + m.tipo + '</span>' +
         '<span class="vid">vídeo</span>' +
+        (m.novo ? '<span class="novo">NOVO</span>' : '') +
         '<div class="thumb">' + invHTML(m) + fx + '</div>' +
         '<div class="meta"><div><b>' + m.nome + '</b><small>' + TPLS[m.tpl].nome + ' · ' + m.pal.n + '</small></div><span style="color:var(--pink);font-weight:800">→</span></div>' +
       '</article>';
@@ -1865,10 +2009,30 @@ footer b{color:var(--ink)}
     });
   }
 
+  var MASCOT_OF = {
+    romance:"mascote-noiva.webp", bodas:"mascote-noiva.webp",
+    "15":"mascote-15.webp", "18":"mascote-18.webp",
+    kids:"mascote-kids.webp", infantil:"mascote-kids.webp"
+  };
+  function dressLenny(){
+    var who = document.querySelector("#mascot .who img");
+    if (!who) return;
+    var key = (current.sub && MASCOT_OF[current.sub]) ? current.sub : (current.cat === "casamento" ? "romance" : current.cat === "aniversario" ? (current.sub || "15") : "");
+    var src = MASCOT_OF[key] || "mascote-oi.webp";
+    if (who.getAttribute("src") !== src){
+      who.setAttribute("src", src);
+      var m = document.getElementById("mascot");
+      if (m){ m.classList.remove("pop"); void m.offsetWidth; m.classList.add("pop"); }
+    }
+  }
+
   function setTheme(tema){
     document.body.setAttribute("data-theme", tema);
     var d = THEME_DATA[tema] || THEME_DATA.home;
     document.documentElement.style.setProperty("--accent", d.particle === "heart" ? (d.color || "#ff3d8b") : "#ff3d8b");
+    dressLenny();
+    var capImg = document.querySelector(".demo-cap img");
+    if (capImg) capImg.src = (MASCOT_OF[(current.sub) || ""] || (current.cat === "casamento" ? "mascote-noiva.webp" : "mascote-oi.webp"));
     say(THEME_SAY[tema] || THEME_SAY.home);
     spawn(d.particle, d.color, 14);
   }
@@ -2013,7 +2177,7 @@ footer b{color:var(--ink)}
     else capAbertura = '<b>Lenny:</b> o convite chega como carta lacrada. O convidado toca no selo, abre e vive a surpresa — a abertura da coleção casamento.';
 
     return [
-      {h:env,  c:capAbertura},
+      {h:env,  c:(m.lenny ? '<b>Lenny:</b> ' + m.lenny.replace(/<\/?(b|i)>/g, '') + ' ' : '') + capAbertura.replace('<b>Lenny:</b> ', '<b>Lenny:</b> ')},
       {h:capa, c:'<b>Lenny:</b> capa com o nome ' + (B ? A + ' & ' + B : A) + ' animado, data, local e o botão de confirmar. Muda a cor e a fonte na hora que você quiser.'},
       {h:cd,   c:'<b>Lenny:</b> contagem regressiva ao vivo. O convidado vê quanto falta, sem precisar calcular nada.'},
       {h:gal,  c:'<b>Lenny:</b> galeria de fotos com slide automático — aqui você coloca as fotos de vocês, do bebê ou do evento.'},
@@ -2114,7 +2278,7 @@ footer b{color:var(--ink)}
     document.body.style.overflow = "hidden";
     playDemo(true);
     showScene(0);
-    say("Olha o <b>" + m.nome + "</b> em ação! É assim que o convidado vê — e no final eu ainda te explico cada detalhe 💕");
+    say((m.lenny ? m.lenny + " " : "") + "É assim que o convidado vê — no final eu ainda te explico cada detalhe 💕");
   }
 
   function rebuildDemo(){
