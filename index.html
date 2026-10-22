@@ -943,6 +943,65 @@ section[id]{scroll-margin-top:82px}
 .inv.t22 .orn::before,.inv.t22 .orn::after{background:#e8c9a0;opacity:.7}
 .inv.t22 .orn span{color:#e8c9a0}
 
+/* ===== Experiência narrada (rolagem) ===== */
+.story{
+  position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;
+  background:#fbf3e1;color:#3d2418;font-family:"Fredoka",sans-serif;
+  -webkit-overflow-scrolling:touch;
+}
+.story::-webkit-scrollbar{width:4px}
+.story::-webkit-scrollbar-thumb{background:#c9a24a;border-radius:4px}
+.story .parch{
+  background-image:radial-gradient(rgba(120,80,40,.06) 1px,transparent 1px);
+  background-size:16px 16px;
+}
+.story.sealed{overflow:hidden}
+.story .s-cover{
+  position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:14% 10%;background:
+    radial-gradient(circle at 50% 20%,#5d2130,#2c1016 75%);
+  color:#f6e6c8;
+}
+.story .s-orn{font-size:16px;color:#d9b46a;letter-spacing:.4em}
+.story .s-k{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:#d9b46a}
+.story .s-names{font-family:"Playfair Display",serif;font-size:34px;line-height:1.05;margin:8px 0 4px}
+.story .s-names i{font-style:normal;display:block;font-family:"Great Vibes",cursive;font-size:26px;color:#d9b46a}
+.story .s-seal{
+  width:88px;height:88px;border-radius:50%;margin:16px 0 10px;
+  background:radial-gradient(circle at 34% 28%,#c23a3f,#6f1218 70%);
+  display:grid;place-items:center;color:#ffeede;font-family:"Playfair Display",serif;font-size:30px;
+  box-shadow:0 10px 24px rgba(0,0,0,.45), inset 0 0 0 3px rgba(255,220,190,.3);cursor:pointer;
+  animation:sealPulse2 2.6s ease-in-out infinite;
+}
+.story .s-hint{font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(246,230,200,.75);margin-top:6px}
+.story.opened .s-cover{display:none}
+.story .s-body{display:none}
+.story.opened .s-body{display:block;animation:fadeIn .6s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.story section{padding:26px 20px;text-align:center;border-bottom:1px solid rgba(150,110,60,.18)}
+.story .s-h{font-family:"Playfair Display",serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#a3543f;margin-bottom:10px}
+.story p{font-size:10.5px;line-height:1.6;color:#5a4030}
+.story .s-div{color:#c9a24a;font-size:14px;margin:12px 0}
+.story .s-date{font-family:"Playfair Display",serif;font-size:22px;color:#5d2130;line-height:1.1}
+.story .s-small{font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:#a3543f;margin-top:4px}
+.story .s-cd{display:flex;justify-content:center;gap:6px;margin:12px 0 10px}
+.story .s-cd i{font-style:normal;background:#5d2130;color:#f6e6c8;border-radius:7px;padding:7px 6px;min-width:34px;font-size:14px;font-weight:800;font-family:"Baloo 2",sans-serif}
+.story .s-cd i span{display:block;font-size:5.5px;letter-spacing:.1em;opacity:.7;font-family:"Fredoka"}
+.story .s-btn{display:inline-block;margin-top:8px;border:1px solid #a3543f;color:#8a3a2f;background:#fff8ec;
+  border-radius:99px;padding:7px 14px;font-size:8.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.story .s-card{background:#fffaf0;border:1px solid rgba(160,120,60,.3);border-radius:12px;padding:12px;margin-top:10px;text-align:left}
+.story .s-card b{font-family:"Playfair Display",serif;font-size:13px;display:block;color:#5d2130}
+.story .s-card span{font-size:9px;color:#7a5a44;display:block;margin-top:3px;line-height:1.45}
+.story .s-photo{width:100%;border-radius:10px;display:block;margin:10px 0;border:2px solid #fff}
+.story .s-wit{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.story .s-wit div{background:#fffaf0;border:1px solid rgba(160,120,60,.25);border-radius:10px;padding:9px}
+.story .s-wit span{font-size:6.6px;letter-spacing:.16em;text-transform:uppercase;color:#a3543f}
+.story .s-wit b{display:block;font-size:10px;margin-top:2px;color:#4a2a1c}
+.story .s-fld{width:100%;border:1px solid rgba(160,120,60,.35);border-radius:9px;padding:9px;font-size:10px;font-family:inherit;background:#fff;margin-bottom:6px;outline:none}
+.story .s-ok{display:none;background:#e9f7e8;border:1px solid #9fce9f;color:#2c6a2c;border-radius:9px;padding:9px;font-size:9.5px;font-weight:700;margin-top:8px}
+.story .s-foot{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;color:#a3543f;padding:18px 0 30px}
+.story .s-quote{font-family:"Caveat",cursive;font-size:16px;color:#8a3a2f;line-height:1.2}
+
 /* Lenny viva */
 #mascot .who img{transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
 #mascot.pop .who img{animation:mascotPop .6s cubic-bezier(.2,1.5,.4,1)}
@@ -1108,9 +1167,9 @@ footer b{color:var(--ink)}
   box-shadow:0 40px 80px rgba(40,0,40,.35);transform:translateY(14px) scale(.98);transition:.3s;
 }
 #modal.on .modal-box{transform:none}
-.modal-phone{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 20px 40px rgba(120,40,110,.22);border:6px solid #1c1024;background:#1c1024;align-self:start;height:fit-content}
+.modal-phone{position:relative;width:100%;border-radius:26px;overflow:hidden;box-shadow:0 20px 40px rgba(120,40,110,.22);border:6px solid #1c1024;background:#1c1024;align-self:start;height:fit-content}
 .modal-phone .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:64px;height:5px;border-radius:99px;background:rgba(255,255,255,.35);z-index:6}
-.modal-phone .screen{aspect-ratio:9/16;position:relative;overflow:hidden}
+.modal-phone .screen{width:100%;aspect-ratio:9/16;position:relative;overflow:hidden}
 .modal-phone .screen > .inv{position:absolute;inset:0;width:100%;height:100%}
 .modal-info h3{font-size:23px;margin-bottom:4px}
 .modal-info .sub{font-size:12px;color:var(--ink-soft);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
@@ -1192,7 +1251,7 @@ footer b{color:var(--ink)}
   .grid-models{grid-template-columns:repeat(2,1fr)}
   .prod-grid,.serv-grid,.steps{grid-template-columns:repeat(2,1fr)}
   .modal-box{grid-template-columns:1fr;gap:14px}
-  .modal-phone{max-width:280px;margin:0 auto}
+  .modal-phone{width:min(280px,100%);max-width:280px;margin:0 auto}
   .nav{display:none;position:absolute;left:12px;right:12px;top:64px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}
   .nav.open{display:flex}
   .nav a{padding:11px 14px;border-radius:12px}
@@ -1587,7 +1646,9 @@ footer b{color:var(--ink)}
     {id:19, nome:"Borboletas",         tipo:"Animado",    feat:["Borboletas voando","Contagem regressiva no convite","Identidade delicada e cultural"]},
     {id:20, nome:"Kinetic",            tipo:"Animado",    feat:["Tipografia em movimento","Faixa animada e profundidade","Estética jovem e urbana"]},
     {id:21, nome:"Mundo dos Brinquedos",tipo:"Interativo",feat:["Blocos e brinquedos animados","Nome e idade da criança","Clima de festa e diversão"]},
-    {id:22, nome:"Laço de Fita",        tipo:"Interativo", feat:["Abertura com laço que se desfaz","Foto em tela cheia estilo cinema","Revelação dos nomes em caligrafia"]}
+    {id:22, nome:"Laço de Fita",        tipo:"Interativo", feat:["Abertura com laço que se desfaz","Foto em tela cheia estilo cinema","Revelação dos nomes em caligrafia"]},
+    {id:23, nome:"Reino Encantado",     tipo:"Interativo", feat:["Convite narrado com selo de cera","História do casal em capítulos","Padrinhos, local, contagem e RSVP"]},
+    {id:24, nome:"Crônica da Debutante",tipo:"Interativo", feat:["História em capítulos com fotos","Contagem e dress code","Confirmação de presença integrada"]}
   ];
 
   var NOMES = {
@@ -1901,12 +1962,14 @@ footer b{color:var(--ink)}
     "18": { tpls:[20,14,15,16,17], pals:[5,6,1,0] }
   };
   var FEATURED = {
-    casamento: 22,
-    "15": 19,
+    casamento: 23,
+    "15": 24,
     "18": 20,
     infantil: 21
   };
   var LENNY_SAY = {
+    23: "Esse é o <b>Reino Encantado</b>: o convite vem lacrado, o convidado rompe o selo e entra numa história em capítulos — com padrinhos, local, contagem e confirmação.",
+    24: "A <b>Crônica da Debutante</b>: a história dela em capítulos, com fotos, contagem, dress code e confirmação. Um convite pra ler e guardar.",
     22: "Esse é o <b>Laço de Fita</b>: o convite chega com um laço, o convidado desfaz e os nomes aparecem sobre a foto — inspirado nos convites cinematográficos que você viu.",
     18: "Esse é o <b>Selo Real</b>: o convite chega lacrado e o convidado toca no selo para abrir — aquele clima de cinema dos convites de luxo.",
     19: "Olha as <b>Borboletas</b>! Elas voam pelo convite, tem contagem regressiva e um toque cultural delicado — perfeito pra debutante.",
@@ -2190,6 +2253,137 @@ footer b{color:var(--ink)}
 
   var demo = { scenes:[], ix:0, playing:true, start:0, dur:4200, raf:null, m:null };
 
+  /* =========================================================
+     EXPERIÊNCIA NARRADA (rolagem dentro do celular)
+     ========================================================= */
+  function storyHTML(m){
+    var A = firstName(m), B = secondName(m);
+    var casal = !!(B);
+    var data = { a: A, b: B };
+
+    var cover =
+      '<div class="s-cover">' +
+        '<div class="s-orn">❦</div>"' +
+        '<div class="s-k" style="margin-top:8px">' + (m.kicker || "Convite") + '</div>' +
+        '<div class="s-names">' + A + (casal ? ' <i>&</i> ' + B : '') + '</div>' +
+        '<div class="s-seal" id="sSeal">' + (A.charAt(0) || "L") + '</div>' +
+        '<div class="s-hint">rompa o selo e abra o convite</div>' +
+      '</div>';
+
+    var historia = m.tpl === 23
+      ? '<section class="parch">' +
+          '<div class="s-h">nossa história</div>' +
+          '<p>Nem todo encontro começa com um olhar certeiro. O nosso começou com uma piada sem graça e um café que esfriou de tanto a gente rir.</p>' +
+          '<div class="s-div">❦</div>' +
+          '<p>Depois vieram os domingos, as viagens curtas, os planos no papel e a certeza de que a vida fica melhor dividida em dois.</p>' +
+          '<div class="s-div">❦</div>' +
+          '<p>Agora chegou a hora de dizer o sim — e a gente quer você lá, do jeitinho que sempre estivemos: em roda, comendo bem e rindo alto.</p>' +
+        '</section>'
+      : '<section class="parch">' +
+          '<div class="s-h">minha história</div>' +
+          '<p>Quinze anos de risadas, escuridão no quarto e sonhos grandes. Cada ano trouxe uma versão nova de mim — e eu gostei de todas.</p>' +
+          '<div class="s-div">❦</div>' +
+          '<p>Essa festa é pra agradecer quem caminhou comigo até aqui. E você é parte dessa história.</p>' +
+          '<img class="s-photo" src="foto-debut.webp" alt="">' +
+        '</section>';
+
+    var dataSec =
+      '<section>' +
+        '<div class="s-h">o grande dia</div>' +
+        '<div class="s-date">' + (m.tpl === 23 ? "06 DE JUNHO DE 2026" : "12 DE OUTUBRO DE 2027") + '</div>' +
+        '<div class="s-small">' + (m.tpl === 23 ? "sábado · 19h" : "domingo · 20h") + '</div>' +
+        '<div class="s-cd" id="sCd"></div>' +
+        '<button class="s-btn" id="sIcs" type="button">📅 adicionar ao calendário</button>' +
+      '</section>';
+
+    var local = m.tpl === 23
+      ? '<section>' +
+          '<div class="s-h">as portas do palácio se abrem</div>' +
+          '<div class="s-card"><b>Rancho das Rosas</b>' +
+          '<span>São Mateus — Ocidental<br>Entrada pelo jardim, estacionamento na frente</span></div>' +
+          '<a class="s-btn" href="https://share.google/6CiNVlNzMdrltsbcU" target="_blank" rel="noopener">📍 ir para o local</a>' +
+        '</section>' +
+        '<section>' +
+          '<div class="s-h">padrinhos e madrinhas</div>' +
+          '<div class="s-wit">' +
+            '<div><span>madrinha</span><b>Kamila Andrade</b></div>' +
+            '<div><span>padrinho</span><b>Rafael Lima</b></div>' +
+            '<div><span>madrinha</span><b>Beatriz Rocha</b></div>' +
+            '<div><span>padrinho</span><b>Thiago Mendes</b></div>' +
+          '</div>' +
+        '</section>'
+      : '<section>' +
+          '<div class="s-h">onde vai ser</div>' +
+          '<div class="s-card"><b>Espaço Villa Rosa</b>' +
+          '<span>São Mateus — Ocidental<br>Traje: festa (sem branco, por favor 😉)</span></div>' +
+          '<a class="s-btn" href="https://share.google/6CiNVlNzMdrltsbcU" target="_blank" rel="noopener">📍 ir para o local</a>' +
+        '</section>' +
+        '<section>' +
+          '<div class="s-h">playlist da festa</div>' +
+          '<p>Quer ouvir aquela sua música favorita na pista? Manda pra mim quando confirmar. A playlist é nossa, a festa é de todo mundo.</p>' +
+        '</section>';
+
+    var rsvp =
+      '<section>' +
+        '<div class="s-h">confirme sua presença</div>' +
+        '<input class="s-fld" id="sNome" placeholder="Seu nome">' +
+        '<input class="s-fld" id="sQtd" type="number" min="1" max="10" value="1" placeholder="Quantas pessoas">' +
+        '<button class="s-btn" id="sOk" type="button">✓ confirmar presença</button>' +
+        '<div class="s-ok" id="sMsg">Presença confirmada! Obrigada por avisar 💕</div>' +
+      '</section>' +
+      '<div class="s-foot">Lenny Personalizados · ' + (m.tpl === 23 ? "2026" : "2027") + '</div>';
+
+    return '<div class="story sealed" id="storyBox">' + cover + '<div class="s-body">' + historia + dataSec + local + rsvp + '</div></div>';
+  }
+
+  function initStory(){
+    var box = document.getElementById("storyBox");
+    if (!box) return;
+    var seal = document.getElementById("sSeal");
+    if (seal) seal.addEventListener("click", function(){
+      box.classList.remove("sealed");
+      box.classList.add("opened");
+      vibrate(20);
+      say("Agora é só rolar: a história, o local, os padrinhos e a confirmação 💕");
+    });
+    // contagem real
+    var cd = document.getElementById("sCd");
+    if (cd){
+      var alvo = new Date(Date.now() + 1000*60*60*24*37 + 1000*3600*5 + 1000*60*42);
+      var upd = function(){
+        var d = Math.max(0, alvo - Date.now());
+        var dias = Math.floor(d/86400000), hrs = Math.floor(d/3600000)%24, min = Math.floor(d/60000)%60;
+        cd.innerHTML = '<i>' + dias + '<span>dias</span></i><i>' + hrs + '<span>horas</span></i><i>' + min + '<span>min</span></i>';
+      };
+      upd(); setInterval(upd, 30000);
+    }
+    // calendário
+    var icsBtn = document.getElementById("sIcs");
+    if (icsBtn) icsBtn.addEventListener("click", function(){
+      var ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODUTO:-//Lenny//Convite//PT-BR",
+        "BEGIN:VEVENT","UID:convite-" + Date.now() + "@lenny",
+        "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g,"").split(".")[0] + "Z",
+        "DTSTART:20270612T200000Z","DTEND:20270613T010000Z",
+        "SUMMARY:Convite Lenny Personalizados","LOCATION:Rancho das Rosas",
+        "END:VEVENT","END:VCALENDAR"].join("\r\n");
+      var a = document.createElement("a");
+      a.href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+      a.download = "convite.ics"; a.click();
+    });
+    // rsvp
+    var ok = document.getElementById("sOk");
+    if (ok) ok.addEventListener("click", function(){
+      var nome = (document.getElementById("sNome").value || "").trim();
+      if (!nome){ document.getElementById("sNome").focus(); return; }
+      document.getElementById("sMsg").style.display = "block";
+      ok.textContent = "✓ confirmado";
+      ok.style.background = "#2c6a2c"; ok.style.color = "#fff";
+      spawn("conf", "", 16);
+      say("Presença confirmada! Isso cai direto no painel de quem organiza 🎉");
+    });
+  }
+  function vibrate(ms){ try { navigator.vibrate && navigator.vibrate(ms); } catch(e){} }
+
   function paintDots(){
     var d = $("#mDots");
     d.innerHTML = demo.scenes.map(function(_, i){ return '<b class="' + (i === demo.ix ? 'on' : '') + '"></b>'; }).join("");
@@ -2268,6 +2462,26 @@ footer b{color:var(--ink)}
       "Local com mapa", "Lista de presentes", "Trilha sonora"
     ];
     $("#mChips").innerHTML = chips.map(function(c){ return "<span>✓ " + c + "</span>"; }).join("");
+
+    var isStory = (m.tpl === 23 || m.tpl === 24);
+    if (isStory){
+      demo.playing = false; cancelAnimationFrame(demo.raf);
+      $("#mStage").innerHTML = storyHTML(m);
+      var ctrl = document.querySelector(".demo-ctrl"); if (ctrl) ctrl.style.display = "none";
+      var bar = document.querySelector(".demo-bar"); if (bar) bar.style.display = "none";
+      var dots = document.querySelector(".demo-dots"); if (dots) dots.style.display = "none";
+      var cap = document.getElementById("mCap");
+      if (cap) cap.style.display = "none";
+      modal.hidden = false;
+      requestAnimationFrame(function(){ modal.classList.add("on"); });
+      document.body.style.overflow = "hidden";
+      initStory();
+      say((m.lenny ? m.lenny + " " : "") + "Toque no selo para abrir e role a tela 💕");
+      return;
+    }
+    var ctrl2 = document.querySelector(".demo-ctrl"); if (ctrl2) ctrl2.style.display = "";
+    var bar2 = document.querySelector(".demo-bar"); if (bar2) bar2.style.display = "";
+    var dots2 = document.querySelector(".demo-dots"); if (dots2) dots2.style.display = "";
 
     var sc = scenesFor(m);
     demo.scenes = sc;
