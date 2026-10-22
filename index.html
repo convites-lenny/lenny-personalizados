@@ -90,7 +90,11 @@ h1,h2,h3,h4{font-family:"Baloo 2",sans-serif;margin:0;line-height:1.06}
   box-shadow:0 6px 16px rgba(255,61,139,.35);
 }
 .logo b{display:block;font-family:"Baloo 2",sans-serif;font-size:17px;line-height:1;letter-spacing:.01em}
-.logo span{display:block;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-top:2px}
+.logo .brand-script{
+  font-family:"Great Vibes",cursive;font-size:27px;font-weight:400;line-height:.9;
+  background:linear-gradient(100deg,#ff3d8b,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.logo .brand-sub{display:block;font-size:7.6px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin-top:1px}
 .nav{margin-left:auto;display:flex;align-items:center;gap:4px}
 .nav a{
   text-decoration:none;font-size:13px;font-weight:600;color:var(--ink-soft);
@@ -179,6 +183,90 @@ h1,h2,h3,h4{font-family:"Baloo 2",sans-serif;margin:0;line-height:1.06}
 }
 .chip-float.a{right:-2%;top:22%;animation-delay:-2s}
 .chip-float.b{left:2%;bottom:16%;animation-delay:-3.5s}
+
+/* =========================================================
+   COLEÇÕES — vitrine premium
+   ========================================================= */
+.colecoes{padding:38px 0 8px}
+.col-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.col-card{
+  position:relative;overflow:hidden;border-radius:26px;min-height:470px;cursor:pointer;
+  box-shadow:0 20px 45px rgba(80,20,80,.18);isolation:isolate;transition:transform .3s ease, box-shadow .3s ease;
+}
+.col-card:hover{transform:translateY(-5px);box-shadow:0 30px 60px rgba(80,20,80,.26)}
+.col-bg{position:absolute;inset:0;z-index:0;transition:transform .6s ease}
+.col-card:hover .col-bg{transform:scale(1.04)}
+.col-card.c15 .col-bg{background:radial-gradient(circle at 74% 12%,rgba(255,196,240,.95),transparent 55%),linear-gradient(135deg,#67104f,#a51e78 52%,#ff5fb4)}
+.col-card.c18 .col-bg{background:radial-gradient(circle at 78% 18%,rgba(255,214,120,.35),transparent 55%),linear-gradient(135deg,#0b0806,#241705 55%,#3a2607)}
+.col-card.cwi .col-bg{background:radial-gradient(circle at 76% 16%,rgba(255,255,255,.75),transparent 55%),linear-gradient(135deg,#c98f86,#e7b9ad 48%,#f7e2d3)}
+.col-card.cki .col-bg{background:radial-gradient(circle at 80% 14%,rgba(255,235,120,.7),transparent 55%),linear-gradient(135deg,#1b7bd4,#38bdf8 48%,#a5f3fc)}
+.col-masc{
+  position:absolute;right:-3%;top:0;height:100%;z-index:2;width:auto;max-width:none;
+  filter:drop-shadow(0 20px 26px rgba(0,0,0,.32));transition:transform .5s ease;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 26%);
+}
+.col-card::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:132px;z-index:3;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(20,5,25,.35));
+}
+.cki.col-card::after{background:linear-gradient(180deg,transparent,rgba(10,60,110,.28))}
+.cwi.col-card::after{background:linear-gradient(180deg,transparent,rgba(90,50,40,.28))}
+.col-card:hover .col-masc{transform:translateY(-8px) scale(1.02)}
+.col-txt{position:relative;z-index:5;padding:22px 0 0 22px;max-width:50%;color:#fff}
+.c18 .col-txt{color:#f7e7c0}
+.cwi .col-txt{color:#4a231f}
+.cki .col-txt{color:#fff}
+.col-k{font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:800;opacity:.85}
+.col-txt h3{font-family:"Playfair Display",serif;font-size:clamp(24px,2.6vw,34px);line-height:1;margin:7px 0 9px;letter-spacing:-.01em}
+.c15 .col-txt h3{font-family:"Great Vibes",cursive;font-size:clamp(32px,3.6vw,46px);font-weight:400;line-height:.95}
+.cki .col-txt h3{font-family:"Baloo 2",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(26px,3vw,38px)}
+.col-list{list-style:none;padding:0;margin:0 0 8px;display:grid;gap:4px}
+.col-list li{font-size:10.6px;font-weight:600;display:flex;gap:6px;align-items:center;opacity:.95}
+.col-list li::before{content:"✦";font-size:7px;opacity:.75}
+.c18 .col-list li::before{content:"★";color:#f0c96a}
+.cki .col-list li::before{content:"●";font-size:6px;color:#ffe066}
+.col-q{font-family:"Caveat",cursive;font-size:13.5px;line-height:1.25;opacity:.9;margin:9px 0 0;max-width:210px}
+.col-cta{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.9}
+.col-phone{
+  position:absolute;right:3%;bottom:76px;z-index:4;width:29%;max-width:150px;aspect-ratio:9/17;
+  border-radius:16px;border:4px solid rgba(20,10,20,.8);overflow:hidden;transform:rotate(5deg);
+  box-shadow:0 18px 34px rgba(0,0,0,.42);transition:transform .45s ease;background:#120a18;
+}
+.col-card:hover .col-phone{transform:rotate(1.5deg) translateY(-5px)}
+.col-phone .ph-in{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:14% 9%;color:#fff;gap:2px;
+}
+.col-phone .ph-k{font-size:7px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;font-weight:800}
+.col-phone .ph-n{font-family:"Great Vibes",cursive;font-size:19px;line-height:1;margin:2px 0}
+.col-phone .ph-d{font-size:6.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.col-phone .ph-b{margin-top:6px;font-size:6px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 9px;border-radius:99px;background:#fff;color:#8a2050}
+.col-bar{
+  position:absolute;left:12px;right:12px;bottom:12px;z-index:6;
+  background:rgba(18,6,22,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.22);border-radius:15px;padding:8px 6px;
+  display:flex;justify-content:space-around;gap:4px;color:#fff;
+}
+.cwi .col-bar{background:rgba(60,25,20,.4)}
+.col-bar span{font-size:8.2px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;opacity:.96;line-height:1.15}
+.col-bar span i{font-style:normal;font-size:13px}
+
+@media(max-width:900px){
+  .col-grid{grid-template-columns:1fr}
+  .col-card{min-height:430px}
+  .col-txt{max-width:58%}
+  .col-masc{right:-10%;height:78%;bottom:56px}
+  .col-phone{width:26%;right:4%}
+}
+@media(max-width:520px){
+  .col-card{min-height:400px}
+  .col-txt{padding:18px 0 0 16px;max-width:64%}
+  .col-phone{display:none}
+  .col-masc{right:-14%;height:74%}
+  .col-list li{font-size:10px}
+}
 
 /* =========================================================
    HUB — o que você procura
@@ -325,6 +413,47 @@ section[id]{scroll-margin-top:82px}
   font-size:3.2cqw;color:#7a5b70;text-align:left;font-weight:600;
 }
 .sc .okmsg{font-size:3.2cqw;margin-top:3cqw;background:rgba(120,255,180,.18);border:1px solid rgba(120,255,180,.5);padding:2.4cqw 4cqw;border-radius:2.4cqw;display:none}
+
+/* portões do castelo (15) */
+.sc-gates{background:radial-gradient(circle at 50% 40%,#ffb3e6,#4a0a3a 70%);perspective:900px;overflow:hidden}
+.sc-gates .gold{
+  position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);z-index:1;
+  font-family:"Playfair Display",serif;font-size:15cqw;color:transparent;-webkit-text-stroke:1.4px #f4dc9f;
+  text-shadow:0 0 30px rgba(244,220,159,.55);
+}
+.sc-gates .gate{
+  position:absolute;top:0;bottom:0;width:50%;z-index:2;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 2px,transparent 2px 16px),
+    linear-gradient(180deg,#5a1247,#8a1a5e 55%,#3b0a30);
+  border:2px solid #d9b46a;box-shadow:inset 0 0 50px rgba(0,0,0,.6);
+  animation:gateOpen 5.4s ease-in-out infinite;
+}
+.sc-gates .gate.l{left:0;transform-origin:left center}
+.sc-gates .gate.r{right:0;transform-origin:right center;animation-name:gateOpenR}
+@keyframes gateOpen{0%,42%{transform:rotateY(0)}62%,100%{transform:rotateY(-82deg)}}
+@keyframes gateOpenR{0%,42%{transform:rotateY(0)}62%,100%{transform:rotateY(82deg)}}
+.sc-gates .st{position:absolute;color:#ffe9b0;font-size:4cqw;animation:sparkle18 2.6s infinite}
+
+/* luzes neon (18) */
+.sc-neon{background:#0a0412;overflow:hidden}
+.sc-neon .beam{position:absolute;top:-20%;width:26%;height:140%;background:linear-gradient(180deg,transparent,rgba(255,45,149,.5),transparent);filter:blur(10px);transform:rotate(14deg);animation:beam 6s ease-in-out infinite}
+.sc-neon .beam.b2{left:55%;background:linear-gradient(180deg,transparent,rgba(0,229,255,.45),transparent);animation-delay:-2s}
+@keyframes beam{0%,100%{opacity:.35;transform:rotate(14deg) translateX(-10%)}50%{opacity:1;transform:rotate(6deg) translateX(10%)}}
+.sc-neon .n18{
+  position:relative;z-index:3;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:34cqw;color:#fff;
+  text-shadow:0 0 12px #ff2d95,0 0 40px #ff2d95,0 0 70px #00e5ff;
+  animation:flick 5.4s linear infinite;
+}
+@keyframes flick{0%,6%,10%,14%,100%{opacity:1}3%,8%,12%{opacity:.35}}
+
+/* balões (infantil) */
+.sc-balao{background:linear-gradient(180deg,#8fd8ff,#d9f0ff 60%,#fff3d6)}
+.sc-balao .b{position:absolute;bottom:-12%;width:16cqw;animation:balUp 6s ease-in-out infinite}
+.sc-balao .b:nth-child(2){left:18%;animation-delay:-1.6s;width:13cqw}
+.sc-balao .b:nth-child(3){left:44%;animation-delay:-3.2s;width:18cqw}
+.sc-balao .b:nth-child(4){left:68%;animation-delay:-4.6s;width:14cqw}
+@keyframes balUp{0%{transform:translateY(0) rotate(-4deg);opacity:0}12%{opacity:1}100%{transform:translateY(-150%) rotate(6deg);opacity:0}}
 
 /* envelope */
 .sc-env{background:linear-gradient(160deg,#2a1240,#5b1f52)}
@@ -957,7 +1086,7 @@ footer b{color:var(--ink)}
   <div class="wrap top-in">
     <a class="logo" href="#home">
       <span class="mark">L</span>
-      <span><b>Lenny Personalizados</b><span>convites &amp; personalizados</span></span>
+      <span><b class="brand-script">Lenny</b><span class="brand-sub">Personalizados Studio</span></span>
     </a>
     <button class="burger" id="burger" type="button" aria-label="Abrir menu">☰</button>
     <nav class="nav" id="nav">
@@ -997,6 +1126,18 @@ footer b{color:var(--ink)}
       <div class="chip-float a">✨ +10 modelos por categoria</div>
       <div class="chip-float b">💌 prévia na hora</div>
     </div>
+  </div>
+</section>
+
+<!-- ================= COLEÇÕES ================= -->
+<section class="colecoes" id="colecoes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">quatro coleções · infinitas histórias</div>
+      <h2>Escolha a coleção do seu momento</h2>
+      <p>Cada coleção tem a sua própria Lenny, o seu cenário e as suas animações. Entre e sinta a experiência antes de escolher.</p>
+    </div>
+    <div class="col-grid" id="colGrid"></div>
   </div>
 </section>
 
@@ -1338,6 +1479,92 @@ footer b{color:var(--ink)}
     home:{particle:"heart", color:"#ff8fc2", cls:"home"}
   };
 
+  var COLLECTIONS = [
+    {
+      id:"c15", cls:"c15", kicker:"Coleção 15 anos", title:"O Baile dos Sonhos",
+      masc:"mascote-15.webp",
+      list:["Baile da Princesa","Jardim Encantado","Noite Galáctica","Red Carpet","Baile de Máscaras","Reino de Cristal"],
+      quote:"“Cada detalhe foi pensado para tornar o seu sonho real!” — Lenny",
+      bar:[["✦","Animações"],["🎨","Ao vivo"],["🎵","Música"],["✓","Confirmação"]],
+      mini:{k:"15 anos", n:"Maria Eduarda", d:"12 · 10 · 2027", g:"linear-gradient(160deg,#5b0f47,#c02e8a 60%,#ff8fc8)", b:"Entrar no baile"},
+      go:{cat:"aniversario", sub:"15"}
+    },
+    {
+      id:"c18", cls:"c18", kicker:"Coleção 18 anos", title:"A Noite Inesquecível",
+      masc:"mascote-18.webp",
+      list:["Black & Gold Luxury","Neon Party","Red Carpet","Futuro 3D","Midnight Celebration","Editorial Premium"],
+      quote:"“É o seu momento de brilhar!” — Lenny",
+      bar:[["⏱","Contagem"],["📸","Galeria"],["📍","Mapa"],["↗","Compartilhar"]],
+      mini:{k:"18 anos", n:"Rafael", d:"29 · 11 · 2027", g:"linear-gradient(160deg,#0b0806,#3a2607 65%,#c9a227)", b:"Entrar na festa"},
+      go:{cat:"aniversario", sub:"18"}
+    },
+    {
+      id:"cwi", cls:"cwi", kicker:"Coleção casamento", title:"Uma História de Amor",
+      masc:"mascote-noiva.webp",
+      list:["Envelope Cinematográfico","Jardim do Amor","Nossa História","Luxo Atemporal","Céu Estrelado","Portal da Cerimônia"],
+      quote:"“O amor é o maior convite de todos!” — Lenny",
+      bar:[["📍","Mapa"],["🎁","Presentes"],["✓","Confirmação"],["📸","Galeria"]],
+      mini:{k:"Casamento", n:"Ana & Lucas", d:"12 · 06 · 2028", g:"linear-gradient(160deg,#8d5b52,#d9a99c 55%,#f7e2d3)", b:"Abrir convite"},
+      go:{cat:"casamento", sub:null}
+    },
+    {
+      id:"cki", cls:"cki", kicker:"Coleção infantil", title:"Um Mundo de Fantasia",
+      masc:"mascote-kids.webp",
+      list:["Mundo dos Brinquedos","Safari Aventureiro","Fundo do Mar","Espaço Sideral","Reino dos Doces","Parque Encantado"],
+      quote:"“Aqui a diversão é garantida!” — Lenny",
+      bar:[["🎈","Tema e idade"],["🎨","Cores"],["🎵","Música"],["↗","Compartilhar"]],
+      mini:{k:"Infantil", n:"Laura", d:"5 aninhos · 2027", g:"linear-gradient(160deg,#1b7bd4,#38bdf8 55%,#ffd166)", b:"Entrar na festa"},
+      go:{cat:"aniversario", sub:"infantil"}
+    }
+  ];
+
+  function renderColecoes(){
+    var box = document.getElementById("colGrid");
+    if (!box) return;
+    box.innerHTML = COLLECTIONS.map(function(c){
+      var m = c.mini;
+      return '<article class="col-card ' + c.cls + '" data-col="' + c.id + '" tabindex="0" role="button" aria-label="Abrir coleção ' + c.kicker + '">' +
+        '<div class="col-bg"></div>' +
+        '<img class="col-masc" src="' + c.masc + '" alt="Lenny na coleção ' + c.kicker + '" loading="lazy">' +
+        '<div class="col-txt">' +
+          '<div class="col-k">' + c.kicker + '</div>' +
+          '<h3>' + c.title + '</h3>' +
+          '<ul class="col-list">' + c.list.map(function(x){ return "<li>" + x + "</li>"; }).join("") + '</ul>' +
+          '<p class="col-q">' + c.quote + '</p>' +
+          '<span class="col-cta">ver os modelos →</span>' +
+        '</div>' +
+        '<div class="col-phone"><div class="ph-in" style="background:' + m.g + '">' +
+          '<span class="ph-k">' + m.k + '</span>' +
+          '<b class="ph-n" data-name="' + m.n + '">' + ((custom.a && custom.a.trim()) || m.n) + '</b>' +
+          '<span class="ph-d">' + m.d + '</span>' +
+          '<span class="ph-b">' + m.b + '</span>' +
+        '</div></div>' +
+        '<div class="col-bar">' + c.bar.map(function(b){ return '<span><i>' + b[0] + '</i>' + b[1] + '</span>'; }).join("") + '</div>' +
+      '</article>';
+    }).join("");
+    box.querySelectorAll(".col-card").forEach(function(el){
+      function go(){
+        var c = COLLECTIONS.filter(function(x){ return x.id === el.getAttribute("data-col"); })[0];
+        if (!c) return;
+        current.cat = c.go.cat; current.sub = c.go.sub;
+        renderAll();
+        var tema = c.go.cat === "casamento" ? "romance" : (c.go.sub === "15" ? "15" : c.go.sub === "18" ? "18" : c.go.sub === "infantil" ? "kids" : "festa");
+        setTheme(tema);
+        document.getElementById("convites").scrollIntoView({behavior:"smooth", block:"start"});
+        say("<b>" + c.title + "</b> — essa é a coleção " + c.kicker.toLowerCase() + ". Escolhe um modelo que eu te mostro cena por cena 💕");
+      }
+      el.addEventListener("click", go);
+      el.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } });
+    });
+  }
+
+  function updateShowcases(){
+    document.querySelectorAll(".col-phone .ph-n").forEach(function(el){
+      var base = el.getAttribute("data-name");
+      el.textContent = (custom.a && custom.a.trim()) || base;
+    });
+  }
+
   var current = { cat:"casamento", sub:null };
   var custom = { a:"", b:"" };
   function firstName(m){ return (custom.a && custom.a.trim()) || m.nomeA || "Seu nome"; }
@@ -1581,9 +1808,32 @@ footer b{color:var(--ink)}
       '<div class="place">' + local + '</div>' +
       '<div class="cta">Confirmar presença</div></div></div></div>';
 
-    var env = '<div class="scene"><div class="sc sc-env">' +
-      '<div class="env"><div class="seal">L</div></div>' +
-      '<p>toque no selo para abrir</p></div></div>';
+    var env;
+    if (current.sub === "15"){
+      env = '<div class="scene"><div class="sc sc-gates">' +
+        '<div class="gold">15</div>' +
+        '<div class="gate l"></div><div class="gate r"></div>' +
+        '<span class="st" style="left:18%;top:16%">✦</span><span class="st" style="left:74%;top:24%;animation-delay:.8s">✦</span>' +
+        '<span class="st" style="left:60%;top:70%;animation-delay:1.4s">✦</span>' +
+        '<div class="sml" style="position:absolute;bottom:8%;left:0;right:0;z-index:4">os portões se abrem para o seu baile</div></div></div>';
+    } else if (current.sub === "18"){
+      env = '<div class="scene"><div class="sc sc-neon">' +
+        '<div class="beam"></div><div class="beam b2"></div>' +
+        '<div class="n18">18</div>' +
+        '<div class="sml" style="position:relative;z-index:3;margin-top:2cqw">as luzes se acendem pra você</div></div></div>';
+    } else if (current.cat === "aniversario"){
+      var balao = '<svg viewBox="0 0 40 90"><ellipse cx="20" cy="24" rx="15" ry="19" fill="#ff6aa8" stroke="#141414" stroke-width="3"/><path d="M20 43 v6 M20 49 q8 12 0 26 q-8 14 0 15" fill="none" stroke="#141414" stroke-width="3"/></svg>';
+      var balao2 = '<svg viewBox="0 0 40 90"><ellipse cx="20" cy="24" rx="15" ry="19" fill="#ffd23f" stroke="#141414" stroke-width="3"/><path d="M20 43 v6 M20 49 q8 12 0 26 q-8 14 0 15" fill="none" stroke="#141414" stroke-width="3"/></svg>';
+      env = '<div class="scene"><div class="sc sc-balao">' +
+        '<div class="b" style="left:8%">' + balao + '</div><div class="b">' + balao2 + '</div>' +
+        '<div class="b">' + balao + '</div><div class="b">' + balao2 + '</div>' +
+        '<div class="ttl" style="position:relative;z-index:3;color:#1d4f74;font-size:9cqw">Vem comemorar!</div>' +
+        '<div class="sml" style="position:relative;z-index:3;color:#2a6a8f">segura a onda que a festa vai começar</div></div></div>';
+    } else {
+      env = '<div class="scene"><div class="sc sc-env">' +
+        '<div class="env"><div class="seal">L</div></div>' +
+        '<p>toque no selo para abrir</p></div></div>';
+    }
 
     var cd = '<div class="scene"><div class="sc" style="background:linear-gradient(160deg,' + p.c3 + ',' + p.c1 + ')">' +
       '<div class="kk">Faltam só</div>' +
@@ -1763,6 +2013,7 @@ footer b{color:var(--ink)}
     function apply(){
       custom.a = a.value;
       custom.b = b.value;
+      updateShowcases();
       renderGallery();
       rebuildDemo();
     }
@@ -1933,6 +2184,7 @@ footer b{color:var(--ink)}
   });
 
   /* inicia */
+  renderColecoes();
   bindNames();
   if (window.innerWidth < 720){
     var mm = document.getElementById("mascot");
