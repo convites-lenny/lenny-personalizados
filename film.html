@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demonstração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:720px;height:1280px;overflow:hidden;background:#120014;font-family:"Fredoka",sans-serif}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;background:#120014}
+.layer{position:absolute;inset:0;opacity:0}
+
+/* fundos */
+.sky{position:absolute;inset:0;background:var(--bg);transition:none}
+.ray{position:absolute;top:-20%;width:26%;height:150%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.28),transparent);filter:blur(18px);transform-origin:top center}
+.glow{position:absolute;border-radius:50%;filter:blur(60px);opacity:.6}
+
+.brand{
+  position:absolute;top:44px;left:0;right:0;text-align:center;z-index:30;
+  font-size:15px;letter-spacing:.42em;text-transform:uppercase;color:rgba(255,255,255,.66);font-weight:700;
+}
+.brand b{font-family:"Great Vibes",cursive;font-size:34px;letter-spacing:0;text-transform:none;color:#fff;display:inline-block;margin-right:10px}
+
+/* ---- fase portões ---- */
+.gates{position:absolute;inset:0;perspective:1200px;z-index:10}
+.gate{
+  position:absolute;top:0;bottom:0;width:50%;transform-style:preserve-3d;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 3px,transparent 3px 26px),linear-gradient(180deg,#4c0d3d,#8a1a5e 55%,#2d0624);
+  border:3px solid #e6c47a;box-shadow:inset 0 0 90px rgba(0,0,0,.75);
+}
+.gate.l{left:0;transform-origin:left center}
+.gate.r{right:0;transform-origin:right center}
+.gnum{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;
+  font-family:"Playfair Display",serif;font-size:280px;line-height:1;color:transparent;
+  -webkit-text-stroke:3px #f3d79c;text-shadow:0 0 60px rgba(243,215,156,.6);
+}
+.glowdoor{position:absolute;left:50%;top:50%;width:420px;height:560px;transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse,rgba(255,236,190,.75),rgba(255,236,190,0) 70%);z-index:3;filter:blur(6px)}
+
+/* envelope (casamento) */
+.envScene{position:absolute;inset:0;display:grid;place-items:center;perspective:1400px}
+.envBox{position:relative;width:520px;height:360px;border-radius:14px;
+  background:linear-gradient(160deg,#fffdf6,#f4e7cf);border:3px solid #2b2118;
+  box-shadow:0 40px 70px rgba(0,0,0,.5)}
+.envFlap{position:absolute;left:0;right:0;top:0;height:52%;transform-origin:top center;
+  background:linear-gradient(180deg,#fffdf6,#efdfc0);border-bottom:2px solid #d8c39e;
+  clip-path:polygon(0 0,100% 0,50% 100%);border-radius:14px 14px 0 0}
+.envSeal{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:96px;height:96px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 34% 28%,#e0533f,#8d1a1e);color:#ffefd6;
+  font-family:"Playfair Display",serif;font-size:44px;border:3px solid #7d1418;
+  box-shadow:0 10px 24px rgba(0,0,0,.4);z-index:3}
+.envCard{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);
+  font-family:"Great Vibes",cursive;font-size:54px;color:#7a3b3b;white-space:nowrap;z-index:2}
+.envHint{position:absolute;bottom:120px;left:0;right:0;text-align:center;font-size:16px;
+  letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:700}
+
+/* balões (infantil) */
+.kidScene{position:absolute;inset:0;overflow:hidden}
+.kidScene .kb{position:absolute;bottom:-22%;width:120px;animation:none}
+.kidScene .kb svg{width:100%;height:auto;filter:drop-shadow(0 10px 14px rgba(0,0,0,.2))}
+.kidTitle{position:absolute;left:0;right:0;top:44%;text-align:center;font-family:"Baloo 2",sans-serif;
+  font-size:74px;font-weight:800;color:#fff;text-shadow:0 6px 0 rgba(20,20,20,.18);line-height:1}
+.kidSub{position:absolute;left:0;right:0;top:56%;text-align:center;font-size:20px;letter-spacing:.24em;
+  text-transform:uppercase;color:rgba(255,255,255,.9);font-weight:700}
+
+/* ---- fase revelação ---- */
+.heroLayer{z-index:12}
+.heroImg{
+  position:absolute;left:50%;bottom:-30px;height:800px;transform:translateX(-50%);
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));
+  -webkit-mask-image:radial-gradient(ellipse 52% 52% at 50% 46%,#000 58%,rgba(0,0,0,.7) 72%,transparent 84%);
+  mask-image:radial-gradient(ellipse 52% 52% at 50% 46%,#000 58%,rgba(0,0,0,.7) 72%,transparent 84%);
+}
+.heroGlow{position:absolute;left:50%;top:52%;width:640px;height:760px;transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse,rgba(255,180,225,.4),transparent 65%);filter:blur(30px);z-index:1}
+.heroShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,0,20,0) 0 34%,rgba(20,0,20,.62) 62%,rgba(20,0,20,.98) 100%)}
+.nameWrap{position:absolute;left:0;right:0;bottom:118px;text-align:center;z-index:20}
+.kick{font-size:19px;letter-spacing:.5em;text-transform:uppercase;color:#f3d79c;font-weight:800}
+.bigName{font-family:"Great Vibes",cursive;font-size:96px;line-height:1;color:#fff;margin:12px 0 8px;text-shadow:0 6px 30px rgba(0,0,0,.5)}
+.subline{font-size:23px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.9);font-weight:600}
+.orn{display:flex;align-items:center;justify-content:center;gap:16px;margin:24px auto 0;width:60%}
+.orn i{flex:1;height:1px;background:rgba(243,215,156,.75)}
+.orn span{color:#f3d79c;font-size:20px}
+
+/* ---- cartão / capa ---- */
+.coverLayer{z-index:12}
+.card{
+  position:absolute;left:60px;right:60px;top:150px;bottom:150px;border-radius:28px;overflow:hidden;
+  background:rgba(255,252,246,.97);color:#4a2438;box-shadow:0 40px 80px rgba(0,0,0,.45);
+  border:2px solid rgba(220,190,140,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:38px 40px;
+}
+.cphoto{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid #fff;
+  box-shadow:0 0 0 1px #d9c39a,0 16px 30px rgba(120,90,50,.28);margin-bottom:20px}
+body.k18 .card{background:rgba(16,12,7,.97);color:#f6e6bd;border-color:rgba(201,162,74,.7)}
+body.k18 .card h2{color:#f3d79c}
+body.k18 .card .ck,body.k18 .card .cd2{color:#c9a227}
+body.k18 .card .pl{color:#cbbc9a}
+body.k18 .card .msg{color:#e6d6b0}
+body.k18 .card .line{background:rgba(201,162,74,.45)}
+body.k18 .card .btnmt{background:linear-gradient(100deg,#c9a227,#f7e7ad);color:#1a1409}
+body.k18 .cphoto{border-color:#0d0904;box-shadow:0 0 0 2px #c9a227,0 16px 30px rgba(0,0,0,.5)}
+body.k18 .rsvpBox{background:rgba(18,13,7,.97);color:#f2e4c4}
+body.k18 .rsvpBox h3{color:#f3d79c}
+body.k18 .fld{background:rgba(255,255,255,.08);color:#cbbc9a}
+body.k18 .ys{background:linear-gradient(100deg,#c9a227,#f7e7ad);color:#1a1409}
+body.k18 .no{border-color:rgba(201,162,74,.45);color:#d8c69c}
+.card .ck{font-size:16px;letter-spacing:.5em;text-transform:uppercase;color:#b08d4f;font-weight:800}
+.card h2{font-family:"Playfair Display",serif;font-size:64px;line-height:1.02;margin:18px 0 6px;color:#5d2b46}
+.card .cd2{font-size:22px;letter-spacing:.24em;text-transform:uppercase;color:#8a6a48;font-weight:600}
+.card .pl{font-size:20px;color:#8b7a68;margin-top:10px}
+.card .btnmt{margin-top:34px;padding:16px 36px;border-radius:999px;background:#b8366b;color:#fff;font-weight:800;font-size:19px;letter-spacing:.08em}
+.card .line{width:60%;height:1px;background:#e2d0b6;margin:26px auto 18px}
+.card .msg{font-family:"Caveat",cursive;font-size:30px;color:#7a5a4a;line-height:1.25;max-width:440px}
+.card .seal{position:absolute;right:38px;bottom:34px;width:90px;height:90px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#e0533f,#8d1a1e);display:grid;place-items:center;color:#ffefd6;
+  font-family:"Playfair Display",serif;font-size:44px;box-shadow:0 10px 20px rgba(0,0,0,.25)}
+
+/* ---- contagem ---- */
+.cdLayer{z-index:12}
+.cdBox{position:absolute;left:0;right:0;top:38%;transform:translateY(-50%);text-align:center}
+.cdTitle{font-size:20px;letter-spacing:.4em;text-transform:uppercase;color:#f3d79c;font-weight:800}
+.cdNums{display:flex;justify-content:center;gap:14px;margin-top:30px}
+.cdNums i{font-style:normal;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:20px;
+  padding:22px 10px;min-width:130px;color:#fff;font-family:"Baloo 2",sans-serif;font-size:56px;font-weight:800;line-height:1}
+.cdNums i span{display:block;font-size:14px;letter-spacing:.16em;font-family:"Fredoka";font-weight:700;opacity:.7;margin-top:8px}
+.cdFoot{font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:26px}
+
+/* ---- galeria ---- */
+.galLayer{z-index:12}
+.galTitle{position:absolute;top:140px;left:0;right:0;text-align:center;font-size:19px;letter-spacing:.4em;text-transform:uppercase;color:#f3d79c;font-weight:800}
+.photos{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:520px;height:640px}
+.photos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.5);border:2px solid rgba(255,255,255,.5)}
+.thumbs{position:absolute;bottom:150px;left:0;right:0;display:flex;justify-content:center;gap:12px;z-index:12}
+.thumbs i{width:56px;height:56px;border-radius:12px;background-size:cover;background-position:center;border:2px solid rgba(255,255,255,.45);opacity:.55}
+.thumbs i.on{opacity:1;border-color:#fff;transform:scale(1.08)}
+
+/* ---- rsvp ---- */
+.rsvpLayer{z-index:12}
+.rsvpBox{position:absolute;left:70px;right:70px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.97);border-radius:26px;padding:46px 38px;text-align:center;color:#3a2233;box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.rsvpBox .k{font-size:15px;letter-spacing:.4em;text-transform:uppercase;color:#a87c3f;font-weight:800}
+.rsvpBox h3{font-family:"Playfair Display",serif;font-size:40px;margin:14px 0 22px;color:#5d2b46}
+.fld{background:#f6eef6;border-radius:14px;padding:18px;text-align:left;color:#8a7080;font-size:18px;margin-bottom:14px}
+.row{display:flex;gap:12px}
+.row div{flex:1;padding:18px;border-radius:14px;font-size:17px;font-weight:800}
+.ys{background:#b8366b;color:#fff}
+.no{border:1.5px solid #e3cddd;color:#7a5a6a}
+.okmsg{margin-top:18px;background:#e9f9ee;border:1.5px solid #9fdcae;color:#1f7a3d;border-radius:14px;padding:16px;font-weight:800;font-size:18px}
+
+/* ---- final ---- */
+.endLayer{z-index:12}
+.endBox{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px}
+.endBox h2{font-family:"Great Vibes",cursive;font-size:96px;color:#fff;line-height:.9}
+.endBox p{font-size:19px;letter-spacing:.36em;text-transform:uppercase;color:#f3d79c;font-weight:800}
+.endBox small{font-size:20px;color:rgba(255,255,255,.7);letter-spacing:.12em}
+.endBox .cta2{margin-top:22px;padding:16px 40px;border-radius:999px;background:#fff;color:#8a2050;font-weight:800;font-size:20px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="sky" id="sky"></div>
+  <div class="glow" id="g1"></div>
+  <div class="glow" id="g2"></div>
+  <div class="ray" id="ray1"></div>
+  <div class="ray" id="ray2"></div>
+
+  <div class="brand" id="brand"><b>Lenny</b> personalizados studio</div>
+
+  <!-- portões -->
+  <div class="layer gates" id="lGates">
+    <div class="glowdoor"></div>
+    <div class="gnum" id="gnum">15</div>
+    <div class="gate l" id="gateL"></div>
+    <div class="gate r" id="gateR"></div>
+  </div>
+
+  <!-- revelação -->
+  <div class="layer heroLayer" id="lHero">
+    <div class="heroGlow"></div>
+    <img class="heroImg" id="heroImg" src="mascote-15.webp" alt="">
+    <div class="heroShade"></div>
+    <div class="nameWrap">
+      <div class="kick" id="kick">15 anos</div>
+      <div class="bigName" id="bigName">Maria Eduarda</div>
+      <div class="subline" id="subline">12 · 10 · 2027</div>
+      <div class="orn"><i></i><span>✦</span><i></i></div>
+    </div>
+  </div>
+
+  <!-- capa -->
+  <div class="layer coverLayer" id="lCover">
+    <div class="card" id="coverCard">
+      <img class="cphoto" id="cPhoto" src="foto-debut.webp" alt="">
+      <div class="ck" id="cKick">15 anos</div>
+      <h2 id="cName">Maria Eduarda</h2>
+      <div class="cd2" id="cDate">12 · 10 · 2027 · 20h</div>
+      <div class="pl" id="cPlace">Espaço Villa Rosa · São Mateus</div>
+      <div class="btnmt">Confirmar presença</div>
+      <div class="line"></div>
+      <div class="msg" id="cMsg">“A noite mais especial da minha vida começa com você.”</div>
+      <div class="seal">L</div>
+    </div>
+  </div>
+
+  <!-- contagem -->
+  <div class="layer cdLayer" id="lCd">
+    <div class="cdBox">
+      <div class="cdTitle">faltam só</div>
+      <div class="cdNums" id="cdNums">
+        <i><b id="cdD">37</b><span>dias</span></i>
+        <i><b id="cdH">12</b><span>horas</span></i>
+        <i><b id="cdM">30</b><span>min</span></i>
+        <i><b id="cdS">08</b><span>seg</span></i>
+      </div>
+      <div class="cdFoot" id="cdFoot">12 · 10 · 2027 · 20h</div>
+    </div>
+  </div>
+
+  <!-- galeria -->
+  <div class="layer galLayer" id="lGal">
+    <div class="galTitle">nossa galeria</div>
+    <div class="photos" id="photos">
+      <img src="foto-debut.webp" id="ph1" alt="">
+      <img src="foto-2.webp" id="ph2" alt="">
+      <img src="foto-debut.webp" id="ph3" alt="">
+    </div>
+    <div class="thumbs" id="thumbs"><i class="on" style="background-image:url(foto-debut.webp)"></i><i style="background-image:url(foto-2.webp)"></i><i style="background-image:url(foto-debut.webp)"></i></div>
+  </div>
+
+  <!-- rsvp -->
+  <div class="layer rsvpLayer" id="lRsvp">
+    <div class="rsvpBox">
+      <div class="k">confirme sua presença</div>
+      <h3 id="rName">Maria Eduarda</h3>
+      <div class="fld">✍️ Seu nome</div>
+      <div class="row"><div class="ys">Vou comparecer</div><div class="no">Não vou poder</div></div>
+      <div class="okmsg" id="okMsg">✓ Presença confirmada — já está no painel!</div>
+    </div>
+  </div>
+
+  <!-- final -->
+  <div class="layer endLayer" id="lEnd">
+    <div class="endBox">
+      <h2>Lenny</h2>
+      <p>personalizados studio</p>
+      <small>convites que contam histórias</small>
+      <div class="cta2">O seu nome aqui ✨</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var kind = q.get("c") || "15";
+  if (!["15","18","casamento","kids"].includes(kind)) kind = "15";
+  if (kind === "18") document.body.classList.add("k18");
+  if (kind === "casamento") document.body.classList.add("kwi");
+  if (kind === "kids") document.body.classList.add("kki");
+  var CFG = {
+    "casamento": {
+      bg: "radial-gradient(circle at 50% 32%,#f3d9c9 0%,#d9a894 40%,#6d3b34 100%)",
+      glow1: "rgba(255,240,220,.6)", glow2: "rgba(255,190,170,.45)",
+      hero: "mascote-noiva.webp", kicker: "Casamento", name: "Ana & Lucas",
+      date: "12 · 06 · 2028 · 16h", place: "Jardim Villa Rosa · São Mateus",
+      msg: "“O nosso sim começa com você do nosso lado.”",
+      photos: ["foto-1.webp", "foto-debut.webp", "foto-1.webp"],
+      photo: "foto-1.webp",
+      accent: "#c9a24a", open: "envelope"
+    },
+    "kids": {
+      bg: "radial-gradient(circle at 50% 30%,#38bdf8 0%,#7dd3fc 45%,#fff3d6 100%)",
+      glow1: "rgba(255,255,255,.75)", glow2: "rgba(255,220,120,.5)",
+      hero: "mascote-kids.webp", kicker: "Infantil", name: "Laura",
+      date: "05 · 04 · 2027 · 15h", place: "Buffet Mundo Encantado",
+      msg: "“Vem brincar comigo no meu aniversário!”",
+      photos: ["foto-2.webp", "foto-debut.webp", "foto-2.webp"],
+      photo: "foto-2.webp",
+      accent: "#ffd166", open: "balloons"
+    },
+    "15": {
+      bg: "radial-gradient(circle at 50% 32%,#8e1a63 0%,#4a0a3a 55%,#1c0219 100%)",
+      glow1: "rgba(255,120,190,.55)", glow2: "rgba(190,120,255,.5)",
+      hero: "mascote-15.webp", kicker: "15 anos", name: "Maria Eduarda",
+      date: "12 · 10 · 2027 · 20h", place: "Espaço Villa Rosa · São Mateus",
+      msg: "“A noite mais especial da minha vida começa com você.”",
+      photos: ["foto-debut.webp", "foto-2.webp", "foto-debut.webp"],
+      photo: "foto-debut.webp",
+      accent: "#f3d79c", open: "gates"
+    },
+    "18": {
+      bg: "radial-gradient(circle at 50% 30%,#3a2607 0%,#150e04 55%,#070402 100%)",
+      glow1: "rgba(240,200,110,.45)", glow2: "rgba(255,90,60,.35)",
+      hero: "mascote-18.webp", kicker: "18 anos", name: "Rafael",
+      date: "29 · 11 · 2027 · 22h", place: "Rooftop Aurora · São Mateus",
+      msg: "“A maioridade chega e a festa é nossa.”",
+      photos: ["foto-18.webp", "foto-1.webp", "foto-18.webp"],
+      photo: "foto-18.webp",
+      accent: "#f0c96a", open: "gates"
+    }
+  }[kind];
+
+  document.getElementById("sky").style.background = CFG.bg;
+  document.getElementById("g1").style.cssText += "width:620px;height:620px;left:50%;top:24%;transform:translate(-50%,-50%);background:radial-gradient(circle," + CFG.glow1 + ",transparent 70%)";
+  document.getElementById("g2").style.cssText += "width:520px;height:520px;left:10%;bottom:6%;background:radial-gradient(circle," + CFG.glow2 + ",transparent 70%)";
+  var ray1 = document.getElementById("ray1"), ray2 = document.getElementById("ray2");
+  ray1.style.left = kind === "18" ? "12%" : "6%";
+  ray2.style.left = kind === "18" ? "58%" : "70%";
+
+  document.getElementById("gnum").textContent = kind === "casamento" ? "♥" : (kind === "kids" ? "🎈" : kind);
+  document.getElementById("lGates").className = "layer gates " + (kind === "casamento" ? "envScene" : kind === "kids" ? "kidScene" : "");
+  document.getElementById("lGates").innerHTML =
+    kind === "casamento"
+      ? '<div class="envBox"><div class="envFlap" id="envFlap"></div><div class="envSeal" id="envSeal">L</div><div class="envCard" id="envCard">Ana &amp; Lucas</div></div><div class="envHint">toque para abrir o convite</div>'
+      : kind === "kids"
+        ? '<div class="kb" style="left:2%;width:150px" data-b="0"><svg viewBox="0 0 40 90"><ellipse cx="20" cy="24" rx="15" ry="19" fill="#ff6aa8" stroke="#141414" stroke-width="3"/><path d="M20 43 v6 M20 49 q8 12 0 26 q-8 14 0 15" fill="none" stroke="#141414" stroke-width="3"/></svg></div>' +
+          '<div class="kb" style="left:24%;width:120px" data-b="1"><svg viewBox="0 0 40 90"><ellipse cx="20" cy="24" rx="15" ry="19" fill="#ffd166" stroke="#141414" stroke-width="3"/><path d="M20 43 v6 M20 49 q8 12 0 26 q-8 14 0 15" fill="none" stroke="#141414" stroke-width="3"/></svg></div>' +
+          '<div class="kb" style="left:47%;width:170px" data-b="2"><svg viewBox="0 0 40 90"><ellipse cx="20" cy="24" rx="15" ry="19" fill="#7ed957" stroke="#141414" stroke-width="3"/><path d="M20 43 v6 M20 49 q8 12 0 26 q-8 14 0 15" fill="none" stroke="#141414" stroke-width="3"/></svg></div>' +
+          '<div class="kb" style="left:70%;width:130px" data-b="3"><svg viewBox="0 0 40 90"><ellipse cx="20" cy="24" rx="15" ry="19" fill="#a855f7" stroke="#141414" stroke-width="3"/><path d="M20 43 v6 M20 49 q8 12 0 26 q-8 14 0 15" fill="none" stroke="#141414" stroke-width="3"/></svg></div>' +
+          '<div class="kidTitle">Vem comemorar!</div><div class="kidSub">a festa da Laura vai começar</div>'
+        : document.getElementById("lGates").innerHTML;
+  document.getElementById("heroImg").src = CFG.hero;
+  document.getElementById("kick").textContent = CFG.kicker;
+  document.getElementById("bigName").textContent = CFG.name;
+  document.getElementById("subline").textContent = CFG.date;
+  document.getElementById("cKick").textContent = CFG.kicker;
+  document.getElementById("cName").textContent = CFG.name;
+  document.getElementById("cDate").textContent = CFG.date;
+  document.getElementById("cPlace").textContent = CFG.place;
+  document.getElementById("cMsg").textContent = CFG.msg;
+  document.getElementById("cPhoto").src = CFG.photo;
+  document.getElementById("cdFoot").textContent = CFG.date;
+  document.getElementById("rName").textContent = CFG.name;
+  var imgs = [document.getElementById("ph1"), document.getElementById("ph2"), document.getElementById("ph3")];
+  imgs.forEach(function(im, i){ im.src = CFG.photos[i]; });
+  var th = document.getElementById("thumbs").children;
+  for (var i = 0; i < th.length; i++) th[i].style.backgroundImage = "url(" + CFG.photos[i] + ")";
+
+  function clamp(v){ return Math.max(0, Math.min(1, v)); }
+  function ease(v){ v = clamp(v); return 1 - Math.pow(1 - v, 3); }
+  function inOut(t, a, b, f){ return ease((t - a) / f) * (1 - ease((t - (b - f)) / f)); }
+
+  var L = {
+    gates: document.getElementById("lGates"),
+    hero: document.getElementById("lHero"),
+    cover: document.getElementById("lCover"),
+    cd: document.getElementById("lCd"),
+    gal: document.getElementById("lGal"),
+    rsvp: document.getElementById("lRsvp"),
+    end: document.getElementById("lEnd")
+  };
+  var gateL = document.getElementById("gateL"), gateR = document.getElementById("gateR");
+  if (CFG.open !== "gates"){ gateL = { style: {} }; gateR = { style: {} }; }
+  var heroImg = document.getElementById("heroImg"), nameWrap = document.querySelector(".nameWrap");
+  var coverCard = document.getElementById("coverCard");
+  var cdBox = document.querySelector(".cdBox"), cdNums = document.getElementById("cdNums");
+  var photos = document.getElementById("photos"), ph = [document.getElementById("ph1"), document.getElementById("ph2"), document.getElementById("ph3")];
+  var thumbs = document.getElementById("thumbs").children;
+  var rsvpBox = document.querySelector(".rsvpBox"), okMsg = document.getElementById("okMsg");
+  var endBox = document.querySelector(".endBox");
+
+  window.DUR = 11;
+
+  window.render = function(t){
+    /* fases */
+    L.gates.style.opacity = t < 2.1 ? 1 : 0;
+    L.hero.style.opacity  = inOut(t, 1.6, 4.0, .5);
+    L.cover.style.opacity = inOut(t, 3.7, 5.8, .45);
+    L.cd.style.opacity    = inOut(t, 5.6, 7.2, .4);
+    L.gal.style.opacity   = inOut(t, 7.0, 8.8, .4);
+    L.rsvp.style.opacity  = inOut(t, 8.6, 10.2, .4);
+    L.end.style.opacity   = t > 10.0 ? clamp((t - 10.0) / .6) : 0;
+
+    /* abertura conforme a coleção */
+    var open = ease((t - 0.35) / 1.05);
+    if (CFG.open === "gates"){
+      gateL.style.transform = "rotateY(" + (-96 * open) + "deg)";
+      gateR.style.transform = "rotateY(" + (96 * open) + "deg)";
+      document.getElementById("gnum").style.opacity = String(1 - clamp((t - .3) / .8));
+      document.getElementById("gnum").style.transform = "translate(-50%,-50%) scale(" + (1 + .25 * ease(t / 1.6)) + ")";
+    } else if (CFG.open === "envelope"){
+      var fl = document.getElementById("envFlap"), se = document.getElementById("envSeal"), ec = document.getElementById("envCard");
+      if (fl){
+        var op = ease((t - .25) / .9);
+        fl.style.transform = "rotateX(" + (-170 * op) + "deg)";
+        se.style.opacity = String(1 - clamp((t - .55) / .5));
+        se.style.transform = "translate(-50%,-50%) scale(" + (1 - .35 * op) + ")";
+        ec.style.transform = "translateX(-50%) translateY(" + (-70 * ease((t - 1.0) / .8)) + "px)";
+        ec.style.opacity = String(clamp((t - .95) / .5));
+      }
+    } else {
+      var bs = document.querySelectorAll(".kb");
+      bs.forEach(function(b, i){
+        var d = i * .14;
+        b.style.transform = "translateY(" + (-1100 * ease((t - .1 - d) / 2.2)) + "px) rotate(" + (Math.sin(t + i) * 8) + "deg)";
+      });
+      var kt = document.querySelector(".kidTitle");
+      if (kt){ kt.style.opacity = String(clamp((t - .7) / .5)); kt.style.transform = "scale(" + (.8 + .2 * ease((t - .7) / .6)) + ")"; }
+    }
+
+    /* raios */
+    ray1.style.transform = "rotate(" + (10 + Math.sin(t * .8) * 6) + "deg)";
+    ray2.style.transform = "rotate(" + (-8 + Math.cos(t * .7) * 6) + "deg)";
+
+    /* revelação */
+    var rv = ease((t - 1.55) / .9);
+    heroImg.style.transform = "translateX(-50%) translateY(" + (90 * (1 - rv)) + "px) scale(" + (.94 + .06 * rv) + ")";
+    nameWrap.style.transform = "translateY(" + (60 * (1 - ease((t - 1.9) / .8))) + "px)";
+    nameWrap.style.opacity = String(clamp((t - 1.85) / .7));
+    document.getElementById("bigName").style.letterSpacing = (2 - 2 * ease((t - 2) / 1.4)) + "px";
+
+    /* capa */
+    var cv = ease((t - 3.75) / .8);
+    coverCard.style.transform = "translateY(" + (50 * (1 - cv)) + "px) scale(" + (.96 + .04 * cv) + ")";
+
+    /* contagem números mudando */
+    var seg = Math.floor(t * 1.4) % 60;
+    document.getElementById("cdD").textContent = String(37);
+    document.getElementById("cdH").textContent = String(12);
+    document.getElementById("cdM").textContent = String(30);
+    document.getElementById("cdS").textContent = String(seg).padStart(2, "0");
+    cdBox.style.transform = "translateY(-50%) scale(" + (1 + .01 * Math.sin(t * 3)) + ")";
+
+    /* galeria */
+    var gi = Math.min(2, Math.floor(clamp((t - 7.0) / 1.8) * 3));
+    ph.forEach(function(p, i){
+      var on = i === gi;
+      p.style.opacity = on ? "1" : "0";
+      p.style.transform = "scale(" + (on ? 1 + .02 * ((t * .5) % 1) : 1.04) + ")";
+      p.style.transition = "opacity .35s";
+      thumbs[i].className = on ? "on" : "";
+    });
+
+    /* rsvp */
+    var confirmou = t > 9.55;
+    okMsg.style.display = confirmou ? "block" : "none";
+    rsvpBox.style.transform = "translateY(-50%) scale(" + (1 - .01 * (1 - ease((t - 8.6) / .6))) + ")";
+
+    /* final */
+    endBox.style.transform = "scale(" + (.96 + .04 * ease((t - 10) / .8)) + ")";
+  };
+
+  window.render(0);
+  if (q.get("play")){
+    var t0 = performance.now();
+    (function loop(){
+      var t = (performance.now() - t0) / 1000;
+      if (t > window.DUR) t = window.DUR;
+      window.render(t);
+      if (t < window.DUR) requestAnimationFrame(loop);
+    })();
+  }
+})();
+</script>
+</body>
+</html>
