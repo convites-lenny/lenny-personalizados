@@ -1929,9 +1929,10 @@ footer b{color:var(--ink)}
       } else {
         t = TPLS[(i + off) % TPLS.length];
       }
+      var forcedName = "";
       if (i === 0){
         var featId = FEATURED[(s && s.id) || current.cat];
-        if (featId !== undefined && (t.id < 10 || featId >= 18)) t = TPLS[featId];
+        if (featId !== undefined && (t.id < 10 || featId >= 18)){ t = TPLS[featId]; forcedName = t.nome; }
       }
       var pIx = set ? (i + Math.floor(i / set.tpls.length)) % pool.length : (i % pool.length);
       var p = PALETTES[pool[pIx]];
@@ -1939,7 +1940,7 @@ footer b{color:var(--ink)}
                  t.id === 0 ? "a-shine" : t.id === 3 ? "a-blink" : t.id === 5 ? "a-shine" :
                  t.id === 7 ? "a-pulse" : t.id === 9 ? "a-pulse" : "a-blink";
       return {
-        tpl: t.id, pal: p, nome: nomes[i] || ("Modelo " + (i + 1)),
+        tpl: t.id, pal: p, nome: forcedName || nomes[i] || ("Modelo " + (i + 1)),
         tipo: t.tipo, feat: t.feat, anim: anim,
         lenny: LENNY_SAY[t.id] || "",
         novo: t.id >= 18,
