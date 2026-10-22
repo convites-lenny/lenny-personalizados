@@ -1000,6 +1000,39 @@ section[id]{scroll-margin-top:82px}
 .story .s-fld{width:100%;border:1px solid rgba(160,120,60,.35);border-radius:9px;padding:9px;font-size:10px;font-family:inherit;background:#fff;margin-bottom:6px;outline:none}
 .story .s-ok{display:none;background:#e9f7e8;border:1px solid #9fce9f;color:#2c6a2c;border-radius:9px;padding:9px;font-size:9.5px;font-weight:700;margin-top:8px}
 .story .s-foot{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;color:#a3543f;padding:18px 0 30px}
+
+/* variante 18 — preto & dourado */
+.story.gold{background:#0d0a06;color:#f2e4c4}
+.story.gold .s-cover{background:radial-gradient(circle at 50% 18%,#3a2607,#0b0806 78%)}
+.story.gold section{border-bottom-color:rgba(201,162,74,.22)}
+.story.gold .s-h{color:#c9a227}
+.story.gold p{color:#d8c9a8}
+.story.gold .s-date{color:#f3d79c}
+.story.gold .s-small,.story.gold .s-k{color:#c9a227}
+.story.gold .s-cd i{background:#c9a227;color:#1a1409}
+.story.gold .s-card{background:rgba(255,255,255,.04);border-color:rgba(201,162,74,.35)}
+.story.gold .s-card b{color:#f3d79c}
+.story.gold .s-card span{color:#cbbc9a}
+.story.gold .s-wit div{background:rgba(255,255,255,.04);border-color:rgba(201,162,74,.3)}
+.story.gold .s-wit span{color:#c9a227}
+.story.gold .s-wit b{color:#f2e4c4}
+.story.gold .s-fld{background:rgba(255,255,255,.08);border-color:rgba(201,162,74,.4);color:#f2e4c4}
+.story.gold .s-btn{border-color:#c9a227;color:#f3d79c;background:transparent}
+.story.gold .s-quote{color:#e8c9a0}
+.story.gold .s-foot{color:#c9a227}
+
+/* Lenny explicando cada parte */
+.story-lenny{
+  position:sticky;bottom:0;z-index:8;display:flex;gap:8px;align-items:center;
+  background:rgba(255,255,255,.96);border-top:1px solid rgba(160,120,60,.35);
+  padding:8px 10px;box-shadow:0 -8px 20px rgba(0,0,0,.18);
+}
+.story-lenny img{height:38px;width:auto;flex:0 0 auto}
+.story-lenny span{font-size:8.6px;line-height:1.4;color:#4a2a1c;font-weight:500}
+.story-lenny b{color:#a3543f}
+.story.gold .story-lenny{background:rgba(18,13,7,.97);border-top-color:rgba(201,162,74,.4)}
+.story.gold .story-lenny span{color:#e6d6b0}
+.story.gold .story-lenny b{color:#f3d79c}
 .story .s-quote{font-family:"Caveat",cursive;font-size:16px;color:#8a3a2f;line-height:1.2}
 
 /* Lenny viva */
@@ -1648,7 +1681,8 @@ footer b{color:var(--ink)}
     {id:21, nome:"Mundo dos Brinquedos",tipo:"Interativo",feat:["Blocos e brinquedos animados","Nome e idade da criança","Clima de festa e diversão"]},
     {id:22, nome:"Laço de Fita",        tipo:"Interativo", feat:["Abertura com laço que se desfaz","Foto em tela cheia estilo cinema","Revelação dos nomes em caligrafia"]},
     {id:23, nome:"Reino Encantado",     tipo:"Interativo", feat:["Convite narrado com selo de cera","História do casal em capítulos","Padrinhos, local, contagem e RSVP"]},
-    {id:24, nome:"Crônica da Debutante",tipo:"Interativo", feat:["História em capítulos com fotos","Contagem e dress code","Confirmação de presença integrada"]}
+    {id:24, nome:"Crônica da Debutante",tipo:"Interativo", feat:["História em capítulos com fotos","Contagem e dress code","Confirmação de presença integrada"]},
+    {id:25, nome:"Legado 18",           tipo:"Interativo", feat:["Selo de cera e capítulos","Testemunhas, mapa e contagem","RSVP integrado ao painel"]}
   ];
 
   var NOMES = {
@@ -1958,17 +1992,18 @@ footer b{color:var(--ink)}
   var OFFSET = { casamento:0, bodas:1, aniversario:2, reunioes:5, eventos:7 };
 
   var SETS = {
-    "15": { tpls:[19,10,11,12,13], pals:[0,1,5,2] },
-    "18": { tpls:[20,14,15,16,17], pals:[5,6,1,0] }
+    "15": { tpls:[24,19,10,11,12,13], pals:[0,1,5,2] },
+    "18": { tpls:[25,20,14,15,16,17], pals:[5,6,1,0] }
   };
   var FEATURED = {
     casamento: 23,
     "15": 24,
-    "18": 20,
+    "18": 25,
     infantil: 21
   };
   var LENNY_SAY = {
     23: "Esse é o <b>Reino Encantado</b>: o convite vem lacrado, o convidado rompe o selo e entra numa história em capítulos — com padrinhos, local, contagem e confirmação.",
+    25: "Esse é o <b>Legado 18</b>: selo de cera, capítulos da sua história, testemunhas, mapa, contagem e confirmação — tudo em um só convite pra ler até o fim.",
     24: "A <b>Crônica da Debutante</b>: a história dela em capítulos, com fotos, contagem, dress code e confirmação. Um convite pra ler e guardar.",
     22: "Esse é o <b>Laço de Fita</b>: o convite chega com um laço, o convidado desfaz e os nomes aparecem sobre a foto — inspirado nos convites cinematográficos que você viu.",
     18: "Esse é o <b>Selo Real</b>: o convite chega lacrado e o convidado toca no selo para abrir — aquele clima de cinema dos convites de luxo.",
@@ -2258,19 +2293,32 @@ footer b{color:var(--ink)}
      ========================================================= */
   function storyHTML(m){
     var A = firstName(m), B = secondName(m);
+    var is18 = m.tpl === 25;
     var casal = !!(B);
     var data = { a: A, b: B };
 
     var cover =
       '<div class="s-cover">' +
         '<div class="s-orn">❦</div>"' +
-        '<div class="s-k" style="margin-top:8px">' + (m.kicker || "Convite") + '</div>' +
+        '<div class="s-k" style="margin-top:8px">' + (is18 ? "18 anos" : (m.kicker || "Convite")) + '</div>' +
         '<div class="s-names">' + A + (casal ? ' <i>&</i> ' + B : '') + '</div>' +
         '<div class="s-seal" id="sSeal">' + (A.charAt(0) || "L") + '</div>' +
         '<div class="s-hint">rompa o selo e abra o convite</div>' +
       '</div>';
 
-    var historia = m.tpl === 23
+    var historia = is18
+      ? '<section class="parch" data-say="Aqui começa a história: três capítulos curtos que o convidado lê rolando a tela.">' +
+          '<div class="s-h">capítulo um</div>' +
+          '<p>Aos 18, a gente acha que sabe tudo. Eu achei também — até descobrir que o melhor da vida é justamente o que não estava no plano.</p>' +
+          '<div class="s-div">✦</div>' +
+          '<div class="s-h">capítulo dois</div>' +
+          '<p>Foram anos de escola, amigos que viraram irmãos e uma família que segurou minha mão em cada virada.</p>' +
+          '<img class="s-photo" src="foto-18.webp" alt="">' +
+          '<div class="s-div">✦</div>' +
+          '<div class="s-h">capítulo três</div>' +
+          '<p>Agora abre um capítulo novo — e eu quero começar celebrando com quem fez parte de todos os anteriores.</p>' +
+        '</section>'
+      : m.tpl === 23
       ? '<section class="parch">' +
           '<div class="s-h">nossa história</div>' +
           '<p>Nem todo encontro começa com um olhar certeiro. O nosso começou com uma piada sem graça e um café que esfriou de tanto a gente rir.</p>' +
@@ -2288,15 +2336,35 @@ footer b{color:var(--ink)}
         '</section>';
 
     var dataSec =
-      '<section>' +
-        '<div class="s-h">o grande dia</div>' +
-        '<div class="s-date">' + (m.tpl === 23 ? "06 DE JUNHO DE 2026" : "12 DE OUTUBRO DE 2027") + '</div>' +
-        '<div class="s-small">' + (m.tpl === 23 ? "sábado · 19h" : "domingo · 20h") + '</div>' +
+      '<section data-say="O grande dia com contagem ao vivo e botão que salva na agenda do celular.">' +
+        '<div class="s-h">' + (is18 ? "a noite" : "o grande dia") + '</div>' +
+        '<div class="s-date">' + (m.tpl === 23 ? "06 DE JUNHO DE 2026" : is18 ? "29 DE NOVEMBRO DE 2027" : "12 DE OUTUBRO DE 2027") + '</div>' +
+        '<div class="s-small">' + (m.tpl === 23 ? "sábado · 19h" : is18 ? "segunda · 22h" : "domingo · 20h") + '</div>' +
         '<div class="s-cd" id="sCd"></div>' +
         '<button class="s-btn" id="sIcs" type="button">📅 adicionar ao calendário</button>' +
       '</section>';
 
-    var local = m.tpl === 23
+    var local = is18
+      ? '<section data-say="Local com endereço e botão que abre o mapa direto no celular do convidado.">' +
+          '<div class="s-h">onde a noite acontece</div>' +
+          '<div class="s-card"><b>Rooftop Aurora</b>' +
+          '<span>São Mateus — Ocidental<br>Entrada 18+ · traje: black & gold</span></div>' +
+          '<a class="s-btn" href="https://share.google/6CiNVlNzMdrltsbcU" target="_blank" rel="noopener">📍 abrir no mapa</a>' +
+        '</section>' +
+        '<section data-say="Testemunhas: os amigos que assinam junto com você nesse capítulo novo.">' +
+          '<div class="s-h">minhas testemunhas</div>' +
+          '<div class="s-wit">' +
+            '<div><span>amigo</span><b>Rafael Lima</b></div>' +
+            '<div><span>amiga</span><b>Kamila Andrade</b></div>' +
+            '<div><span>amigo</span><b>Thiago Mendes</b></div>' +
+            '<div><span>amiga</span><b>Beatriz Rocha</b></div>' +
+          '</div>' +
+        '</section>' +
+        '<section data-say="Playlist colaborativa: o convidado pode sugerir a música da pista.">' +
+          '<div class="s-h">trilha da noite</div>' +
+          '<p>Manda a música que não pode faltar. A playlist é montada com as sugestões de quem confirma — e toca na festa.</p>' +
+        '</section>'
+      : m.tpl === 23
       ? '<section>' +
           '<div class="s-h">as portas do palácio se abrem</div>' +
           '<div class="s-card"><b>Rancho das Rosas</b>' +
@@ -2324,21 +2392,34 @@ footer b{color:var(--ink)}
         '</section>';
 
     var rsvp =
-      '<section>' +
+      '<section data-say="Confirmação de presença: nome e acompanhantes caem no painel de quem organiza.">' +
         '<div class="s-h">confirme sua presença</div>' +
         '<input class="s-fld" id="sNome" placeholder="Seu nome">' +
         '<input class="s-fld" id="sQtd" type="number" min="1" max="10" value="1" placeholder="Quantas pessoas">' +
         '<button class="s-btn" id="sOk" type="button">✓ confirmar presença</button>' +
         '<div class="s-ok" id="sMsg">Presença confirmada! Obrigada por avisar 💕</div>' +
       '</section>' +
-      '<div class="s-foot">Lenny Personalizados · ' + (m.tpl === 23 ? "2026" : "2027") + '</div>';
+      '<div class="s-foot">Lenny Personalizados · ' + (is18 ? "2027" : m.tpl === 23 ? "2026" : "2027") + '</div>';
 
-    return '<div class="story sealed" id="storyBox">' + cover + '<div class="s-body">' + historia + dataSec + local + rsvp + '</div></div>';
+    return '<div class="story' + (is18 ? " gold" : "") + ' sealed" id="storyBox">' + cover + '<div class="s-body">' + historia + dataSec + local + rsvp + '<div class="story-lenny" id="sLenny"><img src="' + (is18 ? "mascote-18.webp" : m.tpl === 24 ? "mascote-15.webp" : "mascote-noiva.webp") + '" alt=""><span><b>Lenny:</b> toque no selo para abrir. Depois role a tela que eu vou te explicando cada parte.</span></div></div></div>';
   }
 
   function initStory(){
     var box = document.getElementById("storyBox");
     if (!box) return;
+    var ln = document.getElementById("sLenny");
+    var secs = box.querySelectorAll("section[data-say]");
+    if (ln && secs.length && "IntersectionObserver" in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if (!en.isIntersecting) return;
+          var txt = en.target.getAttribute("data-say");
+          var sp = ln.querySelector("span");
+          if (sp && txt) sp.innerHTML = "<b>Lenny:</b> " + txt;
+        });
+      }, { root: box, threshold: .55 });
+      secs.forEach(function(x){ io.observe(x); });
+    }
     var seal = document.getElementById("sSeal");
     if (seal) seal.addEventListener("click", function(){
       box.classList.remove("sealed");
@@ -2463,7 +2544,7 @@ footer b{color:var(--ink)}
     ];
     $("#mChips").innerHTML = chips.map(function(c){ return "<span>✓ " + c + "</span>"; }).join("");
 
-    var isStory = (m.tpl === 23 || m.tpl === 24);
+    var isStory = (m.tpl >= 23);
     if (isStory){
       demo.playing = false; cancelAnimationFrame(demo.raf);
       $("#mStage").innerHTML = storyHTML(m);
