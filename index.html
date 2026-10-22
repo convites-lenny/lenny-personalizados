@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ff3d8b">
+<title>Lenny Personalizados · Convites que encantam</title>
+<meta name="description" content="Convites digitais simples, animados e interativos para casamento, bodas, aniversários, 15 e 18 anos, reuniões e eventos. Topos de bolo, tags, banners, cartões e logos — tudo personalizado.">
+<link rel="canonical" href="https://lenny-personalizados-studio.web.app/">
+<meta property="og:site_name" content="Lenny Personalizados">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Lenny Personalizados · Convites que encantam">
+<meta property="og:description" content="Convites digitais que encantam: simples, animados e interativos. Casamento, bodas, aniversários, 15 e 18 anos, reuniões e eventos.">
+<meta property="og:url" content="https://lenny-personalizados-studio.web.app/">
+<meta property="og:image" content="https://lenny-personalizados-studio.web.app/og-lenny.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lenny Personalizados · Convites que encantam">
+<meta name="twitter:description" content="Convites digitais simples, animados e interativos. Feitos do seu jeitinho.">
+<meta name="twitter:image" content="https://lenny-personalizados-studio.web.app/og-lenny.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff3d8b'/%3E%3Cstop offset='1' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-weight='bold' font-size='50' fill='%23fff'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   LENNY PERSONALIZADOS — base
+   ========================================================= */
+:root{
+  --pink:#ff3d8b;
+  --pink-soft:#ffd7e6;
+  --purple:#8b5cf6;
+  --lilac:#c9b6ff;
+  --blue:#38bdf8;
+  --cyan:#a5f3fc;
+  --ink:#2a1436;
+  --ink-soft:#6b5578;
+  --cream:#fff8fc;
+  --card:#ffffff;
+  --line:#f0e2ec;
+  --shadow:0 18px 45px rgba(120,40,110,.13);
+  --shadow-sm:0 8px 22px rgba(120,40,110,.10);
+  --radius:24px;
+  --accent:#ff3d8b;
+  --accent2:#8b5cf6;
+  --glow:rgba(255,61,139,.35);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Fredoka",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+button{font-family:inherit}
+a{color:inherit}
+h1,h2,h3,h4{font-family:"Baloo 2",sans-serif;margin:0;line-height:1.06}
+.wrap{width:min(1180px,100% - 36px);margin:0 auto}
+
+/* fundo geral */
+#bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#bgfx .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;animation:blobMove 22s ease-in-out infinite alternate}
+#bgfx .b1{width:44vw;height:44vw;left:-10vw;top:-8vw;background:radial-gradient(circle,#ffd0e2,transparent 68%)}
+#bgfx .b2{width:38vw;height:38vw;right:-8vw;top:14vh;background:radial-gradient(circle,#d9c8ff,transparent 68%);animation-delay:-7s}
+#bgfx .b3{width:50vw;height:50vw;left:22vw;bottom:-18vw;background:radial-gradient(circle,#c7f0ff,transparent 70%);animation-delay:-12s}
+@keyframes blobMove{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(3vw,-3vh,0) scale(1.15)}}
+#fx{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+
+/* =========================================================
+   TOPO
+   ========================================================= */
+.top{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(255,248,252,.78);
+  border-bottom:1px solid rgba(240,226,236,.9);
+}
+.top-in{display:flex;align-items:center;gap:14px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo .mark{
+  width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--pink),var(--purple));
+  color:#fff;font-family:"Playfair Display",serif;font-weight:700;font-size:23px;
+  box-shadow:0 6px 16px rgba(255,61,139,.35);
+}
+.logo b{display:block;font-family:"Baloo 2",sans-serif;font-size:17px;line-height:1;letter-spacing:.01em}
+.logo span{display:block;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-top:2px}
+.nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.nav a{
+  text-decoration:none;font-size:13px;font-weight:600;color:var(--ink-soft);
+  padding:9px 12px;border-radius:999px;transition:.2s;white-space:nowrap;
+}
+.nav a:hover{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+.top .cta{
+  margin-left:8px;display:inline-flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;
+  border:0;border-radius:999px;padding:11px 17px;font-weight:700;font-size:13px;
+  text-decoration:none;box-shadow:0 10px 22px rgba(139,92,246,.3);transition:.2s;
+}
+.top .cta:hover{transform:translateY(-2px)}
+.sound{
+  width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:#fff;
+  display:grid;place-items:center;cursor:pointer;font-size:16px;color:var(--ink-soft);
+  transition:.2s;flex:0 0 auto;
+}
+.sound.on{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;border-color:transparent}
+.burger{display:none;width:40px;height:40px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:17px;cursor:pointer}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;z-index:2;padding:34px 0 10px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:center;min-height:min(640px,86vh)}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+  padding:7px 14px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+  color:var(--ink-soft);box-shadow:var(--shadow-sm);text-transform:uppercase;
+}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--pink);display:inline-block;animation:pulseDot 1.8s infinite}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 var(--glow)}60%{box-shadow:0 0 0 8px transparent}}
+.hero h1{
+  font-size:clamp(38px,6.2vw,72px);font-weight:800;letter-spacing:-.02em;margin:16px 0 14px;
+}
+.hero h1 em{
+  font-style:normal;background:linear-gradient(120deg,var(--pink),var(--purple) 55%,var(--blue));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:clamp(14.5px,1.6vw,17px);line-height:1.6;color:var(--ink-soft);max-width:52ch;margin:0 0 22px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;padding:14px 22px;font-weight:700;font-size:14.5px;
+  text-decoration:none;border:0;cursor:pointer;transition:.2s;white-space:nowrap;
+}
+.btn.primary{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;box-shadow:0 14px 30px rgba(139,92,246,.32)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(139,92,246,.4)}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--shadow-sm)}
+.btn.ghost:hover{border-color:var(--pink-soft);transform:translateY(-2px)}
+.hero-mini{display:flex;gap:16px;margin-top:26px;flex-wrap:wrap}
+.hero-mini div{font-size:12px;color:var(--ink-soft);font-weight:600;display:flex;align-items:center;gap:6px}
+.hero-mini b{font-family:"Baloo 2",sans-serif;font-size:15px;color:var(--ink);display:block}
+
+/* palco da mascote */
+.stage{position:relative;display:grid;place-items:center;min-height:420px}
+.stage .ring{
+  position:absolute;width:min(430px,88%);aspect-ratio:1;border-radius:50%;
+  background:conic-gradient(from 210deg,var(--pink),var(--purple),var(--blue),var(--pink));
+  filter:blur(2px);opacity:.16;animation:spinSlow 26s linear infinite;
+}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+.stage .circle{
+  position:absolute;width:min(400px,84%);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 34% 26%,#fff 0%,#ffe9f3 46%,#ecdcff 100%);
+  box-shadow:0 30px 70px rgba(150,60,130,.18), inset 0 0 0 1px rgba(255,255,255,.9);
+}
+.mascote{position:relative;z-index:3;height:min(560px,62vh);width:auto;filter:drop-shadow(0 24px 30px rgba(120,40,100,.22));animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.bubble{
+  position:absolute;z-index:4;background:#fff;border:1.5px solid var(--line);
+  border-radius:20px 20px 20px 4px;padding:12px 16px;max-width:250px;
+  box-shadow:var(--shadow);font-size:12.5px;line-height:1.45;font-weight:500;color:var(--ink-soft);
+  left:-2%;top:12%;
+}
+.bubble b{color:var(--ink)}
+.bubble::after{
+  content:"";position:absolute;left:20px;bottom:-9px;width:16px;height:16px;background:#fff;
+  border-left:1.5px solid var(--line);border-bottom:1.5px solid var(--line);transform:rotate(-45deg);border-radius:0 0 0 3px;
+}
+.chip-float{
+  position:absolute;z-index:5;background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:8px 13px;font-size:11.5px;font-weight:700;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:7px;
+  animation:float 6s ease-in-out infinite;
+}
+.chip-float.a{right:-2%;top:22%;animation-delay:-2s}
+.chip-float.b{left:2%;bottom:16%;animation-delay:-3.5s}
+
+/* =========================================================
+   HUB — o que você procura
+   ========================================================= */
+section{position:relative;z-index:2}
+section[id]{scroll-margin-top:82px}
+.hub{padding:46px 0 20px}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 26px}
+.sec-head .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.sec-head h2{font-size:clamp(27px,4vw,40px);font-weight:800;margin:8px 0 8px;letter-spacing:-.01em}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:14.5px;line-height:1.55}
+.hub-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.hub-card{
+  position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 14px 16px;
+  cursor:pointer;transition:.22s;overflow:hidden;text-align:left;box-shadow:var(--shadow-sm);
+}
+.hub-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--pink-soft)}
+.hub-card .ico{
+  width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px;margin-bottom:12px;
+  background:linear-gradient(140deg,var(--pink-soft),#efe6ff);
+}
+.hub-card b{display:block;font-family:"Baloo 2",sans-serif;font-size:15.5px;margin-bottom:3px}
+.hub-card span{font-size:11.5px;color:var(--ink-soft);line-height:1.4;display:block}
+.hub-card::after{
+  content:"→";position:absolute;right:14px;top:16px;color:var(--pink);font-weight:800;opacity:0;transform:translateX(-4px);transition:.2s;
+}
+.hub-card:hover::after{opacity:1;transform:none}
+
+/* =========================================================
+   CONVITES — abas
+   ========================================================= */
+.convites{padding:34px 0 10px}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.tab{
+  border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;
+  font-size:13px;font-weight:700;color:var(--ink-soft);cursor:pointer;transition:.2s;
+  display:inline-flex;align-items:center;gap:7px;
+}
+.tab:hover{border-color:var(--pink-soft);color:var(--ink);transform:translateY(-1px)}
+.tab.on{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:transparent;
+  box-shadow:0 10px 24px rgba(139,92,246,.28);
+}
+.subtabs{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:2px 0 18px}
+.subtab{
+  border:1px dashed #e6d3ea;background:rgba(255,255,255,.7);border-radius:999px;
+  padding:7px 13px;font-size:11.5px;font-weight:700;color:var(--ink-soft);cursor:pointer;transition:.2s;
+}
+.subtab:hover{background:#fff}
+.subtab.on{background:#2a1436;color:#fff;border-color:#2a1436}
+.panel-head{
+  display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);
+  border-radius:20px;padding:14px 16px;margin-bottom:18px;box-shadow:var(--shadow-sm);
+}
+.panel-head img{width:54px;height:54px;object-fit:contain;object-position:top;border-radius:14px;background:linear-gradient(160deg,#ffe6f1,#eee4ff)}
+.panel-head .txt{flex:1;min-width:0}
+.panel-head b{display:block;font-family:"Baloo 2",sans-serif;font-size:16px}
+.panel-head p{margin:3px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.4}
+.panel-head .pill{
+  font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);
+  background:#fff2f7;border:1px solid #ffdce9;padding:6px 11px;border-radius:999px;white-space:nowrap;
+}
+.grid-models{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.model{
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:9px;cursor:pointer;
+  transition:.22s;box-shadow:var(--shadow-sm);text-align:left;position:relative;overflow:hidden;
+}
+.model:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--pink-soft)}
+.model .thumb{border-radius:12px;overflow:hidden;background:#faf3f9;aspect-ratio:4/5;position:relative}
+.model .meta{padding:9px 4px 4px;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.model b{font-family:"Baloo 2",sans-serif;font-size:13px;display:block;line-height:1.15}
+.model small{font-size:10px;color:var(--ink-soft);font-weight:700;letter-spacing:.03em}
+.model .badge{
+  position:absolute;top:14px;left:14px;z-index:5;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+  background:rgba(42,20,54,.82);color:#fff;padding:4px 8px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.model .badge.anim{background:rgba(139,92,246,.9)}
+.model .badge.inter{background:rgba(255,61,139,.92)}
+
+/* =========================================================
+   MODELOS DE CONVITE (miniaturas)
+   ========================================================= */
+.inv{
+  container-type:inline-size;
+  position:relative;width:100%;height:100%;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--c4);color:var(--c3);
+  font-family:"Fredoka",sans-serif;
+}
+.inv .deco{position:absolute;pointer-events:none}
+.inv .in{position:relative;z-index:3;padding:9% 8%}
+.inv .kick{font-size:3.2cqw;letter-spacing:.28em;text-transform:uppercase;opacity:.75;font-weight:700;margin-bottom:3cqw}
+.inv .nm{
+  font-family:"Playfair Display",serif;font-size:9.4cqw;line-height:1.05;font-weight:700;
+  letter-spacing:-.01em;margin-bottom:2.4cqw;
+}
+.inv .nm em{font-style:normal;display:block;font-family:"Great Vibes",cursive;font-size:.72em;line-height:.9;color:var(--c1);margin:.6cqw 0}
+.inv .sub{font-size:3.5cqw;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.85}
+.inv .place{font-size:3.2cqw;opacity:.7;margin-top:1.4cqw;font-weight:500}
+.inv .cta{
+  display:inline-block;margin-top:5cqw;font-size:3cqw;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:2.2cqw 4.2cqw;border-radius:999px;
+  background:var(--c1);color:#fff;
+}
+.inv .orn{display:flex;align-items:center;justify-content:center;gap:2cqw;margin:2.4cqw auto 0;width:60%}
+.inv .orn::before,.inv .orn::after{content:"";height:1px;flex:1;background:currentColor;opacity:.35}
+.inv .orn span{font-size:3cqw;opacity:.7}
+
+/* 1 clássico */
+.inv.t0{background:var(--c4)}
+.inv.t0 .in{border:1px solid color-mix(in srgb,var(--c1) 55%,transparent);padding:11% 9%;outline:1px solid color-mix(in srgb,var(--c1) 25%,transparent);outline-offset:-5px}
+.inv.t0 .nm{font-family:"Playfair Display",serif}
+.inv.t0 .cta{background:transparent;color:var(--c3);border:1px solid color-mix(in srgb,var(--c3) 35%,transparent)}
+
+/* 2 floral */
+.inv.t1{background:
+  radial-gradient(circle at 0% 0%, var(--c2) 0 22%, transparent 23%),
+  radial-gradient(circle at 100% 100%, var(--c2) 0 26%, transparent 27%),
+  radial-gradient(circle at 100% 0%, color-mix(in srgb,var(--c5) 35%,transparent) 0 16%, transparent 17%),
+  radial-gradient(circle at 0% 100%, color-mix(in srgb,var(--c5) 30%,transparent) 0 18%, transparent 19%),
+  var(--c4)}
+.inv.t1 .nm{font-family:"Great Vibes",cursive;font-size:12cqw;color:var(--c1)}
+.inv.t1 .cta{background:var(--c1)}
+
+/* 3 minimal */
+.inv.t2{background:#fff}
+.inv.t2 .in{display:flex;flex-direction:column;justify-content:space-between;height:88%;padding:12% 9%}
+.inv.t2 .nm{font-family:"Fredoka",sans-serif;font-weight:300;letter-spacing:.18em;text-transform:uppercase;font-size:7cqw}
+.inv.t2 .kick{letter-spacing:.4em}
+.inv.t2 .cta{background:transparent;color:var(--c1);border:1px solid var(--c1);border-radius:0;letter-spacing:.24em}
+.inv.t2 .deco{inset:auto 0 26% 0;height:1px;background:var(--c1);opacity:.4}
+
+/* 4 neon */
+.inv.t3{background:radial-gradient(circle at 50% 20%,#1b0f33,#0a0512 70%)}
+.inv.t3 .in{border:1px solid var(--c1);box-shadow:0 0 22px var(--c1), inset 0 0 26px color-mix(in srgb,var(--c1) 35%,transparent);padding:12% 8%;border-radius:2px}
+.inv.t3 .nm{font-family:"Fredoka",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:10cqw;
+  color:#fff;text-shadow:0 0 6px var(--c1),0 0 18px var(--c1)}
+.inv.t3 .sub{color:var(--c5);text-shadow:0 0 8px var(--c5)}
+.inv.t3 .cta{background:var(--c1);box-shadow:0 0 18px var(--c1);color:#0a0512}
+.inv.t3 .kick{color:var(--c5)}
+
+/* 5 boho */
+.inv.t4{background:linear-gradient(160deg,#efdfc8,#e3cfb2)}
+.inv.t4 .in{
+  background:rgba(255,252,246,.6);border-radius:50% 50% 6px 6px;border:1px solid rgba(120,80,40,.28);
+  padding:14% 9% 12%;margin-top:8%;
+}
+.inv.t4 .nm{font-family:"Playfair Display",serif;font-style:italic;color:#6d4a2f}
+.inv.t4 .kick,.inv.t4 .sub,.inv.t4 .place{color:#8a6a48}
+.inv.t4 .cta{background:#8a6a48;color:#fff8ef}
+.inv.t4 .deco.d1{left:8%;bottom:8%;width:26%;height:26%;border-left:2px solid #a67c52;border-bottom:2px solid #a67c52;border-radius:0 0 0 30px;opacity:.5}
+
+/* 6 luxo */
+.inv.t5{background:#0f0c09;color:#f6e6bd}
+.inv.t5 .in{padding:11% 8%}
+.inv.t5 .nm{font-family:"Playfair Display",serif;color:transparent;background:linear-gradient(100deg,#8a6a1f,#f7e7ad 40%,#c9a227 60%,#f7e7ad);-webkit-background-clip:text;background-clip:text;font-size:10cqw}
+.inv.t5 .kick{color:#c9a227;letter-spacing:.4em}
+.inv.t5 .sub,.inv.t5 .place{color:#d8c69c}
+.inv.t5 .cta{background:linear-gradient(100deg,#c9a227,#f7e7ad);color:#1a1409}
+.inv.t5 .deco.d1,.inv.t5 .deco.d2{left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,#c9a227,transparent)}
+.inv.t5 .deco.d1{top:12%}.inv.t5 .deco.d2{bottom:12%}
+
+/* 7 glass */
+.inv.t6{background:
+  radial-gradient(circle at 20% 20%,var(--c1),transparent 55%),
+  radial-gradient(circle at 85% 30%,var(--c5),transparent 50%),
+  radial-gradient(circle at 50% 90%,var(--c2),transparent 60%),
+  #1a0f2b}
+.inv.t6 .in{
+  background:rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.45);border-radius:5cqw;box-shadow:0 10px 30px rgba(0,0,0,.2);
+  padding:10% 8%;margin:8%;color:#fff;
+}
+.inv.t6 .nm{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.inv.t6 .cta{background:#fff;color:#3a1d4f}
+
+/* 8 retro */
+.inv.t7{background:var(--c2)}
+.inv.t7 .deco.d1{
+  left:50%;top:52%;width:120%;aspect-ratio:1;transform:translate(-50%,-50%);
+  background:repeating-conic-gradient(from 0deg, color-mix(in srgb,var(--c1) 18%,transparent) 0 9deg, transparent 9deg 18deg);
+  border-radius:50%;
+}
+.inv.t7 .in{background:color-mix(in srgb,var(--c4) 92%,transparent);border-radius:50%;padding:14% 8%;width:84%;box-shadow:0 0 0 6px color-mix(in srgb,var(--c1) 30%,transparent)}
+.inv.t7 .nm{font-family:"Baloo 2",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;color:var(--c1);font-size:9cqw}
+.inv.t7 .cta{background:var(--c3)}
+
+/* 9 aurora */
+.inv.t8{background:linear-gradient(160deg,#ff7ab6,#8b5cf6 46%,#38bdf8)}
+.inv.t8 .deco.d1{inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.55),transparent 45%),radial-gradient(circle at 75% 75%,rgba(255,255,255,.3),transparent 50%)}
+.inv.t8 .in{color:#fff;text-shadow:0 2px 12px rgba(60,10,60,.28)}
+.inv.t8 .nm{font-family:"Great Vibes",cursive;font-size:12cqw;color:#fff}
+.inv.t8 .cta{background:rgba(255,255,255,.92);color:#7a2e8f}
+
+/* 10 festa */
+.inv.t9{background:var(--c4)}
+.inv.t9 .deco.d1{
+  inset:0;
+  background-image:radial-gradient(var(--c1) 1.2px, transparent 1.3px), radial-gradient(var(--c5) 1.2px, transparent 1.3px);
+  background-size:14px 14px, 22px 22px;background-position:0 0, 7px 7px;opacity:.35;
+}
+.inv.t9 .in{background:#fff;border:1.5px dashed var(--c1);border-radius:4cqw;padding:9% 7%;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.inv.t9 .nm{font-family:"Baloo 2",sans-serif;font-weight:800;color:var(--c1);font-size:10cqw}
+.inv.t9 .cta{background:var(--c1);box-shadow:0 4px 0 color-mix(in srgb,var(--c1) 55%,#000)}
+
+/* animações */
+.inv .nm em, .inv .cta{will-change:transform}
+.inv.a-blink .nm{animation:nameGlow 2.6s ease-in-out infinite}
+@keyframes nameGlow{0%,100%{opacity:1}50%{opacity:.55;filter:brightness(1.25)}}
+.inv.a-pulse .cta{animation:ctaPulse 2s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.inv.a-shine .in::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);
+  transform:translateX(-120%);animation:shine 4.5s ease-in-out infinite;
+}
+@keyframes shine{0%,60%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+.inv .spark{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 8px #fff;animation:sp 2.8s infinite}
+@keyframes sp{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:.95;transform:scale(1.2)}}
+
+/* =========================================================
+   PRODUTOS
+   ========================================================= */
+.produtos{padding:56px 0 10px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.prod{
+  background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:.22s;display:flex;flex-direction:column;
+}
+.prod:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.prod .art{height:190px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#fff2f8,#f3ecff)}
+.prod .body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod h3{font-size:16.5px;font-weight:800}
+.prod p{margin:0;font-size:12.8px;line-height:1.5;color:var(--ink-soft)}
+.prod .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.prod .tags span{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--purple);background:#f5efff;border-radius:999px;padding:4px 9px}
+.prod .mais{margin-top:auto;padding-top:12px;font-size:12px;font-weight:800;color:var(--pink);text-decoration:none;display:inline-flex;gap:5px;align-items:center}
+
+/* mockups produtos */
+.mk{position:relative}
+.mk.topper{width:150px;height:150px}
+.mk .cake{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);width:112px}
+.mk .cake i{position:relative;display:block;height:27px;margin:0 auto 2px;border-radius:5px 5px 9px 9px;
+  background:linear-gradient(180deg,#fff 0 38%,#ffd3e4 38% 100%);border:2px solid #ffb9d3}
+.mk .cake i::before{content:"";position:absolute;left:-2px;right:-2px;top:-5px;height:8px;border-radius:99px;background:#fff;border:2px solid #ffb9d3}
+.mk .cake i:nth-child(1){width:70%}
+.mk .cake i:nth-child(2){width:85%}
+.mk .cake i:nth-child(3){width:100%}
+.mk .topper-top{position:absolute;left:50%;top:2px;transform:translateX(-50%);width:96px;text-align:center;font-family:"Baloo 2",sans-serif;font-size:11px;color:#c2185b;font-weight:800;letter-spacing:.04em}
+.mk .topper-top::before,.mk .topper-top::after{content:"";position:absolute;bottom:-14px;width:1.5px;height:20px;background:#d8a7bb}
+.mk .topper-top::before{left:14px;transform:rotate(9deg)}
+.mk .topper-top::after{right:14px;transform:rotate(-9deg)}
+.mk.tag{width:150px;height:120px;display:flex;gap:8px;align-items:center;justify-content:center}
+.mk.tag b{position:relative;background:#fff;border:1.5px solid #f3c9dc;border-radius:8px;padding:12px 10px;font-family:"Caveat",cursive;font-size:15px;color:#8d3a5c;box-shadow:0 6px 14px rgba(180,80,130,.12);transform:rotate(-6deg)}
+.mk.tag b:last-child{transform:rotate(7deg);background:#fdf1ff;border-color:#e0c8f5;color:#6b3fa0}
+.mk.tag b::before{content:"";position:absolute;left:50%;top:-6px;width:10px;height:10px;border:1.5px solid currentColor;border-radius:50%;transform:translateX(-50%);opacity:.5}
+.mk.cards{width:170px;height:120px;position:relative}
+.mk.cards b{position:absolute;width:112px;height:68px;border-radius:10px;background:#fff;border:1px solid #efd9e6;box-shadow:0 10px 20px rgba(120,40,110,.12);display:flex;flex-direction:column;justify-content:center;padding:8px 10px;font-family:"Baloo 2",sans-serif;font-size:8px;line-height:1.25;color:#8b3f66;letter-spacing:.04em;overflow:hidden}
+.mk.cards b:first-child{left:8px;top:16px;transform:rotate(-7deg)}
+.mk.cards b:last-child{left:44px;top:34px;transform:rotate(5deg);background:linear-gradient(140deg,#ff9ec4,#a78bfa);color:#fff;border:0;font-size:10px}
+.mk.banner{width:190px;height:110px;border-radius:10px;background:linear-gradient(140deg,#ffd9e8,#e6d9ff);border:1px solid #edcfe2;display:flex;align-items:center;justify-content:center;font-family:"Baloo 2",sans-serif;font-weight:800;color:#7b2b5c;font-size:16px;letter-spacing:.06em;box-shadow:0 12px 24px rgba(120,40,110,.12);position:relative;overflow:hidden}
+.mk.banner::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 8px,transparent 8px 16px)}
+.mk.logo{width:120px;height:120px;border-radius:50%;background:conic-gradient(from 40deg,#ff7ab6,#a78bfa,#7dd3fc,#ff7ab6);display:grid;place-items:center;box-shadow:0 14px 28px rgba(139,92,246,.25)}
+.mk.logo b{width:92px;height:92px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:34px;color:#a0326a}
+.mk.mini{width:160px;display:flex;gap:8px;justify-content:center;align-items:flex-end}
+.mk.mini i{width:34px;height:44px;background:linear-gradient(160deg,#fff,#ffe6f2);border:1px solid #f2c6da;border-radius:6px 6px 3px 3px;position:relative;box-shadow:0 6px 12px rgba(180,80,130,.12)}
+.mk.mini i::before{content:"";position:absolute;left:50%;top:-9px;width:9px;height:9px;border:1px solid #eab8ce;border-radius:50%;transform:translateX(-50%)}
+.mk.mini i:nth-child(2){height:56px;background:linear-gradient(160deg,#f6f0ff,#e4d5ff);border-color:#d9c4f7}
+
+/* =========================================================
+   SERVIÇOS
+   ========================================================= */
+.servicos{padding:56px 0 10px}
+.serv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.serv{
+  background:linear-gradient(165deg,#fff,#fff6fb);border:1px solid var(--line);border-radius:20px;
+  padding:20px 18px;box-shadow:var(--shadow-sm);transition:.2s;
+}
+.serv:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.serv .ico{width:44px;height:44px;border-radius:13px;background:linear-gradient(140deg,#ffe0ee,#ece0ff);display:grid;place-items:center;font-size:20px;margin-bottom:12px}
+.serv b{display:block;font-family:"Baloo 2",sans-serif;font-size:15px;margin-bottom:5px}
+.serv p{margin:0;font-size:12.3px;line-height:1.5;color:var(--ink-soft)}
+
+/* passos */
+.passos{padding:52px 0 10px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 18px 18px;box-shadow:var(--shadow-sm)}
+.step::before{
+  counter-increment:s;content:counter(s);position:absolute;top:-14px;left:18px;
+  width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-weight:800;font-size:13px;
+  box-shadow:0 8px 16px rgba(139,92,246,.28);
+}
+.step b{display:block;font-family:"Baloo 2",sans-serif;font-size:14.5px;margin:6px 0 5px}
+.step p{margin:0;font-size:12.2px;color:var(--ink-soft);line-height:1.5}
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+.contato{padding:56px 0 70px}
+.contato-box{
+  position:relative;overflow:hidden;border-radius:30px;padding:34px;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(255,255,255,.35),transparent 42%),
+    linear-gradient(135deg,#ff5fa2,#a855f7 55%,#38bdf8);
+  color:#fff;box-shadow:0 30px 60px rgba(139,92,246,.28);
+}
+.contato-box h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:8px}
+.contato-box p{margin:0 0 20px;max-width:52ch;line-height:1.55;font-size:14.5px;opacity:.95}
+.contato-box .btn.ghost{background:#fff;color:#7a2e8f;border:0}
+.contato-box .btn.wpp{background:#25d366;color:#07320f;box-shadow:0 14px 30px rgba(0,80,20,.25)}
+.contato-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}
+.contato-box .masc{height:250px;margin:-40px auto -30px;filter:drop-shadow(0 18px 24px rgba(60,0,60,.28))}
+.contato-info{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;font-size:12.5px;font-weight:600}
+.contato-info span{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:8px 13px;border-radius:999px}
+footer{padding:26px 0 40px;text-align:center;color:var(--ink-soft);font-size:12px}
+footer b{color:var(--ink)}
+
+/* =========================================================
+   MASCOTE COMPANHEIRA
+   ========================================================= */
+#mascot{
+  position:fixed;right:16px;bottom:16px;z-index:70;display:flex;align-items:flex-end;gap:8px;
+  transition:transform .3s ease;
+}
+#mascot .who{
+  width:74px;height:74px;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,#ffe6f1,#eee4ff);
+  border:2.5px solid #fff;box-shadow:0 12px 26px rgba(120,40,100,.25);cursor:pointer;flex:0 0 auto;
+  display:grid;place-items:end center;transition:.25s;
+}
+#mascot .who:hover{transform:translateY(-3px) scale(1.04)}
+#mascot .who img{height:74px;width:auto;object-fit:contain;object-position:top}
+#mascot .say{
+  background:#fff;border:1.5px solid var(--line);border-radius:16px 16px 4px 16px;
+  padding:10px 13px;font-size:11.8px;line-height:1.45;color:var(--ink-soft);
+  max-width:230px;box-shadow:var(--shadow);margin-bottom:6px;font-weight:500;
+  animation:sayIn .35s ease both;
+}
+#mascot .say b{color:var(--ink)}
+#mascot #mascotSay{transition:opacity .35s ease}
+#mascot.quiet .say{opacity:0;pointer-events:none}
+#mascot .who{animation:float 5s ease-in-out infinite}
+@keyframes sayIn{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
+#mascot .close{
+  position:absolute;top:-6px;left:-6px;width:22px;height:22px;border-radius:50%;border:0;
+  background:#2a1436;color:#fff;font-size:11px;cursor:pointer;display:none;
+}
+
+/* =========================================================
+   MODAL DO MODELO
+   ========================================================= */
+#modal{
+  position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:18px;
+  background:rgba(30,10,40,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;pointer-events:none;transition:opacity .28s ease;
+}
+#modal.on{opacity:1;pointer-events:auto}
+#modal[hidden]{display:none}
+.modal-box{
+  width:min(940px,100%);max-height:92svh;overflow:auto;background:#fff;border-radius:26px;
+  padding:18px;display:grid;grid-template-columns:300px 1fr;gap:20px;
+  box-shadow:0 40px 80px rgba(40,0,40,.35);transform:translateY(14px) scale(.98);transition:.3s;
+}
+#modal.on .modal-box{transform:none}
+.modal-phone{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 20px 40px rgba(120,40,110,.22);border:6px solid #1c1024;background:#1c1024;align-self:start;height:fit-content}
+.modal-phone .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:64px;height:5px;border-radius:99px;background:rgba(255,255,255,.35);z-index:6}
+.modal-phone .screen{aspect-ratio:9/16;position:relative;overflow:hidden}
+.modal-phone .screen > .inv{position:absolute;inset:0;width:100%;height:100%}
+.modal-info h3{font-size:23px;margin-bottom:4px}
+.modal-info .sub{font-size:12px;color:var(--ink-soft);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.modal-info p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px}
+.feat{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:7px}
+.feat li{display:flex;gap:8px;font-size:12.8px;color:var(--ink);font-weight:500;align-items:flex-start}
+.feat li::before{content:"✓";color:#fff;background:linear-gradient(135deg,var(--pink),var(--purple));width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font-size:10px;flex:0 0 auto;margin-top:1px}
+.demo{
+  background:#fbf6ff;border:1px dashed #e3d3f5;border-radius:16px;padding:12px;margin-bottom:14px;
+}
+.demo b{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--purple);display:block;margin-bottom:8px}
+.demo .row{display:flex;gap:8px;flex-wrap:wrap}
+.demo .row button{
+  border:1.5px solid #e2d3f3;background:#fff;border-radius:999px;padding:8px 13px;font-size:11.5px;font-weight:700;color:var(--ink-soft);cursor:pointer;
+}
+.demo .row button.ok{background:#e9f9ee;border-color:#9fdcae;color:#1f7a3d}
+.demo .count{display:flex;gap:6px;margin-top:9px}
+.demo .count i{font-style:normal;background:#2a1436;color:#fff;border-radius:8px;padding:5px 8px;font-size:11px;font-weight:700;min-width:38px;text-align:center}
+.demo .count i span{display:block;font-size:7.5px;text-transform:uppercase;opacity:.6;letter-spacing:.08em}
+.demo .gal{display:flex;gap:6px;margin-top:9px}
+.demo .gal i{display:block;flex:1;height:62px;border-radius:8px;background:linear-gradient(135deg,#ffd6e7,#e3d4ff)}
+.demo .gal i:nth-child(2){background:linear-gradient(135deg,#d6e9ff,#d9ffe9)}
+.demo .gal i:nth-child(3){background:linear-gradient(135deg,#fff0cc,#ffd6e7)}
+.tip{display:flex;gap:10px;align-items:center;background:#fff6fb;border:1px solid #ffe0ee;border-radius:14px;padding:10px 12px;margin-bottom:14px}
+.tip img{height:52px;width:auto}
+.tip span{font-size:11.8px;line-height:1.45;color:var(--ink-soft)}
+.tip b{color:var(--ink)}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap}
+.modal-close{
+  position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:0;
+  background:rgba(42,20,54,.75);color:#fff;font-size:15px;cursor:pointer;z-index:5;
+}
+/* partículas dentro do modal */
+.modal-phone .hearts,.modal-phone .conf{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.modal-phone .hearts i{position:absolute;bottom:-14px;color:#ff6aa8;font-size:14px;animation:up 5s linear infinite}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.9}100%{transform:translateY(-320px) rotate(40deg);opacity:0}}
+.modal-phone .conf i{position:absolute;top:-12px;width:7px;height:10px;border-radius:2px;animation:down 4.4s linear infinite}
+@keyframes down{0%{transform:translateY(-20px) rotate(0);opacity:0}10%{opacity:1}100%{transform:translateY(420px) rotate(480deg);opacity:0}}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+#intro{
+  position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:20px;
+  background:radial-gradient(circle at 30% 20%,#ffe6f3,#eee1ff 55%,#dff4ff);
+  transition:opacity .45s ease;
+}
+#intro.gone{opacity:0;pointer-events:none}
+.intro-box{text-align:center;max-width:520px}
+.intro-box img{height:min(300px,36vh);margin:0 auto 8px;animation:float 4.5s ease-in-out infinite;filter:drop-shadow(0 20px 26px rgba(120,40,100,.2))}
+.intro-box h2{font-size:clamp(24px,5vw,34px);margin-bottom:8px}
+.intro-box p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 18px}
+.intro-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+@media(max-width:980px){
+  .top-in{gap:8px;padding:9px 0;flex-wrap:nowrap}
+  .logo{gap:8px;min-width:0;flex:1}
+  .logo .mark{width:36px;height:36px;font-size:19px;border-radius:11px}
+  .logo b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .logo > span > span{display:none}
+  .top .cta{width:42px;height:42px;padding:0;font-size:0;justify-content:center;flex:0 0 auto;margin-left:0}
+  .top .cta::before{content:"💬";font-size:18px}
+  .burger,.sound{width:38px;height:38px;font-size:16px;flex:0 0 auto}
+  .hero-grid{grid-template-columns:1fr;gap:8px;min-height:0;padding-top:6px}
+  .stage{order:-1;min-height:330px}
+  .mascote{height:min(360px,42vh)}
+  .bubble{display:none}
+  .chip-float{display:none}
+  .hub-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-models{grid-template-columns:repeat(2,1fr)}
+  .prod-grid,.serv-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .modal-box{grid-template-columns:1fr;gap:14px}
+  .modal-phone{max-width:280px;margin:0 auto}
+  .nav{display:none;position:absolute;left:12px;right:12px;top:64px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}
+  .nav.open{display:flex}
+  .nav a{padding:11px 14px;border-radius:12px}
+  .burger{display:grid;place-items:center}
+  .top .cta{padding:0;font-size:0}
+  .contato-grid{grid-template-columns:1fr}
+  .contato-box .masc{margin:0 auto -20px}
+  #mascot .say{max-width:158px;font-size:10.6px;padding:8px 11px}
+  body{--radius:20px}
+}
+@media(max-width:520px){
+  .prod-grid,.serv-grid,.steps,.hub-grid{grid-template-columns:1fr}
+  .grid-models{grid-template-columns:repeat(2,1fr);gap:10px}
+  .wrap{width:calc(100% - 26px)}
+  .hero h1{font-size:clamp(32px,9.4vw,44px)}
+  #mascot .who{width:58px;height:58px}
+  #mascot .who img{height:58px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;animation-iteration-count:1!important}
+}
+</style>
+</head>
+<body data-theme="home">
+
+<div id="bgfx" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+</div>
+<div id="fx" aria-hidden="true"></div>
+
+<!-- ================= INTRO ================= -->
+<div id="intro">
+  <div class="intro-box">
+    <img src="mascote-oi.webp" alt="Lenny virtual, a mascote da Lenny Personalizados">
+    <h2>Oi! Eu sou a <em style="font-style:normal;color:#c02e7a">Lenny virtual</em> 💕</h2>
+    <p>A minha humana me criou pra te mostrar como tudo funciona antes de você tomar a sua decisão. Então vem comigo: escolhe o que você procura e deixa comigo!</p>
+    <div class="intro-actions">
+      <button class="btn primary" id="introGo" type="button">Vem comigo ✨</button>
+      <button class="btn ghost" id="introSkip" type="button">Ver os modelos</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TOPO ================= -->
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#home">
+      <span class="mark">L</span>
+      <span><b>Lenny Personalizados</b><span>convites &amp; personalizados</span></span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menu">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#convites">Convites</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#servicos">Serviços digitais</a>
+      <a href="#como">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="sound" id="sound" type="button" aria-label="Ligar música de fundo">🎵</button>
+    <a class="cta" href="#contato">💬 Falar com a Lenny</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag"><i></i> convites digitais feitos à mão, com carinho</span>
+      <h1>Convites que <em>encantam</em> antes da festa começar</h1>
+      <p class="lead">Simples, animados ou interativos — cada convite é criado do zero pro seu evento: casamento, bodas, aniversários, 15 e 18 anos, reuniões e comemorações. Você escolhe o estilo, a Lenny cuida do resto.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#convites">Ver modelos de convite</a>
+        <a class="btn ghost" href="#produtos">Topos, tags e personalizados</a>
+      </div>
+      <div class="hero-mini">
+        <div>🎨 <span><b>100% personalizado</b>do seu jeitinho</span></div>
+        <div>📱 <span><b>Pronto pro celular</b>envia no WhatsApp</span></div>
+        <div>⚡ <span><b>Entrega rápida</b>com prévia antes</span></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="ring"></div>
+      <div class="circle"></div>
+      <img class="mascote" src="mascote-oi.webp" alt="Lenny virtual acenando">
+      <div class="bubble"><b>Oi, eu sou a Lenny virtual!</b> Vou te mostrar cada detalhe dos modelos — é só clicar em um deles 💕</div>
+      <div class="chip-float a">✨ +10 modelos por categoria</div>
+      <div class="chip-float b">💌 prévia na hora</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HUB ================= -->
+<section class="hub">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">escolha o que procura</div>
+      <h2>Tudo pra deixar seu evento com a sua cara</h2>
+      <p>Convites, topos, tags, banners e artes digitais. Um menu pra cada momento — e uma Lenny pra te guiar em cada um deles.</p>
+    </div>
+    <div class="hub-grid" id="hub">
+      <button class="hub-card" data-go="casamento"><span class="ico">💍</span><b>Casamento &amp; Bodas</b><span>Clássico, floral, luxo e interativo com galeria e votos</span></button>
+      <button class="hub-card" data-go="aniversario"><span class="ico">🎂</span><b>Aniversários</b><span>Infantil, infanto-juvenil, adolescente, adulto, 15 e 18</span></button>
+      <button class="hub-card" data-go="reunioes"><span class="ico">💼</span><b>Reuniões</b><span>Corporativo, encontros, formaturas e conferências</span></button>
+      <button class="hub-card" data-go="produtos"><span class="ico">🍰</span><b>Produtos</b><span>Topos de bolo, tags de doces, banners e cartões</span></button>
+      <button class="hub-card" data-go="servicos"><span class="ico">✨</span><b>Serviços digitais</b><span>Artes para redes, vídeo-convite e identidade visual</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONVITES ================= -->
+<section class="convites" id="convites">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">convites</div>
+      <h2>Escolha o tipo do seu evento</h2>
+      <p>Cada categoria tem a sua personalidade — e o seu convite também. Clique em um modelo pra ver a prévia e sentir a experiência.</p>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="subtabs" id="subtabs"></div>
+    <div class="panel-head" id="panelHead"></div>
+    <div class="grid-models" id="gallery"></div>
+  </div>
+</section>
+
+<!-- ================= PRODUTOS ================= -->
+<section class="produtos" id="produtos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">produtos personalizados</div>
+      <h2>Do bolo à mesa de doces, tudo combinando</h2>
+      <p>Impressos em papel fotográfico, recortados e montados prontos pra usar. É só chegar, montar e arrasar.</p>
+    </div>
+    <div class="prod-grid">
+      <article class="prod">
+        <div class="art"><div class="mk topper"><div class="topper-top">Gael</div><div class="cake"><i></i><i></i><i></i></div></div></div>
+        <div class="body">
+          <h3>Topo de bolo</h3>
+          <p>Simples ou em camadas, no tema da festa. Papel fotográfico de alta qualidade, recortado e montado — já vai pronto pra fincar no bolo.</p>
+          <div class="tags"><span>1 andar</span><span>camadas</span><span>nome + tema</span></div>
+          <a class="mais" href="#contato">Pedir orçamento →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="art"><div class="mk tag"><b>Obrigada!</b><b>Com carinho</b></div></div>
+        <div class="body">
+          <h3>Tags de doces</h3>
+          <p>Tags personalizadas pra docinhos, lembrancinhas e potinhos. Combinando com o convite e com o topo do bolo.</p>
+          <div class="tags"><span>por tema</span><span>nome do evento</span></div>
+          <a class="mais" href="#contato">Pedir orçamento →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="art"><div class="mk mini"><i></i><i></i><i></i><i></i></div></div>
+        <div class="body">
+          <h3>Mini topos</h3>
+          <p>Pra cupcake, brigadeiro gourmet e docinhos especiais. Aquele detalhe que faz a mesa parecer de revista.</p>
+          <div class="tags"><span>cupcake</span><span>docinhos</span><span>kits</span></div>
+          <a class="mais" href="#contato">Pedir orçamento →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="art"><div class="mk banner">Parabéns, Ana!</div></div>
+        <div class="body">
+          <h3>Banners e painéis</h3>
+          <p>Painel de fundo pra fotos, faixa de entrada e banner de mesa. Arte grande, impressão nítida e cores vivas.</p>
+          <div class="tags"><span>foto</span><span>entrada</span><span>mesa</span></div>
+          <a class="mais" href="#contato">Pedir orçamento →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="art"><div class="mk cards"><b>LENNY<br>personalizados</b><b>Ana &amp; Lucas<br>12 · 06 · 2027</b></div></div>
+        <div class="body">
+          <h3>Cartões de visita e agradecimento</h3>
+          <p>Cartões com a sua identidade, pra entregar junto com a lembrancinha ou deixar na mesa dos convidados.</p>
+          <div class="tags"><span>visita</span><span>agradecimento</span><span>convite impresso</span></div>
+          <a class="mais" href="#contato">Pedir orçamento →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="art"><div class="mk logo"><b>L</b></div></div>
+        <div class="body">
+          <h3>Logos e identidade</h3>
+          <p>Marca, monograma e paleta de cores pro seu evento ou pro seu negócio. Depois desdobro em convite, tag, banner e redes sociais.</p>
+          <div class="tags"><span>logo</span><span>monograma</span><span>paleta</span></div>
+          <a class="mais" href="#contato">Pedir orçamento →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">serviços digitais</div>
+      <h2>Além do convite: tudo online, prontinho</h2>
+      <p>Serviços digitais feitos com o mesmo cuidado do impresso — pra você só se preocupar em aproveitar a festa.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv"><div class="ico">💌</div><b>Convite interativo</b><p>Com confirmação de presença, galeria, mapa, música e contagem regressiva.</p></div>
+      <div class="serv"><div class="ico">📲</div><b>Artes para redes</b><p>Feed, stories e capas combinando com o convite do evento.</p></div>
+      <div class="serv"><div class="ico">🎬</div><b>Vídeo-convite</b><p>Convite animado em vídeo pra mandar no WhatsApp e nos grupos.</p></div>
+      <div class="serv"><div class="ico">📋</div><b>Gestão de confirmações</b><p>Painel com a lista de convidados, acompanhantes e presentes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="passos" id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">como funciona</div>
+      <h2>Simples do começo ao fim</h2>
+      <p>Você me conta a sua ideia, eu transformo em arte — e você aprova cada detalhe antes de receber.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b>Conversa</b><p>Você chama no WhatsApp e conta do evento: data, nome, estilo e o que não pode faltar.</p></div>
+      <div class="step"><b>Escolha</b><p>Te mostro os modelos e a gente ajusta cores, fontes e detalhes do seu jeitinho.</p></div>
+      <div class="step"><b>Aprovação</b><p>Você recebe a prévia, pede os ajustes e aprova. Sem surpresa no final.</p></div>
+      <div class="step"><b>Entrega</b><p>Arquivo digital pronto pra enviar no WhatsApp + versão pra imprimir, quando for o caso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div class="contato-box">
+      <div class="contato-grid">
+        <div>
+          <h2>Bora criar o seu?</h2>
+          <p>Me conta o tipo de evento e o que você imaginou. Eu te mostro as opções, monto a prévia e a gente deixa tudo com a sua cara — do convite ao topo do bolo.</p>
+          <div class="modal-actions">
+            <a class="btn wpp" id="wppMain" href="#" target="_blank" rel="noopener">💬 Chamar no WhatsApp</a>
+            <a class="btn ghost" href="#convites">Ver os modelos</a>
+          </div>
+          <div class="contato-info">
+            <span>📸 @lennypersonalizados</span>
+            <span>✉️ contato@lennypersonalizados.com</span>
+            <span>⏱️ resposta no mesmo dia</span>
+          </div>
+        </div>
+        <img class="masc" src="mascote-apresenta.webp" alt="Lenny virtual apresentando">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Lenny Personalizados</b> · convites, topografia e artes digitais<br>
+    Feito com carinho pra deixar o seu evento inesquecível 💕
+  </div>
+</footer>
+
+<!-- ================= MASCOTE FIXA ================= -->
+<div id="mascot" aria-live="polite">
+  <div class="say" id="mascotSay">Oi! Sou a <b>Lenny virtual</b>. Clica em um modelo que eu te mostro cada detalhe 💕</div>
+  <div class="who" id="mascotWho" role="button" tabindex="0" aria-label="Falar com a Lenny virtual">
+    <img src="mascote-oi.webp" alt="">
+  </div>
+</div>
+
+<!-- ================= MODAL ================= -->
+<div id="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal-close" id="mClose" type="button" aria-label="Fechar">✕</button>
+    <div class="modal-phone">
+      <div class="notch"></div>
+      <div class="screen" id="mScreen"></div>
+    </div>
+    <div class="modal-info">
+      <h3 id="mTitle">Modelo</h3>
+      <div class="sub" id="mSub">Categoria</div>
+      <p id="mDesc"></p>
+      <ul class="feat" id="mFeat"></ul>
+      <div class="demo">
+        <b>Experimente aqui 👇</b>
+        <div class="row">
+          <button type="button" id="mYes">Vou comparecer</button>
+          <button type="button" id="mNo">Não vou poder</button>
+        </div>
+        <div class="count" id="mCount"></div>
+        <div class="gal"><i></i><i></i><i></i></div>
+      </div>
+      <div class="tip">
+        <img src="mascote-apresenta.webp" alt="">
+        <span><b>Lenny:</b> esse modelo é só uma base pra você sentir as funcionalidades. Cada trabalho é único — eu monto do zero com a sua ideia, suas cores e o seu nome no lugar. 💕</span>
+      </div>
+      <div class="modal-actions">
+        <a class="btn primary" id="mWpp" href="#" target="_blank" rel="noopener">Quero esse estilo</a>
+        <button class="btn ghost" id="mBack" type="button">Ver outros modelos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(s,r){ return (r||document).querySelector(s); };
+  var $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var WPP = "https://wa.me/?text=" + encodeURIComponent("Oi, Lenny! Vi o site e quero um orçamento para o meu evento 💕");
+
+  /* =========================================================
+     DADOS
+     ========================================================= */
+  var PALETTES = [
+    {n:"rosé",     c1:"#e0326e", c2:"#ffd9e6", c3:"#5a1b34", c4:"#fff6fa", c5:"#f7c873"},
+    {n:"lilás",    c1:"#8b5cf6", c2:"#e9dcff", c3:"#2f1a52", c4:"#faf6ff", c5:"#ffd166"},
+    {n:"azul",     c1:"#2f7fd4", c2:"#d6ecff", c3:"#12314f", c4:"#f6fbff", c5:"#7dd3fc"},
+    {n:"verde",    c1:"#2f9e6f", c2:"#d7f5e6", c3:"#123f30", c4:"#f5fffa", c5:"#ffd166"},
+    {n:"terracota",c1:"#c2683f", c2:"#f4dccb", c3:"#4a2417", c4:"#fdf5ee", c5:"#8aa26b"},
+    {n:"dourado",  c1:"#c9a227", c2:"#f6e6bd", c3:"#221a0e", c4:"#14100b", c5:"#f3d27a"},
+    {n:"neon",     c1:"#ff2d95", c2:"#00e5ff", c3:"#f4f0ff", c4:"#0c0716", c5:"#a855f7"},
+    {n:"menta",    c1:"#0ea5a4", c2:"#c8f7f4", c3:"#0b3a39", c4:"#f4fffe", c5:"#f9a8d4"}
+  ];
+
+  var TPLS = [
+    {id:0, nome:"Clássico",  tipo:"Simples",   feat:["Moldura dupla delicada","Tipografia serifada","Ideal para casamento e bodas"]},
+    {id:1, nome:"Floral",    tipo:"Simples",   feat:["Cantos florais em aquarela","Nome em caligrafia","Toque romântico e leve"]},
+    {id:2, nome:"Minimal",   tipo:"Simples",   feat:["Muito espaço em branco","Letras finas espaçadas","Elegância discreta"]},
+    {id:3, nome:"Neon",      tipo:"Animado",   feat:["Brilho pulsante","Fundo escuro premium","Nome com efeito de luz"]},
+    {id:4, nome:"Boho",      tipo:"Simples",   feat:["Arco e tons terrosos","Textura de papel kraft","Charme artesanal"]},
+    {id:5, nome:"Luxo",      tipo:"Animado",   feat:["Dourado com brilho","Detalhes art déco","Sofisticação pura"]},
+    {id:6, nome:"Glass",     tipo:"Animado",   feat:["Efeito vidro fosco","Cores em degradê","Movimento suave"]},
+    {id:7, nome:"Retrô",     tipo:"Animado",   feat:["Sol radiante ao fundo","Tipografia divertida","Clima de festa"]},
+    {id:8, nome:"Aurora",    tipo:"Animado",   feat:["Degradê aurora","Caligrafia branca","Brilho cintilante"]},
+    {id:9, nome:"Festa",     tipo:"Interativo",feat:["Confete e bolinhas","Botão de confirmação","Perfeito para aniversários"]}
+  ];
+
+  var NOMES = {
+    casamento:["Laço de Cetim","Jardim Secreto","Entre Nós","Villa Rosa","Dois Corações","Promessa","Bem-Te-Vi","Luar","Raiz & Flor","Para Sempre"],
+    bodas:["Bodas de Prata","Caminho de Flores","Vinte e Cinco","Madeira Nobre","Ouro & Mel","Nossa História","Bodas de Papel","Jardim de Anos","Aliança","Renovar"],
+    infantil:["Dinossauro","Unicórnio","Fundo do Mar","Fazendinha","Safari","Super-Herói","Jardim Encantado","Circo","Bolinha de Sabão","Pequeno Príncipe"],
+    infantojuvenil:["Festa Neon","Pop Star","Futebol","Games","Space Party","Bailarina","Sorveteria","Mágico","Pijama Party","Aventura"],
+    adolescente:["Neon Night","Glow","Urban","Sunset","Aurora","Retrô 90s","Festival","Ondas","Estrelas","Free Style"],
+    adulto:["Noir","Jardim de Inverno","Champagne","Terracota","Vinhedo","Clássico Moderno","Ilha","Bossa","Veludo","Cristal"],
+    "15":["Princesa","Jardim das Rosas","Valsa","Cinderela","Doce 15","Lua Cheia","Borboletas","Paris","Cristal","Festa das Flores"],
+    "18":["Black & Gold","Maioridade","Neon 18","Sunset Party","Cidade","Aurora","Midnight","Festa VIP","Champagne","Free"],
+    reunioes:["Encontro de Equipe","Conferência","Workshop","Formatura","Assembleia","Networking","Palestra","Imersão","Alinhamento","Celebração"],
+    eventos:["Chá de Fraldas","Chá de Casa Nova","Chá Revelação","Clube do Livro","Culto","Batizado","Formatura","Confraternização","Encontro","Festa Junina"]
+  };
+
+  var COPY = {
+    casamento:{tema:"romance", kicker:"Casamento", sub:"Para o grande dia: convite digital com galeria, votos e confirmação de presença.", nomeA:"Ana", nomeB:"Lucas", e:"&", data:"12 · 06 · 2027", hora:"16h", local:"Espaço Villa Rosa", msg:"E convidam para celebrar o seu casamento"},
+    bodas:{tema:"bodas", kicker:"Bodas", sub:"Renovando votos em cada etapa: modelos clássicos e interativos com a história do casal.", nomeA:"Ana", nomeB:"Lucas", e:"&", data:"10 · 09 · 2028", hora:"19h", local:"Rancho das Rosas", msg:"Renovando votos de amor"},
+    aniversario:{tema:"festa", kicker:"Aniversário", sub:"Cada idade com a sua energia: do primeiro aninho aos 18, com animação e interação de verdade.", nomeA:"Seu nome", nomeB:"", e:"", data:"06 · 12 · 2026", hora:"18h", local:"Salão das Flores"},
+    reunioes:{tema:"corp", kicker:"Reuniões", sub:"Encontros profissionais com convite elegante, pauta, local e confirmação de presença.", nomeA:"Equipe Lenny", nomeB:"", e:"", data:"18 · 03 · 2027", hora:"09h", local:"Centro de Convenções"},
+    eventos:{tema:"eventos", kicker:"Eventos", sub:"Chá de fraldas, chá revelação, casa nova, clube do livro e muito mais — com tema e carinho.", nomeA:"Família Silva", nomeB:"", e:"", data:"22 · 08 · 2026", hora:"15h", local:"Espaço Jardim"},
+  };
+
+  var SUBS = {
+    aniversario:[
+      {id:"infantil", nome:"Infantil", kicker:"Infantil", nomeA:"Gael", data:"06 · 12 · 2026", tema:"kids", msg:"1 aninho — venha comemorar"},
+      {id:"infantojuvenil", nome:"Infanto-juvenil", kicker:"Infanto-juvenil", nomeA:"Sofia", data:"14 · 02 · 2027", tema:"kids", msg:"10 anos de muita diversão"},
+      {id:"adolescente", nome:"Adolescente", kicker:"Adolescente", nomeA:"Lucas", data:"20 · 05 · 2027", tema:"neon", msg:"13 anos — party time"},
+      {id:"adulto", nome:"Adulto", kicker:"Adulto", nomeA:"Marina", data:"02 · 10 · 2026", tema:"elegante", msg:"40 anos — comemore comigo"},
+      {id:"15", nome:"15 anos", kicker:"15 anos", nomeA:"Isabela", data:"11 · 07 · 2027", tema:"15", msg:"Meus 15 anos"},
+      {id:"18", nome:"18 anos", kicker:"18 anos", nomeA:"Rafael", data:"29 · 11 · 2026", tema:"18", msg:"18 — agora oficialmente adulto"}
+    ],
+    bodas:[
+      {id:"papel", nome:"Bodas de Papel (1 ano)", nomeA:"Ana", nomeB:"Lucas", msg:"1 ano de nós"},
+      {id:"algodao", nome:"Bodas de Algodão (2 anos)", nomeA:"Ana", nomeB:"Lucas", msg:"2 anos de nós"},
+      {id:"couro", nome:"Bodas de Couro (3 anos)", nomeA:"Ana", nomeB:"Lucas", msg:"3 anos de nós"},
+      {id:"flores", nome:"Bodas de Flores (5 anos)", nomeA:"Ana", nomeB:"Lucas", msg:"5 anos de nós"},
+      {id:"madeira", nome:"Bodas de Madeira (10 anos)", nomeA:"Ana", nomeB:"Lucas", msg:"10 anos de nós"},
+      {id:"prata", nome:"Bodas de Prata (25 anos)", nomeA:"Ana", nomeB:"Lucas", msg:"25 anos de nós"},
+      {id:"ouro", nome:"Bodas de Ouro (50 anos)", nomeA:"Ana", nomeB:"Lucas", msg:"50 anos de nós"}
+    ],
+    casamento:[],
+    reunioes:[],
+    eventos:[]
+  };
+
+  var THEME_SAY = {
+    home:"Oi! Sou a <b>Lenny virtual</b>. Clica em um modelo que eu te mostro cada detalhe 💕",
+    romance:"Corações, caligrafia fina e aquele clima de cinema 🥰 Escolhe um modelo e eu transformo na história de vocês.",
+    bodas:"Cada ano merece uma festa diferente 🥂 Vamos renovar os votos com estilo?",
+    kids:"Aqui a festa é séria! 🎈 Tem dinossauro, unicórnio, fundo do mar... me diz a idade que eu separo os melhores.",
+    neon:"Essa parte é pra brilhar ✨ Modelos com luz, movimento e muita atitude.",
+    elegante:"Para celebrar com sofisticação 🍷 Preto, dourado e detalhes que impressionam.",
+    "15":" Quinze anos pedem um convite de princesa 👑 Olha as opções e escolhe o seu.",
+    "18":"Maioridade com estilo! 🖤 Modelos ousados, escuros e cheios de personalidade.",
+    corp:"Reunião também merece capricho 💼 Elegância e clareza pra causar boa impressão.",
+    eventos:"Do chá de fraldas ao clube do livro 💛 Cada encontro tem o seu charme.",
+    produtos:"Aqui é a parte que todo mundo vê na mesa 🍰 Topos, tags e banners combinando com o convite.",
+    servicos:"Quer tudo no digital, prontinho? ✨ Eu cuido das artes, do vídeo e até da lista de confirmados."
+  };
+
+  var THEME_DATA = {
+    romance:{particle:"heart", color:"#ff6aa8", cls:"romance"},
+    bodas:{particle:"heart", color:"#c9a227", cls:"bodas"},
+    kids:{particle:"conf", color:"", cls:"kids"},
+    neon:{particle:"spark", color:"#00e5ff", cls:"neon"},
+    elegante:{particle:"heart", color:"#c9a227", cls:"elegante"},
+    "15":{particle:"heart", color:"#ff8fc2", cls:"quinze"},
+    "18":{particle:"spark", color:"#c9a227", cls:"dezoito"},
+    corp:{particle:"spark", color:"#38bdf8", cls:"corp"},
+    eventos:{particle:"conf", color:"", cls:"eventos"},
+    festa:{particle:"conf", color:"", cls:"festa"},
+    home:{particle:"heart", color:"#ff8fc2", cls:"home"}
+  };
+
+  var current = { cat:"casamento", sub:null };
+
+  /* =========================================================
+     RENDER: abas e galeria
+     ========================================================= */
+  function catData(){
+    if (current.cat === "casamento") return COPY.casamento;
+    if (current.cat === "bodas") return COPY.bodas;
+    if (current.cat === "aniversario") return COPY.aniversario;
+    if (current.cat === "reunioes") return COPY.reunioes;
+    return COPY.eventos;
+  }
+  function subData(){
+    var list = SUBS[current.cat] || [];
+    if (!list.length) return null;
+    return list.filter(function(s){ return s.id === current.sub; })[0] || list[0];
+  }
+
+  function palFor(i){
+    return PALETTES[(i * 3 + 1) % PALETTES.length];
+  }
+
+  function invHTML(m, extraClass){
+    var p = m.pal, tagData = catData(), s = subData();
+    var nomeA = m.nomeA || tagData.nomeA;
+    var nomeB = m.nomeB || tagData.nomeB;
+    var e = m.e !== undefined ? m.e : tagData.e;
+    var kick = m.kicker || (s && s.kicker) || tagData.kicker;
+    var data = m.data || (s && s.data) || tagData.data;
+    var hora = m.hora || tagData.hora;
+    var local = m.local || tagData.local;
+    var cls = "inv t" + m.tpl + " " + (m.anim || "") + (extraClass ? " " + extraClass : "");
+    var nomes = '<span class="nm">' + nomeA +
+      (nomeB ? '<em>' + e + '</em>' + nomeB : '') + '</span>';
+    return '<div class="' + cls + '" style="--c1:' + p.c1 + ';--c2:' + p.c2 + ';--c3:' + p.c3 + ';--c4:' + p.c4 + ';--c5:' + p.c5 + '">' +
+      '<span class="deco d1"></span><span class="deco d2"></span>' +
+      '<div class="in">' +
+        '<div class="kick">' + kick + '</div>' +
+        nomes +
+        '<div class="orn"><span>✦</span></div>' +
+        '<div class="sub">' + data + ' · ' + hora + '</div>' +
+        '<div class="place">' + local + '</div>' +
+        '<div class="cta">Confirmar presença</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function modelsFor(){
+    var base = NOMES[current.cat] || NOMES.eventos;
+    var s = subData();
+    var nomes = (s && NOMES[s.id]) ? NOMES[s.id] : base;
+    return TPLS.map(function(t, i){
+      var p = PALETTES[(i + (current.cat === "casamento" ? 0 : (s ? 2 : 4))) % PALETTES.length];
+      var anim = t.id === 0 ? "a-shine" : t.id === 3 ? "a-blink" : t.id === 5 ? "a-shine" : t.id === 7 ? "a-pulse" : t.id === 9 ? "a-pulse" : "a-blink";
+      return {
+        tpl: t.id, pal: p, nome: nomes[i] || ("Modelo " + (i + 1)),
+        tipo: t.tipo, feat: t.feat, anim: anim,
+        kicker: s ? s.kicker : (COPY[current.cat] ? COPY[current.cat].kicker : "Convite"),
+        nomeA: s ? (s.nomeA || "Seu nome") : (COPY[current.cat] ? COPY[current.cat].nomeA : "Seu nome"),
+        nomeB: s && s.nomeB ? s.nomeB : (COPY[current.cat] ? COPY[current.cat].nomeB : ""),
+        msg: s ? s.msg : (COPY[current.cat] ? COPY[current.cat].msg : "")
+      };
+    });
+  }
+
+  function renderTabs(){
+    var cats = [
+      {id:"casamento", nome:"Casamento", ico:"💍"},
+      {id:"bodas", nome:"Bodas", ico:"🥂"},
+      {id:"aniversario", nome:"Aniversário", ico:"🎂"},
+      {id:"reunioes", nome:"Reuniões", ico:"💼"},
+      {id:"eventos", nome:"Eventos", ico:"🎉"}
+    ];
+    $("#tabs").innerHTML = cats.map(function(c){
+      return '<button class="tab' + (current.cat === c.id ? ' on' : '') + '" data-cat="' + c.id + '" type="button">' + c.ico + ' ' + c.nome + '</button>';
+    }).join("");
+    var subs = SUBS[current.cat] || [];
+    var box = $("#subtabs");
+    if (!subs.length){ box.innerHTML = ""; box.style.display = "none"; }
+    else {
+      box.style.display = "flex";
+      box.innerHTML = subs.map(function(s){
+        return '<button class="subtab' + ((current.sub || subs[0].id) === s.id ? ' on' : '') + '" data-sub="' + s.id + '" type="button">' + s.nome + '</button>';
+      }).join("");
+    }
+  }
+
+  function renderPanel(){
+    var t = catData();
+    var s = subData();
+    var titulo = s ? (COPY[current.cat].kicker + " · " + s.nome) : t.kicker;
+    var txt = s ? (s.msg + " — modelo com nome e informações do evento. Eu personalizo com a sua ideia.") : t.sub;
+    $("#panelHead").innerHTML =
+      '<img src="mascote-apresenta.webp" alt="">' +
+      '<div class="txt"><b>' + titulo + '</b><p>' + txt + '</p></div>' +
+      '<span class="pill">' + (modelsFor().length) + ' modelos</span>';
+  }
+
+  function renderGallery(){
+    var html = modelsFor().map(function(m, i){
+      var badge = m.tipo === "Interativo" ? "inter" : (m.tipo === "Animado" ? "anim" : "");
+      return '<article class="model" data-i="' + i + '" tabindex="0" role="button" aria-label="Ver modelo ' + m.nome + '">' +
+        '<span class="badge ' + badge + '">' + m.tipo + '</span>' +
+        '<div class="thumb">' + invHTML(m) + '</div>' +
+        '<div class="meta"><div><b>' + m.nome + '</b><small>' + TPLS[m.tpl].nome + ' · ' + m.pal.n + '</small></div><span style="color:var(--pink);font-weight:800">→</span></div>' +
+      '</article>';
+    }).join("");
+    $("#gallery").innerHTML = html;
+    $("#gallery").querySelectorAll(".model").forEach(function(el){
+      el.addEventListener("click", function(){ openModel(Number(el.getAttribute("data-i"))); });
+      el.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); openModel(Number(el.getAttribute("data-i"))); } });
+    });
+  }
+
+  function setTheme(tema){
+    document.body.setAttribute("data-theme", tema);
+    var d = THEME_DATA[tema] || THEME_DATA.home;
+    document.documentElement.style.setProperty("--accent", d.particle === "heart" ? (d.color || "#ff3d8b") : "#ff3d8b");
+    say(THEME_SAY[tema] || THEME_SAY.home);
+    spawn(d.particle, d.color, 14);
+  }
+
+  function renderAll(){
+    renderTabs(); renderPanel(); renderGallery();
+  }
+
+  /* =========================================================
+     INTERAÇÕES DE NAVEGAÇÃO
+     ========================================================= */
+  $("#tabs").addEventListener("click", function(e){
+    var b = e.target.closest("[data-cat]"); if (!b) return;
+    current.cat = b.getAttribute("data-cat");
+    current.sub = null;
+    renderAll();
+    var tema = current.cat === "casamento" ? "romance" :
+               current.cat === "bodas" ? "bodas" :
+               current.cat === "aniversario" ? "kids" :
+               current.cat === "reunioes" ? "corp" : "eventos";
+    setTheme(tema);
+  });
+  $("#subtabs").addEventListener("click", function(e){
+    var b = e.target.closest("[data-sub]"); if (!b) return;
+    current.sub = b.getAttribute("data-sub");
+    renderAll();
+    var s = subData();
+    setTheme(s && s.tema ? s.tema : "festa");
+  });
+
+  function goCat(cat){
+    document.getElementById("convites").scrollIntoView({ behavior: "smooth", block: "start" });
+    current.cat = cat; current.sub = null;
+    renderAll();
+    var tema = cat === "casamento" ? "romance" : cat === "bodas" ? "bodas" : cat === "aniversario" ? "kids" : cat === "reunioes" ? "corp" : "eventos";
+    setTheme(tema);
+  }
+  $("#hub").addEventListener("click", function(e){
+    var b = e.target.closest("[data-go]"); if (!b) return;
+    var go = b.getAttribute("data-go");
+    if (go === "produtos"){ document.getElementById("produtos").scrollIntoView({behavior:"smooth"}); setTheme("produtos"); return; }
+    if (go === "servicos"){ document.getElementById("servicos").scrollIntoView({behavior:"smooth"}); setTheme("servicos"); return; }
+    goCat(go);
+  });
+
+  /* =========================================================
+     MODAL DO MODELO
+     ========================================================= */
+  var modal = $("#modal"), mTimer = null;
+  function openModel(i){
+    var m = modelsFor()[i];
+    if (!m) return;
+    var p = m.pal;
+    $("#mScreen").innerHTML = invHTML(m, "lg") +
+      (m.tpl === 3 || m.tpl === 6 || m.tpl === 8
+        ? '<div class="hearts">' + Array.from({length:7}).map(function(_,k){
+            return '<i style="left:' + (8 + k*13) + '%;animation-delay:' + (k*0.55) + 's;font-size:' + (10 + (k%3)*4) + 'px">♥</i>';
+          }).join("") + '</div>'
+        : '<div class="conf">' + Array.from({length:12}).map(function(_,k){
+            return '<i style="left:' + (5 + k*8) + '%;animation-delay:' + (k*0.3) + 's;background:' + PALETTES[k % PALETTES.length].c1 + '"></i>';
+          }).join("") + '</div>');
+    $("#mTitle").textContent = m.nome;
+    $("#mSub").textContent = (m.kicker || "Convite") + " · " + TPLS[m.tpl].nome + " · " + m.tipo;
+    var t = catData();
+    $("#mDesc").textContent = (m.msg ? m.msg + ". " : "") + "Modelo " + TPLS[m.tpl].nome.toLowerCase() + " na paleta " + m.pal.n + ". Tudo é personalizável: nomes, data, local, cores, fontes e as animações. " + (t.sub || "");
+    $("#mFeat").innerHTML = TPLS[m.tpl].feat.concat([
+      m.tipo === "Interativo" ? "Confirmação de presença integrada" : "Versão digital + opção impressa",
+      "Nome, data e local do seu evento"
+    ]).map(function(f){ return "<li>" + f + "</li>"; }).join("");
+    $("#mWpp").href = "https://wa.me/?text=" + encodeURIComponent("Oi, Lenny! Gostei do modelo " + m.nome + " (" + TPLS[m.tpl].nome + "). Quero fazer um parecido pro meu evento 💕");
+    $("#mBack").onclick = closeModel;
+    $("#mYes").classList.remove("ok"); $("#mNo").classList.remove("ok");
+    $("#mYes").textContent = "Vou comparecer"; $("#mNo").textContent = "Não vou poder";
+    var alvo = new Date(Date.now() + 1000*60*60*24*37);
+    $("#mCount").innerHTML = '<i>' + Math.ceil((alvo - Date.now())/86400000) + '<span>dias</span></i><i>12<span>horas</span></i><i>30<span>min</span></i><i>00<span>seg</span></i>';
+    modal.hidden = false;
+    requestAnimationFrame(function(){ modal.classList.add("on"); });
+    document.body.style.overflow = "hidden";
+    say("Olha só esse <b>" + m.nome + "</b>! É só uma base: eu monto do zero com a sua ideia 💕");
+  }
+  function closeModel(){
+    modal.classList.remove("on");
+    document.body.style.overflow = "";
+    setTimeout(function(){ modal.hidden = true; }, 280);
+  }
+  $("#mClose").addEventListener("click", closeModel);
+  modal.addEventListener("click", function(e){ if (e.target === modal) closeModel(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !modal.hidden) closeModel(); });
+  $("#mYes").addEventListener("click", function(){
+    this.classList.add("ok"); this.textContent = "✓ Presença confirmada";
+    spawn("conf", "", 26); say("Uhuu! Presença confirmada 🎉 No convite real isso cai direto no painel da anfitriã.");
+  });
+  $("#mNo").addEventListener("click", function(){
+    this.classList.add("ok"); this.textContent = "✓ Avisado";
+    say("Tudo bem! O importante é avisar com carinho 💕");
+  });
+
+  /* =========================================================
+     PARTÍCULAS
+     ========================================================= */
+  function spawn(kind, color, n){
+    var fx = $("#fx");
+    n = n || 10;
+    for (var i = 0; i < n; i++){
+      var el = document.createElement("span");
+      var left = Math.random()*100;
+      if (kind === "heart"){
+        el.textContent = "♥";
+        el.style.cssText = "position:absolute;bottom:-20px;left:" + left + "%;color:" + (color || "#ff6aa8") +
+          ";font-size:" + (10 + Math.random()*16) + "px;opacity:0;animation:fxUp " + (4 + Math.random()*3) + "s linear " + (Math.random()*1.5) + "s forwards";
+      } else if (kind === "conf"){
+        el.style.cssText = "position:absolute;top:-16px;left:" + left + "%;width:7px;height:11px;border-radius:2px;background:" +
+          PALETTES[Math.floor(Math.random()*PALETTES.length)].c1 + ";opacity:0;transform:rotate(" + Math.random()*180 + "deg);animation:fxDown " + (3.5 + Math.random()*3) + "s linear " + (Math.random()*1.2) + "s forwards";
+      } else {
+        el.textContent = "✦";
+        el.style.cssText = "position:absolute;left:" + left + "%;top:" + (10 + Math.random()*70) + "%;color:" + (color || "#fff") +
+          ";font-size:" + (8 + Math.random()*10) + "px;opacity:0;animation:fxTwinkle " + (1.8 + Math.random()*2) + "s ease-in-out " + (Math.random()*1.2) + "s forwards";
+      }
+      fx.appendChild(el);
+      setTimeout(function(el){ return function(){ el.remove(); }; }(el), 9000);
+    }
+  }
+
+  /* =========================================================
+     MASCOTE / FALA
+     ========================================================= */
+  var sayTimer = null, sayHide = null;
+  function autoHideSay(){
+    clearTimeout(sayHide);
+    sayHide = setTimeout(function(){
+      var el = document.getElementById("mascotSay");
+      if (el) el.style.opacity = "0";
+      var m = document.getElementById("mascot");
+      if (m) m.classList.add("quiet");
+    }, window.innerWidth < 720 ? 6000 : 11000);
+  }
+  function showSay(){
+    var el = document.getElementById("mascotSay");
+    if (el) el.style.opacity = "1";
+    var m = document.getElementById("mascot");
+    if (m) m.classList.remove("quiet");
+    autoHideSay();
+  }
+  function say(txt){
+    var s = $("#mascotSay");
+    if (!s) return;
+    s.innerHTML = txt;
+    s.style.animation = "none";
+    void s.offsetWidth;
+    s.style.animation = "";
+    s.style.transition = "opacity .3s ease";
+    showSay();
+  }
+  function saySoon(txt, ms){
+    clearTimeout(sayTimer);
+    sayTimer = setTimeout(function(){ say(txt); }, ms || 6000);
+  }
+
+  /* =========================================================
+     MÚSICA AMBIENTE (WebAudio, sem arquivo)
+     ========================================================= */
+  var actx = null, musicOn = false, musicTimer = null;
+  function audioCtx(){
+    if (!actx){ var A = window.AudioContext || window.webkitAudioContext; if (A) actx = new A(); }
+    if (actx && actx.state === "suspended") actx.resume();
+    return actx;
+  }
+  function pad(freqs, dur){
+    var a = audioCtx(); if (!a) return;
+    var t = a.currentTime;
+    freqs.forEach(function(f, i){
+      var o = a.createOscillator(), g = a.createGain();
+      o.type = i === 0 ? "sine" : "triangle";
+      o.frequency.value = f;
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(0.035, t + 1.4);
+      g.gain.linearRampToValueAtTime(0, t + dur);
+      o.connect(g); g.connect(a.destination);
+      o.start(t); o.stop(t + dur + 0.1);
+    });
+  }
+  var PROG = [[261.63,329.63,392.00],[293.66,349.23,440.00],[220.00,261.63,329.63],[246.94,311.13,392.00]];
+  var progIx = 0;
+  function loopMusic(){
+    if (!musicOn) return;
+    pad(PROG[progIx % PROG.length], 5.2);
+    progIx++;
+    musicTimer = setTimeout(loopMusic, 4800);
+  }
+  $("#sound").addEventListener("click", function(){
+    musicOn = !musicOn;
+    this.classList.toggle("on", musicOn);
+    this.textContent = musicOn ? "🔊" : "🎵";
+    if (musicOn){ audioCtx(); loopMusic(); say("Trilha ligada 🎶 Cada categoria tem a sua clima — e o seu convite também pode ter música."); }
+    else { clearTimeout(musicTimer); }
+  });
+
+  /* =========================================================
+     INTRO / MENU / CTA
+     ========================================================= */
+  $("#introGo").addEventListener("click", function(){
+    $("#intro").classList.add("gone");
+    setTimeout(function(){ $("#intro").style.display = "none"; }, 500);
+    document.getElementById("convites").scrollIntoView({behavior:"smooth"});
+    setTheme("romance");
+    say("Vem comigo! Aqui estão os convites de casamento 💍 Escolhe um pra ver de perto.");
+  });
+  $("#introSkip").addEventListener("click", function(){
+    $("#intro").classList.add("gone");
+    setTimeout(function(){ $("#intro").style.display = "none"; }, 500);
+  });
+  $("#burger").addEventListener("click", function(){ $("#nav").classList.toggle("open"); });
+  $("#nav").addEventListener("click", function(e){ if (e.target.tagName === "A") $("#nav").classList.remove("open"); });
+  $("#wppMain").href = WPP;
+  $("#mascotWho").addEventListener("mouseenter", showSay);
+  $("#mascotWho").addEventListener("click", function(){
+    var msgs = [
+      "Oi! Sou a <b>Lenny virtual</b>. Clica em um modelo que eu te mostro cada detalhe 💕",
+      "Cada trabalho é único: eu monto do zero com a sua ideia, não é copiar modelo não 😉",
+      "Quer ver os topos de bolo? Rola a página até <b>Produtos</b> 🍰",
+      "No convite interativo tem confirmação de presença, galeria e música — igualzinho ao do seu evento.",
+      "Gostou de algum? Clica em <b>Quero esse estilo</b> que a minha humana te responde no WhatsApp."
+    ];
+    say(msgs[Math.floor(Math.random()*msgs.length)]);
+  });
+
+  /* rolagem: muda o clima e a fala da mascote */
+  var secObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      var id = en.target.id;
+      if (id === "produtos") { saySoon("Aqui é a parte que todo mundo vê na mesa 🍰 Topos, tags e banners combinando com o convite."); }
+      else if (id === "servicos") { saySoon("Quer tudo no digital? ✨ Eu cuido das artes, do vídeo e até da lista de confirmados."); }
+      else if (id === "contato") { saySoon("Bora começar? Me chama no WhatsApp que a minha humana te responde rapidinho 💕"); }
+    });
+  }, { threshold: .25 });
+  ["produtos","servicos","contato"].forEach(function(id){ var el = document.getElementById(id); if (el) secObserver.observe(el); });
+
+  /* primeiro acesso: intro só uma vez por sessão */
+  try {
+    if (sessionStorage.getItem("lenny-intro")){
+      $("#intro").style.display = "none";
+    } else {
+      sessionStorage.setItem("lenny-intro", "1");
+    }
+  } catch(e){}
+
+  /* efeitos de entrada */
+  var revealObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.style.opacity = 1; en.target.style.transform = "none"; revealObs.unobserve(en.target); }
+    });
+  }, { threshold: .12 });
+  $$(".prod, .serv, .step, .hub-card, .contato-box").forEach(function(el, i){
+    el.style.opacity = 0; el.style.transform = "translateY(16px)";
+    el.style.transition = "opacity .55s ease " + Math.min(i*40, 300) + "ms, transform .55s cubic-bezier(.2,.9,.3,1) " + Math.min(i*40, 300) + "ms";
+    revealObs.observe(el);
+  });
+
+  /* inicia */
+  if (window.innerWidth < 720){
+    var mm = document.getElementById("mascot");
+    if (mm) mm.classList.add("quiet");
+  }
+  autoHideSay();
+  renderAll();
+  setTheme("home");
+  setInterval(function(){ spawn(THEME_DATA[document.body.getAttribute("data-theme")] ? THEME_DATA[document.body.getAttribute("data-theme")].particle : "heart",
+    THEME_DATA[document.body.getAttribute("data-theme")] ? THEME_DATA[document.body.getAttribute("data-theme")].color : "#ff8fc2", 3); }, 4200);
+})();
+</script>
+
+<style>
+@keyframes fxUp{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translateY(-105vh) rotate(30deg);opacity:0}}
+@keyframes fxDown{0%{transform:translateY(-20px) rotate(0);opacity:0}8%{opacity:1}100%{transform:translateY(104vh) rotate(560deg);opacity:0}}
+@keyframes fxTwinkle{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:1;transform:scale(1.15)}}
+</style>
+</body>
+</html>
