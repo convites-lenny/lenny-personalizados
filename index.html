@@ -533,6 +533,138 @@ section[id]{scroll-margin-top:82px}
 .inv.t9 .nm{font-family:"Baloo 2",sans-serif;font-weight:800;color:var(--c1);font-size:10cqw}
 .inv.t9 .cta{background:var(--c1);box-shadow:0 4px 0 color-mix(in srgb,var(--c1) 55%,#000)}
 
+/* =========================================================
+   MODELOS PREMIUM — 15 e 18 anos (exclusivos)
+   ========================================================= */
+.inv .ph{position:absolute;overflow:hidden;z-index:1}
+.inv .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.inv .nump{
+  position:absolute;z-index:2;font-family:"Playfair Display",serif;font-weight:700;line-height:.8;
+  color:transparent;-webkit-text-stroke:1.2px rgba(201,162,74,.9);pointer-events:none;
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14)}}
+@keyframes goldSweep{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes sparkle18{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.1)}}
+@keyframes petalFall18{0%{transform:translateY(-10%) rotate(0);opacity:0}20%{opacity:.9}100%{transform:translateY(260%) rotate(220deg);opacity:0}}
+.inv .glow{position:absolute;border-radius:50%;filter:blur(12px);z-index:1;pointer-events:none}
+
+/* t10 — Debutante Clássica */
+.inv.t10{background:#fffaf2}
+.inv.t10 .ph{left:0;right:0;top:0;height:54%}
+.inv.t10 .ph img{animation:kb 14s ease-in-out infinite alternate}
+.inv.t10 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,40,20,.05) 0 45%,#fffaf2 100%)}
+.inv.t10 .in{
+  position:absolute;left:5%;right:5%;top:46%;bottom:4%;z-index:3;
+  background:rgba(255,250,242,.95);border:1px solid rgba(180,140,70,.55);
+  box-shadow:0 6px 22px rgba(120,80,30,.14);padding:6% 5% 5%;
+}
+.inv.t10 .nm{font-family:"Playfair Display",serif;font-size:9.6cqw;color:#5b3d25}
+.inv.t10 .nm em{font-family:"Great Vibes",cursive;color:#b08d4f;font-size:.55em}
+.inv.t10 .kick{color:#a8843f;letter-spacing:.4em}
+.inv.t10 .nump{top:3%;right:6%;left:auto;font-size:11cqw;color:transparent;-webkit-text-stroke:1px rgba(255,248,235,.95);opacity:.9}
+.inv.t10 .cta{background:#b08d4f;color:#fff}
+
+/* t11 — Debutante Royal (foto inteira) */
+.inv.t11{background:#1b1020;color:#fff}
+.inv.t11 .ph{inset:0}
+.inv.t11 .ph img{animation:kb 18s ease-in-out infinite alternate}
+.inv.t11 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,20,.25) 0 35%,rgba(20,10,20,.86) 100%)}
+.inv.t11 .in{position:absolute;left:7%;right:7%;bottom:7%;z-index:4;padding:0}
+.inv.t11 .nm{font-family:"Great Vibes",cursive;font-size:14cqw;color:#f4dc9f;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.inv.t11 .nm em{display:none}
+.inv.t11 .kick{color:#f4dc9f;letter-spacing:.42em;font-size:2.8cqw}
+.inv.t11 .sub,.inv.t11 .place{color:#efe3c8}
+.inv.t11 .orn::before,.inv.t11 .orn::after{background:#f4dc9f;opacity:.7}
+.inv.t11 .orn span{color:#f4dc9f}
+.inv.t11 .nump{top:4%;right:7%;left:auto;font-size:12cqw;color:transparent;-webkit-text-stroke:1.4px #f4dc9f}
+.inv.t11 .cta{background:linear-gradient(100deg,#c9a24a,#f7e7ad,#c9a24a);background-size:200% 100%;color:#211505;animation:goldSweep 5s linear infinite}
+
+/* t12 — Debutante Pérola (medalhão) */
+.inv.t12{background:linear-gradient(165deg,#fffdf8,#f3ece2)}
+.inv.t12 .in{position:absolute;left:7%;right:7%;bottom:6%;top:50%;z-index:3;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.inv.t12 .ph{top:7%;left:50%;transform:translateX(-50%);width:46%;aspect-ratio:1;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 1px #d9c39a, 0 10px 24px rgba(120,90,50,.22)}
+.inv.t12 .ph img{animation:kb 16s ease-in-out infinite alternate}
+.inv.t12 .nm{font-family:"Playfair Display",serif;text-transform:uppercase;letter-spacing:.12em;font-size:6.6cqw;color:#4a3a26}
+.inv.t12 .kick{color:#b39a6a;letter-spacing:.46em}
+.inv.t12 .nump{top:auto;bottom:5%;right:8%;font-size:7cqw;-webkit-text-stroke:1px rgba(179,154,106,.55)}
+.inv.t12 .cta{background:#4a3a26;color:#fff}
+
+/* t13 — Debutante Jardim (arco floral) */
+.inv.t13{background:radial-gradient(circle at 15% 10%,#ffe9ef,transparent 55%),radial-gradient(circle at 85% 90%,#f3e6ff,transparent 55%),#fffaf9}
+.inv.t13 .ph{
+  left:50%;top:7%;transform:translateX(-50%);width:58%;height:46%;
+  border-radius:50% 50% 4px 4px;border:3px solid #fff;
+  box-shadow:0 0 0 1px #e9c5d3, 0 14px 26px rgba(160,80,110,.18);
+}
+.inv.t13 .ph img{animation:kb 15s ease-in-out infinite alternate}
+.inv.t13 .in{position:absolute;left:6%;right:6%;bottom:5%;top:56%;z-index:3;padding:0}
+.inv.t13 .nm{font-family:"Great Vibes",cursive;font-size:13cqw;color:#b8366b;line-height:.95}
+.inv.t13 .kick{color:#c0688a;letter-spacing:.42em}
+.inv.t13 .nump{top:3%;right:7%;font-size:7cqw;-webkit-text-stroke:1px rgba(200,80,130,.5)}
+.inv.t13 .cta{background:#b8366b;color:#fff}
+.inv.t13 .deco.d1{right:6%;top:6%;width:16%;height:16%;border-radius:50%;background:radial-gradient(circle,#ffd1e2,transparent 70%)}
+
+/* t14 — 18 Black & Gold */
+.inv.t14{background:#0c0a08;color:#f6e6bd}
+.inv.t14 .ph{left:0;right:0;bottom:0;height:52%}
+.inv.t14 .ph img{animation:kb 17s ease-in-out infinite alternate;filter:saturate(.9)}
+.inv.t14 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0c0a08 0 6%,rgba(12,10,8,.15) 45%,rgba(12,10,8,.55) 100%)}
+.inv.t14 .in{position:absolute;left:7%;right:7%;top:7%;z-index:3;padding:0}
+.inv.t14 .nm{
+  font-family:"Playfair Display",serif;font-size:8.6cqw;letter-spacing:.02em;
+  background:linear-gradient(100deg,#8a6a1f,#f7e7ad 40%,#c9a227 60%,#f7e7ad);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.inv.t14 .nm em{display:none}
+.inv.t14 .kick{color:#c9a227;letter-spacing:.5em}
+.inv.t14 .sub,.inv.t14 .place{color:#d8c69c}
+.inv.t14 .nump{top:6%;right:6%;font-size:16cqw;-webkit-text-stroke:1.2px #c9a227;opacity:.75}
+.inv.t14 .cta{background:linear-gradient(100deg,#c9a227,#f7e7ad);color:#1a1409}
+.inv.t14 .deco.d1,.inv.t14 .deco.d2{left:7%;right:7%;height:1px;background:linear-gradient(90deg,transparent,#c9a227,transparent)}
+.inv.t14 .deco.d1{top:34%}.inv.t14 .deco.d2{top:36%}
+
+/* t15 — 18 Neon */
+.inv.t15{background:radial-gradient(circle at 50% 0%,#2b0b3f,#0a0412 70%);color:#fff}
+.inv.t15 .ph{
+  left:50%;top:9%;transform:translateX(-50%);width:46%;aspect-ratio:1;border-radius:50%;
+  box-shadow:0 0 0 3px #ff2d95,0 0 26px rgba(255,45,149,.7),0 0 60px rgba(0,229,255,.35);
+}
+.inv.t15 .ph img{animation:kb 12s ease-in-out infinite alternate}
+.inv.t15 .in{position:absolute;left:7%;right:7%;bottom:6%;top:64%;z-index:3;padding:0}
+.inv.t15 .nm{font-family:"Baloo 2",sans-serif;font-weight:800;text-transform:uppercase;font-size:9.6cqw;
+  color:#fff;text-shadow:0 0 8px #ff2d95,0 0 22px #ff2d95}
+.inv.t15 .kick{color:#00e5ff;letter-spacing:.4em}
+.inv.t15 .sub{color:#c9f7ff}
+.inv.t15 .nump{top:6%;right:7%;font-size:9cqw;-webkit-text-stroke:1.2px rgba(0,229,255,.85)}
+.inv.t15 .cta{background:#ff2d95;box-shadow:0 0 20px #ff2d95;color:#fff}
+
+/* t16 — 18 Midnight */
+.inv.t16{background:#06121f;color:#e9f4ff}
+.inv.t16 .ph{inset:0}
+.inv.t16 .ph img{animation:kb 19s ease-in-out infinite alternate;filter:saturate(.75) brightness(.9)}
+.inv.t16 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,18,31,.55),rgba(5,18,31,.2) 40%,rgba(5,18,31,.92))}
+.inv.t16 .in{position:absolute;left:8%;right:8%;bottom:8%;z-index:3;padding:0}
+.inv.t16 .nm{font-family:"Fredoka",sans-serif;font-weight:300;letter-spacing:.22em;text-transform:uppercase;font-size:6.4cqw;color:#fff}
+.inv.t16 .nm em{display:none}
+.inv.t16 .kick{color:#9cc8e8;letter-spacing:.5em}
+.inv.t16 .sub,.inv.t16 .place{color:#cfe6f8}
+.inv.t16 .nump{top:5%;right:7%;left:auto;font-size:14cqw;-webkit-text-stroke:1px rgba(190,225,255,.85)}
+.inv.t16 .cta{background:#e9f4ff;color:#0a1b2a}
+
+/* t17 — 18 Champagne */
+.inv.t17{background:linear-gradient(165deg,#fdf6ea,#f0e2c8)}
+.inv.t17 .in{position:absolute;left:7%;right:7%;bottom:7%;top:52%;z-index:3;padding:0}
+.inv.t17 .ph{
+  left:50%;top:9%;transform:translateX(-50%);width:50%;aspect-ratio:1;border-radius:50%;
+  border:2px solid #fff;box-shadow:0 0 0 1px #d5b887,0 14px 28px rgba(140,100,40,.22);
+}
+.inv.t17 .ph img{animation:kb 16s ease-in-out infinite alternate}
+.inv.t17 .nm{font-family:"Playfair Display",serif;font-size:8.4cqw;color:#6b4a22}
+.inv.t17 .nm em{display:none}
+.inv.t17 .kick{color:#b08d4f;letter-spacing:.46em}
+.inv.t17 .nump{top:3%;right:9%;font-size:10cqw;-webkit-text-stroke:1px rgba(176,141,79,.7)}
+.inv.t17 .cta{background:#b08d4f;color:#fff}
+
 /* animações */
 .inv .nm em, .inv .cta{will-change:transform}
 .inv.a-blink .nm{animation:nameGlow 2.6s ease-in-out infinite}
@@ -1122,7 +1254,15 @@ footer b{color:var(--ink)}
     {id:6, nome:"Glass",     tipo:"Animado",   feat:["Efeito vidro fosco","Cores em degradê","Movimento suave"]},
     {id:7, nome:"Retrô",     tipo:"Animado",   feat:["Sol radiante ao fundo","Tipografia divertida","Clima de festa"]},
     {id:8, nome:"Aurora",    tipo:"Animado",   feat:["Degradê aurora","Caligrafia branca","Brilho cintilante"]},
-    {id:9, nome:"Festa",     tipo:"Interativo",feat:["Confete e bolinhas","Botão de confirmação","Perfeito para aniversários"]}
+    {id:9, nome:"Festa",     tipo:"Interativo",feat:["Confete e bolinhas","Botão de confirmação","Perfeito para aniversários"]},
+    {id:10, nome:"Debutante Clássica", tipo:"Interativo", feat:["Foto da debutante com zoom suave","Moldura dourada e tipografia de luxo","Animações próprias de 15 anos"]},
+    {id:11, nome:"Debutante Royal",    tipo:"Animado",    feat:["Foto em tela cheia com degradê","Nome em caligrafia dourada","Brilho passando no botão"]},
+    {id:12, nome:"Debutante Pérola",   tipo:"Simples",    feat:["Medalhão de foto circular","Tipografia em caixa alta sofisticada","Toque minimalista premium"]},
+    {id:13, nome:"Debutante Jardim",   tipo:"Animado",    feat:["Arco floral com foto","Caligrafia rosé","Detalhes em aquarela"]},
+    {id:14, nome:"18 Black & Gold",    tipo:"Interativo",feat:["Preto e dourado com brilho","Foto com zoom cinematográfico","Número 18 em destaque"]},
+    {id:15, nome:"18 Neon",            tipo:"Animado",    feat:["Moldura neon pulsante","Foto com halo de luz","Tipografia impactante"]},
+    {id:16, nome:"18 Midnight",        tipo:"Animado",    feat:["Foto em tela cheia azul-noite","Tipografia fina e elegante","Clima de festa premium"]},
+    {id:17, nome:"18 Champagne",       tipo:"Simples",    feat:["Paleta champanhe e dourado","Foto circular com moldura","Acabamento clássico"]}
   ];
 
   var NOMES = {
@@ -1238,7 +1378,14 @@ footer b{color:var(--ink)}
     var cls = "inv t" + m.tpl + " " + (m.anim || "") + (extraClass ? " " + extraClass : "");
     var nomes = '<span class="nm">' + nomeA +
       (nomeB ? '<em>' + e + '</em>' + nomeB : '') + '</span>';
+    var extra = "";
+    if (m.tpl >= 10 && m.tpl <= 13){
+      extra = '<div class="ph"><img src="foto-debut.webp" alt="Debutante"></div><div class="nump">15</div>';
+    } else if (m.tpl >= 14){
+      extra = '<div class="ph"><img src="foto-18.webp" alt="18 anos"></div><div class="nump">18</div>';
+    }
     return '<div class="' + cls + '" style="--c1:' + p.c1 + ';--c2:' + p.c2 + ';--c3:' + p.c3 + ';--c4:' + p.c4 + ';--c5:' + p.c5 + '">' +
+      extra +
       '<span class="deco d1"></span><span class="deco d2"></span>' +
       '<div class="in">' +
         '<div class="kick">' + kick + '</div>' +
@@ -1265,17 +1412,31 @@ footer b{color:var(--ink)}
   };
   var OFFSET = { casamento:0, bodas:1, aniversario:2, reunioes:5, eventos:7 };
 
+  var SETS = {
+    "15": { tpls:[10,11,12,13], pals:[0,1,5,2] },
+    "18": { tpls:[14,15,16,17], pals:[5,6,1,0] }
+  };
+
   function modelsFor(){
     var base = NOMES[current.cat] || NOMES.eventos;
     var s = subData();
     var nomes = (s && NOMES[s.id]) ? NOMES[s.id] : base;
-    var pool = POOLS[(s && s.id) || current.cat] || [0,1,2,3,4,5,6,7];
+    var set = s && SETS[s.id];
+    var pool = set ? set.pals : (POOLS[(s && s.id) || current.cat] || [0,1,2,3,4,5,6,7]);
     var off = OFFSET[current.cat] || 0;
-    return TPLS.map(function(t, i){
-      var ix = (i + off) % TPLS.length;
-      t = TPLS[ix];
-      var p = PALETTES[pool[i % pool.length]];
-      var anim = t.id === 0 ? "a-shine" : t.id === 3 ? "a-blink" : t.id === 5 ? "a-shine" : t.id === 7 ? "a-pulse" : t.id === 9 ? "a-pulse" : "a-blink";
+    var total = 10;
+    return Array.from({length: total}).map(function(_, i){
+      var t;
+      if (set){
+        t = TPLS[set.tpls[i % set.tpls.length]];
+      } else {
+        t = TPLS[(i + off) % TPLS.length];
+      }
+      var pIx = set ? (i + Math.floor(i / set.tpls.length)) % pool.length : (i % pool.length);
+      var p = PALETTES[pool[pIx]];
+      var anim = t.id >= 10 ? (t.id === 11 || t.id === 14 ? "a-shine" : "a-blink") :
+                 t.id === 0 ? "a-shine" : t.id === 3 ? "a-blink" : t.id === 5 ? "a-shine" :
+                 t.id === 7 ? "a-pulse" : t.id === 9 ? "a-pulse" : "a-blink";
       return {
         tpl: t.id, pal: p, nome: nomes[i] || ("Modelo " + (i + 1)),
         tipo: t.tipo, feat: t.feat, anim: anim,
