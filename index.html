@@ -1068,7 +1068,7 @@ section[id]{scroll-margin-top:82px}
 
 /* Lenny explicando cada parte */
 .story-lenny{
-  position:sticky;bottom:0;z-index:8;display:flex;gap:8px;align-items:center;
+  position:sticky;bottom:0;z-index:12;display:flex;gap:8px;align-items:center;
   background:rgba(255,255,255,.96);border-top:1px solid rgba(160,120,60,.35);
   padding:8px 10px;box-shadow:0 -8px 20px rgba(0,0,0,.18);
 }
@@ -1085,13 +1085,13 @@ section[id]{scroll-margin-top:82px}
 .story.parchment .p-bg{position:sticky;top:0;height:0;z-index:0;overflow:visible}
 .story.parchment .p-bg img{position:absolute;top:0;left:0;width:100%;height:100svh;object-fit:cover;opacity:.92}
 .story.parchment .p-bg::after{content:"";position:absolute;top:0;left:0;width:100%;height:100svh;
-  background:linear-gradient(180deg,rgba(20,8,10,.25),rgba(20,8,10,.55))}
+  background:linear-gradient(180deg,rgba(20,8,10,.10),rgba(20,8,10,.34))}
 .story.parchment .p-fire{position:sticky;top:0;height:0;z-index:1;overflow:visible;pointer-events:none}
 .story.parchment .p-fire i{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffd98a;
   box-shadow:0 0 10px 3px rgba(255,205,120,.7);animation:firefly 7s ease-in-out infinite}
 @keyframes firefly{0%,100%{opacity:0;transform:translateY(0) scale(.6)}30%{opacity:.9}60%{opacity:.5;transform:translateY(-26px) scale(1.1)}}
 
-.story.parchment .p-wrap{position:relative;z-index:2;padding:24px 12px 44px}
+.story.parchment .p-wrap{position:relative;z-index:2;padding:22px 14px 44px}
 .story.parchment .p-paper{
   position:relative;background:#f8ecd6;
   background-image:radial-gradient(rgba(150,110,60,.09) 1px,transparent 1px);
@@ -1135,14 +1135,29 @@ section[id]{scroll-margin-top:82px}
   color:#3d6b32;border-radius:7px;padding:8px;font-size:8.5px;font-weight:700;margin-top:6px;text-align:center}
 .story.parchment .p-foot{text-align:center;font-size:6.5px;letter-spacing:.3em;text-transform:uppercase;color:#a3823f;margin-top:18px}
 
+/* borboletas voando (15) */
+.story.parchment .p-bflies{position:sticky;top:0;height:0;z-index:1;overflow:visible;pointer-events:none}
+.story.parchment .p-bflies i{
+  position:absolute;font-style:normal;font-size:16px;opacity:.9;
+  filter:drop-shadow(0 2px 4px rgba(120,40,90,.25));
+  animation:flutter 9s ease-in-out infinite;
+}
+@keyframes flutter{
+  0%{transform:translate(0,0) rotate(-8deg) scale(1)}
+  25%{transform:translate(26px,-22px) rotate(10deg) scale(1.05)}
+  50%{transform:translate(10px,18px) rotate(-6deg) scale(.95)}
+  75%{transform:translate(-20px,-10px) rotate(8deg) scale(1.02)}
+  100%{transform:translate(0,0) rotate(-8deg) scale(1)}
+}
+
 /* capa selada */
 .story.parchment .p-sealbox{
   position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:radial-gradient(circle at 50% 45%,rgba(30,12,14,.18),rgba(20,8,12,.55));backdrop-filter:blur(1px);
+  background:radial-gradient(circle at 50% 50%,rgba(30,12,14,.02),rgba(20,8,12,.34));backdrop-filter:none;
   text-align:center;transition:opacity .6s ease;
 }
 .story.parchment .p-sealbox .s-seal{width:104px;height:104px;font-size:34px;margin-bottom:14px}
-.story.parchment .p-sealbox p{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:#f6e6c8;opacity:.85}
+.story.parchment .p-sealbox p{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:#f6e6c8;opacity:.95;background:rgba(20,8,12,.6);padding:6px 12px;border-radius:99px;border:1px solid rgba(246,230,200,.25)}
 .story.parchment.opened .p-sealbox{opacity:0;pointer-events:none}
 .story.parchment.sealed .p-paper{filter:blur(.6px) brightness(.94)}
 .story.parchment.opened .p-paper{animation:pUnroll .9s cubic-bezier(.2,.8,.3,1) both}
@@ -1797,7 +1812,8 @@ footer b{color:var(--ink)}
     {id:24, nome:"Crônica da Debutante",tipo:"Interativo", feat:["História em capítulos com fotos","Contagem e dress code","Confirmação de presença integrada"]},
     {id:25, nome:"Legado 18",           tipo:"Interativo", feat:["Selo de cera e capítulos","Testemunhas, mapa e contagem","RSVP integrado ao painel"]},
     {id:26, nome:"Pergaminho Encantado",tipo:"Interativo", feat:["Pergaminho que se desenrola","Floresta encantada e vaga-lumes","História, mapa, padrinhos e RSVP"]},
-    {id:27, nome:"Pergaminho da Meia-Noite",tipo:"Interativo", feat:["Pergaminho noturno dourado","Partículas e brilho","Testemunhas, contagem e RSVP"]}
+    {id:27, nome:"Pergaminho da Meia-Noite",tipo:"Interativo", feat:["Pergaminho noturno dourado","Partículas e brilho","Testemunhas, contagem e RSVP"]},
+    {id:28, nome:"Pergaminho Jardim",   tipo:"Interativo", feat:["Jardim encantado com borboletas","Pergaminho que se desenrola","Madrinhas, mapa, contagem e RSVP"]}
   ];
 
   var NOMES = {
@@ -2107,17 +2123,18 @@ footer b{color:var(--ink)}
   var OFFSET = { casamento:0, bodas:1, aniversario:2, reunioes:5, eventos:7 };
 
   var SETS = {
-    "15": { tpls:[24,19,10,11,12,13], pals:[0,1,5,2] },
+    "15": { tpls:[28,24,19,10,11,12], pals:[0,1,5,2] },
     "18": { tpls:[27,25,20,14,15,16,17], pals:[5,6,1,0] }
   };
   var FEATURED = {
     casamento: 26,
-    "15": 24,
+    "15": 28,
     "18": 27,
     infantil: 21
   };
   var LENNY_SAY = {
     23: "Esse é o <b>Reino Encantado</b>: o convite vem lacrado, o convidado rompe o selo e entra numa história em capítulos — com padrinhos, local, contagem e confirmação.",
+    28: "Esse é o <b>Pergaminho Jardim</b>: um jardim encantado com borboletas, e o pergaminho se desenrola contando a história dos 15 anos — com madrinhas, mapa, contagem e confirmação.",
     26: "Esse é o <b>Pergaminho Encantado</b>: a floresta ao fundo, o pergaminho se desenrola e a história aparece conforme você rola — com selo, mapa, padrinhos e RSVP.",
     27: "O <b>Pergaminho da Meia-Noite</b>: mesma experiência, agora em preto e dourado, com partículas e brilho pra combinar com a festa de 18.",
     25: "Esse é o <b>Legado 18</b>: selo de cera, capítulos da sua história, testemunhas, mapa, contagem e confirmação — tudo em um só convite pra ler até o fim.",
@@ -2411,11 +2428,18 @@ footer b{color:var(--ink)}
   function parchmentHTML(m){
     var A = firstName(m), B = secondName(m);
     var is18 = m.tpl === 27;
-    var bg = is18 ? "bg-noite.webp" : "bg-encanto.webp";
-    var dataTxt = is18 ? "29 DE NOVEMBRO DE 2027" : "06 DE JUNHO DE 2028";
-    var horaTxt = is18 ? "segunda · 22h" : "sábado · 19h";
-    var alvo = is18 ? "2027-11-29T22:00:00" : "2028-06-06T19:00:00";
-    var cap = is18
+    var is15 = m.tpl === 28;
+    var bg = is18 ? "bg-noite.webp" : is15 ? "bg-jardim.webp" : "bg-encanto.webp";
+    var dataTxt = is18 ? "29 DE NOVEMBRO DE 2027" : is15 ? "12 DE OUTUBRO DE 2028" : "06 DE JUNHO DE 2028";
+    var horaTxt = is18 ? "segunda · 22h" : is15 ? "sábado · 20h" : "sábado · 19h";
+    var alvo = is18 ? "2027-11-29T22:00:00" : is15 ? "2028-10-12T20:00:00" : "2028-06-06T19:00:00";
+    var cap = is15
+      ? ['<p class="p-txt">Quinze anos de risadas, escuridão no quarto e sonhos grandes. Cada ano trouxe uma versão nova de mim — e eu gostei de todas.</p>' +
+         '<div class="p-orn">❦</div>' +
+         '<p class="p-txt">Essa festa é pra agradecer quem caminhou comigo até aqui: as madrinhas que seguraram minha mão, a família que fez de tudo e os amigos que viraram irmãos.</p>' +
+         '<div class="p-orn">❦</div>' +
+         '<p class="p-txt">Agora é o meu baile — e você é parte dessa história.</p>']
+      : is18
       ? ['<p class="p-txt">Aos 18 a gente acha que sabe tudo. Eu achei também — até descobrir que o melhor da vida é o que não estava no plano.</p>' +
          '<div class="p-orn">✦</div>' +
          '<p class="p-txt">Foram anos de escola, amigos que viraram irmãos e uma família que segurou minha mão em cada virada.</p>' +
@@ -2427,18 +2451,23 @@ footer b{color:var(--ink)}
          '<div class="p-orn">❦</div>' +
          '<p class="p-txt">Agora é o nosso sim — e a gente quer você lá, do jeitinho que sempre estivemos: em roda, comendo bem e rindo alto.</p>'];
 
-    var wit = is18
+    var wit = is15
+      ? '<div class="p-wit"><div><span>madrinha</span><b>Kamila Andrade</b></div><div><span>madrinha</span><b>Beatriz Rocha</b></div><div><span>madrinha</span><b>Alice Moraes</b></div><div><span>madrinha</span><b>Sofia Lima</b></div></div>'
+      : is18
       ? '<div class="p-wit"><div><span>amigo</span><b>Rafael Lima</b></div><div><span>amiga</span><b>Kamila Andrade</b></div><div><span>amigo</span><b>Thiago Mendes</b></div><div><span>amiga</span><b>Beatriz Rocha</b></div></div>'
       : '<div class="p-wit"><div><span>madrinha</span><b>Kamila Andrade</b></div><div><span>padrinho</span><b>Rafael Lima</b></div><div><span>madrinha</span><b>Beatriz Rocha</b></div><div><span>padrinho</span><b>Thiago Mendes</b></div></div>';
 
-    return '<div class="story parchment' + (is18 ? " pela-noite" : "") + ' sealed" id="storyBox">' +
+    return '<div class="story parchment' + (is18 ? " pela-noite" : "") + (is15 ? " jardim" : "") + ' sealed" id="storyBox">' +
       '<div class="p-bg"><img src="' + bg + '" alt=""></div>' +
+      (is15 ? '<div class="p-bflies">' + Array.from({length: 7}).map(function(_, k){
+        return '<i style="left:' + (8 + (k * 13) % 84) + '%;top:' + (12 + (k * 29) % 72) + '%;animation-delay:-' + (k * 1.1) + 's;font-size:' + (12 + (k % 3) * 6) + 'px">🦋</i>';
+      }).join("") + '</div>' : '') +
       '<div class="p-fire">' + Array.from({length: 14}).map(function(_, k){
         return '<i style="left:' + (6 + (k * 6.6) % 88) + '%;top:' + (10 + (k * 37) % 78) + '%;animation-delay:-' + (k * .7) + 's"></i>';
       }).join("") + '</div>' +
       '<div class="p-wrap">' +
         '<div class="p-paper"><div class="p-in">' +
-          '<div class="p-k">' + (is18 ? "18 anos" : "Casamento") + '</div>' +
+          '<div class="p-k">' + (is18 ? "18 anos" : is15 ? "15 anos" : "Casamento") + '</div>' +
           '<div class="p-names">' + A + (B ? '<i>&</i>' + B : '') + '</div>' +
           '<div class="p-orn">❦</div>' +
           cap.join("") +
@@ -2448,10 +2477,10 @@ footer b{color:var(--ink)}
           '<div class="p-cd" id="sCd" data-alvo="' + alvo + '"></div>' +
           '<button class="p-btn" id="sIcs" type="button">📅 salvar na agenda</button>' +
           '<div class="p-h">onde</div>' +
-          '<div class="p-card"><b>' + (is18 ? "Rooftop Aurora" : "Rancho das Rosas") + '</b>' +
-            '<span>' + (is18 ? "São Mateus — Ocidental<br>18+ · black & gold" : "São Mateus — Ocidental<br>entrada pelo jardim") + '</span></div>' +
+          '<div class="p-card"><b>' + (is18 ? "Rooftop Aurora" : is15 ? "Españço Villa Rosa".replace('ñ','') : "Rancho das Rosas") + '</b>' +
+            '<span>' + (is18 ? "São Mateus — Ocidental<br>18+ · black & gold" : is15 ? "São Mateus — Ocidental<br>traje: festa · sem branco" : "São Mateus — Ocidental<br>entrada pelo jardim") + '</span></div>' +
           '<a class="p-btn" href="https://share.google/6CiNVlNzMdrltsbcU" target="_blank" rel="noopener">📍 abrir no mapa</a>' +
-          '<div class="p-h">' + (is18 ? "testemunhas" : "padrinhos e madrinhas") + '</div>' + wit +
+          '<div class="p-h">' + (is18 ? "testemunhas" : is15 ? "madrinhas" : "padrinhos e madrinhas") + '</div>' + wit +
           '<div class="p-h">confirme sua presença</div>' +
           '<input class="p-fld" id="sNome" placeholder="Seu nome">' +
           '<input class="p-fld" id="sQtd" type="number" min="1" max="10" value="1" placeholder="Pessoas">' +
@@ -2461,7 +2490,7 @@ footer b{color:var(--ink)}
         '</div></div>' +
       '</div>' +
       '<div class="p-sealbox"><div class="s-seal" id="sSeal"><span>' + (A.charAt(0) || "L") + '</span></div><p>toque no selo para abrir</p></div>' +
-      '<div class="story-lenny" id="sLenny"><img src="' + (is18 ? "mascote-18.webp" : "mascote-noiva.webp") + '" alt=""><span><b>Lenny:</b> toque no selo e role o pergaminho que eu explico cada parte.</span></div>' +
+      '<div class="story-lenny" id="sLenny"><img src="' + (is18 ? "mascote-18.webp" : is15 ? "mascote-15.webp" : "mascote-noiva.webp") + '" alt=""><span><b>Lenny:</b> toque no selo e role o pergaminho que eu explico cada parte.</span></div>' +
     '</div>';
   }
 
@@ -2733,7 +2762,7 @@ footer b{color:var(--ink)}
     var isStory = (m.tpl >= 23);
     if (isStory){
       demo.playing = false; cancelAnimationFrame(demo.raf);
-      $("#mStage").innerHTML = (m.tpl === 26 || m.tpl === 27) ? parchmentHTML(m) : storyHTML(m);
+      $("#mStage").innerHTML = (m.tpl >= 26) ? parchmentHTML(m) : storyHTML(m);
       var ctrl = document.querySelector(".demo-ctrl"); if (ctrl) ctrl.style.display = "none";
       var bar = document.querySelector(".demo-bar"); if (bar) bar.style.display = "none";
       var dots = document.querySelector(".demo-dots"); if (dots) dots.style.display = "none";
