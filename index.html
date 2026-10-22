@@ -431,8 +431,8 @@ section[id]{scroll-margin-top:82px}
 }
 .sc-gates .gate.l{left:0;transform-origin:left center}
 .sc-gates .gate.r{right:0;transform-origin:right center;animation-name:gateOpenR}
-@keyframes gateOpen{0%,42%{transform:rotateY(0)}62%,100%{transform:rotateY(-82deg)}}
-@keyframes gateOpenR{0%,42%{transform:rotateY(0)}62%,100%{transform:rotateY(82deg)}}
+@keyframes gateOpen{0%,18%{transform:rotateY(0)}40%,88%{transform:rotateY(-82deg)}100%{transform:rotateY(0)}}
+@keyframes gateOpenR{0%,18%{transform:rotateY(0)}40%,88%{transform:rotateY(82deg)}100%{transform:rotateY(0)}}
 .sc-gates .st{position:absolute;color:#ffe9b0;font-size:4cqw;animation:sparkle18 2.6s infinite}
 
 /* luzes neon (18) */
@@ -1873,8 +1873,14 @@ footer b{color:var(--ink)}
       '<div class="now">tocando agora</div><div class="song">Nossa música 💕</div>' +
       '<div class="sml" style="margin-top:3cqw;opacity:.7">o convite pode ter a música de vocês</div></div></div>';
 
+    var capAbertura;
+    if (current.sub === "15") capAbertura = '<b>Lenny:</b> os portões do baile se abrem e revelam o nome da debutante. Essa é a abertura exclusiva dos modelos de 15 anos.';
+    else if (current.sub === "18") capAbertura = '<b>Lenny:</b> as luzes acendem, o 18 aparece em neon e a festa começa. Abertura exclusiva dos modelos de 18 anos.';
+    else if (current.cat === "aniversario") capAbertura = '<b>Lenny:</b> os balões sobem e chamam a criançada. Abertura exclusiva da coleção infantil, colorida e leve.';
+    else capAbertura = '<b>Lenny:</b> o convite chega como carta lacrada. O convidado toca no selo, abre e vive a surpresa — a abertura da coleção casamento.';
+
     return [
-      {h:env,  c:'<b>Lenny:</b> o convite chega assim, tipo carta lacrada. O convidado toca no selo e abre — igual àquele que você já viu funcionando.'},
+      {h:env,  c:capAbertura},
       {h:capa, c:'<b>Lenny:</b> capa com o nome ' + (B ? A + ' & ' + B : A) + ' animado, data, local e o botão de confirmar. Muda a cor e a fonte na hora que você quiser.'},
       {h:cd,   c:'<b>Lenny:</b> contagem regressiva ao vivo. O convidado vê quanto falta, sem precisar calcular nada.'},
       {h:gal,  c:'<b>Lenny:</b> galeria de fotos com slide automático — aqui você coloca as fotos de vocês, do bebê ou do evento.'},
