@@ -257,6 +257,155 @@ section[id]{scroll-margin-top:82px}
 }
 .model .badge.anim{background:rgba(139,92,246,.9)}
 .model .badge.inter{background:rgba(255,61,139,.92)}
+.model .vid{
+  position:absolute;right:14px;top:14px;z-index:5;font-size:8.5px;font-weight:800;letter-spacing:.06em;
+  background:rgba(255,255,255,.92);color:#b3266e;padding:4px 7px;border-radius:999px;display:flex;align-items:center;gap:3px;
+  box-shadow:0 3px 8px rgba(0,0,0,.12);
+}
+.model .vid::before{content:"▶";font-size:7px}
+.card-fx{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden;border-radius:12px}
+.card-fx i{position:absolute;font-style:normal;font-size:10px;opacity:0;animation:cardUp linear infinite}
+@keyframes cardUp{0%{transform:translateY(120%) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translateY(-40%) scale(1);opacity:0}}
+.card-fx.cf i{width:5px;height:8px;border-radius:1px;animation-name:cardDown}
+@keyframes cardDown{0%{transform:translateY(-60%) rotate(0);opacity:0}15%{opacity:1}100%{transform:translateY(560%) rotate(420deg);opacity:0}}
+.model:hover .card-fx i{animation-play-state:paused}
+
+/* =========================================================
+   DEMO PLAYER (prévia em vídeo)
+   ========================================================= */
+.demo-stage{position:absolute;inset:0;background:#0d0714;overflow:hidden}
+.scene{
+  position:absolute;inset:0;opacity:0;transform:scale(1.07);
+  transition:opacity .5s ease, transform 1.4s ease;pointer-events:none;
+  container-type:inline-size;
+}
+.scene.on{opacity:1;transform:none;pointer-events:auto;z-index:2}
+.scene .inv{position:absolute;inset:0}
+.demo-bar{position:absolute;top:0;left:0;right:0;height:3px;z-index:14;background:rgba(255,255,255,.2)}
+.demo-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#fff,#ffd9e8)}
+.demo-dots{position:absolute;top:9px;left:50%;transform:translateX(-50%);z-index:14;display:flex;gap:4px}
+.demo-dots b{width:5px;height:5px;border-radius:3px;background:rgba(255,255,255,.42);transition:.25s}
+.demo-dots b.on{background:#fff;width:15px}
+.demo-cap{
+  position:absolute;left:8px;right:8px;bottom:8px;z-index:14;display:flex;gap:8px;align-items:center;
+  background:rgba(255,255,255,.96);border-radius:12px;padding:7px 9px;
+  box-shadow:0 10px 24px rgba(0,0,0,.28);
+}
+.demo-cap img{height:36px;width:auto;flex:0 0 auto}
+.demo-cap span{font-size:9.3px;line-height:1.35;color:#3a2440;font-weight:500}
+.demo-cap b{color:#b3266e}
+.demo-ctrl{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:9px}
+.demo-ctrl button{
+  border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;
+  font-size:10.5px;font-weight:800;color:var(--ink-soft);cursor:pointer;transition:.2s;
+}
+.demo-ctrl button:hover{border-color:var(--pink-soft)}
+.demo-ctrl button.playactive{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;border:0}
+.modal-phone .screen{position:relative}
+
+/* cenas */
+.sc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12cqw 9cqw;color:#fff}
+.sc .kk{font-size:3.1cqw;letter-spacing:.3em;text-transform:uppercase;font-weight:800;opacity:.8;margin-bottom:2.5cqw}
+.sc .ttl{font-family:"Playfair Display",serif;font-size:10.5cqw;line-height:1.02;font-weight:700}
+.sc .sml{font-size:3.4cqw;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:2.4cqw}
+.sc .rule{width:44%;height:1px;background:currentColor;opacity:.4;margin:3.4cqw auto}
+.sc .ccc{display:flex;gap:2.4cqw;margin-top:4cqw}
+.sc .ccc i{
+  font-style:normal;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+  border-radius:2.6cqw;padding:2.6cqw 3.4cqw;min-width:14cqw;font-size:6.6cqw;font-weight:800;font-family:"Baloo 2",sans-serif;
+}
+.sc .ccc i span{display:block;font-size:2.5cqw;letter-spacing:.12em;opacity:.7;font-weight:700;margin-top:.6cqw;font-family:"Fredoka"}
+.sc .btn-demo{
+  display:inline-block;margin-top:4.6cqw;padding:3cqw 6cqw;border-radius:99px;font-weight:800;font-size:3.3cqw;
+  background:#fff;color:#8a2050;border:0;cursor:pointer;
+}
+.sc .btn-demo.alt{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;margin-left:2cqw}
+.sc .fld{
+  width:74%;margin-top:4cqw;background:rgba(255,255,255,.92);border-radius:2.6cqw;padding:3cqw 4cqw;
+  font-size:3.2cqw;color:#7a5b70;text-align:left;font-weight:600;
+}
+.sc .okmsg{font-size:3.2cqw;margin-top:3cqw;background:rgba(120,255,180,.18);border:1px solid rgba(120,255,180,.5);padding:2.4cqw 4cqw;border-radius:2.4cqw;display:none}
+
+/* envelope */
+.sc-env{background:linear-gradient(160deg,#2a1240,#5b1f52)}
+.sc-env .env{
+  width:70cqw;aspect-ratio:3/2;position:relative;border-radius:2.4cqw;
+  background:linear-gradient(160deg,#fff9ef,#f2e2c8);border:.8cqw solid #2b2118;
+  box-shadow:0 4cqw 8cqw rgba(0,0,0,.4);
+  animation:envFloat 4s ease-in-out infinite;
+}
+@keyframes envFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6cqw)}}
+.sc-env .env::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:52%;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  background:linear-gradient(180deg,#fffdf6,#efdfc0);border-bottom:.5cqw solid #cbb38a;
+}
+.sc-env .env .seal{
+  position:absolute;left:50%;top:52%;width:16cqw;height:16cqw;border-radius:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 34% 28%,#e0533f,#a41f22 70%);
+  border:.6cqw solid #7d1418;display:grid;place-items:center;font-family:"Playfair Display",serif;
+  font-size:7cqw;color:#ffefd6;box-shadow:0 1cqw 2.4cqw rgba(0,0,0,.35);
+  animation:sealPulse 2.2s ease-in-out infinite;
+}
+@keyframes sealPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
+.sc-env p{font-size:3.2cqw;letter-spacing:.2em;text-transform:uppercase;margin-top:6cqw;opacity:.85}
+
+/* galeria */
+.sc-gal{background:#1a0d26}
+.sc-gal .ph{
+  width:74cqw;height:50cqw;border-radius:3cqw;background:linear-gradient(140deg,#ffd6e7,#c9b6ff);
+  margin-bottom:2.6cqw;position:relative;overflow:hidden;box-shadow:0 2cqw 5cqw rgba(0,0,0,.35);
+}
+.sc-gal .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sc-gal .thumbs i{background-size:cover;background-position:center}
+.sc-gal .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.28))}
+.sc-gal .thumbs{display:flex;gap:2cqw;margin-top:1cqw}
+.sc-gal .thumbs i{width:15cqw;height:15cqw;border-radius:1.8cqw;background:linear-gradient(140deg,#ffd6e7,#c9b6ff);border:.5cqw solid rgba(255,255,255,.6)}
+.sc-gal .thumbs i.on{outline:.6cqw solid #fff}
+.sc-gal .ph{animation:phZoom 6s ease-in-out infinite alternate}
+@keyframes phZoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+
+/* musica */
+.sc-mus{background:linear-gradient(160deg,#2b0f3a,#0f2a3f)}
+.sc-mus .disc{
+  width:34cqw;height:34cqw;border-radius:50%;overflow:hidden;margin:1cqw auto 3cqw;
+  border:.8cqw solid rgba(255,255,255,.5);box-shadow:0 2cqw 5cqw rgba(0,0,0,.35);
+  animation:spinDisc 9s linear infinite;
+}
+.sc-mus .disc img{width:100%;height:100%;object-fit:cover}
+@keyframes spinDisc{to{transform:rotate(360deg)}}
+.sc-mus .eq{display:flex;align-items:flex-end;gap:1.2cqw;height:22cqw;margin:2cqw 0 4cqw}
+.sc-mus .eq i{width:2.2cqw;background:linear-gradient(180deg,#fff,#ff9ec4);border-radius:1cqw;animation:eq 1s ease-in-out infinite}
+@keyframes eq{0%,100%{height:18%}50%{height:100%}}
+.sc-mus .now{font-size:3.4cqw;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.sc-mus .song{font-family:"Playfair Display",serif;font-size:6.4cqw;margin-top:1.4cqw}
+
+/* presentes/votos */
+.sc-gift{background:linear-gradient(160deg,#3a1230,#6d2a4a)}
+.sc-gift .cards2{display:flex;gap:3cqw;margin-top:3cqw}
+.sc-gift .cards2 i{
+  font-style:normal;width:32cqw;padding:4cqw 2cqw;border-radius:3cqw;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.25);font-size:7cqw;display:block;
+}
+.sc-gift .cards2 i b{display:block;font-size:2.8cqw;letter-spacing:.1em;margin-top:2cqw;font-family:"Fredoka";font-weight:700;opacity:.85}
+
+/* =========================================================
+   MODELOS DE CONVITE (miniaturas)
+   ========================================================= */
+
+/* barra de nome */
+.namebar{
+  display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;
+  background:linear-gradient(135deg,#fff,#fff5fa);border:1px solid var(--line);
+  border-radius:18px;padding:11px 14px;margin:0 auto 16px;max-width:820px;box-shadow:var(--shadow-sm);
+}
+.namebar .lbl{font-size:11.5px;font-weight:800;color:var(--ink-soft);display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.06em}
+.namebar input{
+  border:1.5px solid var(--line);border-radius:999px;padding:9px 15px;font-size:13px;
+  font-family:inherit;outline:none;background:#fff;min-width:145px;color:var(--ink);transition:.2s;
+}
+.namebar input:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(255,61,139,.12)}
+.namebar .hint{font-size:10.5px;color:var(--ink-soft);opacity:.8;width:100%;text-align:center}
 
 /* =========================================================
    MODELOS DE CONVITE (miniaturas)
@@ -538,8 +687,8 @@ footer b{color:var(--ink)}
 #modal.on{opacity:1;pointer-events:auto}
 #modal[hidden]{display:none}
 .modal-box{
-  width:min(940px,100%);max-height:92svh;overflow:auto;background:#fff;border-radius:26px;
-  padding:18px;display:grid;grid-template-columns:300px 1fr;gap:20px;
+  width:min(980px,100%);max-height:92svh;overflow:auto;background:#fff;border-radius:26px;
+  padding:18px;display:grid;grid-template-columns:330px 1fr;gap:22px;
   box-shadow:0 40px 80px rgba(40,0,40,.35);transform:translateY(14px) scale(.98);transition:.3s;
 }
 #modal.on .modal-box{transform:none}
@@ -562,6 +711,11 @@ footer b{color:var(--ink)}
   border:1.5px solid #e2d3f3;background:#fff;border-radius:999px;padding:8px 13px;font-size:11.5px;font-weight:700;color:var(--ink-soft);cursor:pointer;
 }
 .demo .row button.ok{background:#e9f9ee;border-color:#9fdcae;color:#1f7a3d}
+.chips2{display:flex;flex-wrap:wrap;gap:6px}
+.chips2 span{
+  font-size:10.5px;font-weight:700;color:#6b3a8a;background:#f6efff;border:1px solid #e8d9ff;
+  padding:5px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:4px;
+}
 .demo .count{display:flex;gap:6px;margin-top:9px}
 .demo .count i{font-style:normal;background:#2a1436;color:#fff;border-radius:8px;padding:5px 8px;font-size:11px;font-weight:700;min-width:38px;text-align:center}
 .demo .count i span{display:block;font-size:7.5px;text-transform:uppercase;opacity:.6;letter-spacing:.08em}
@@ -738,6 +892,12 @@ footer b{color:var(--ink)}
     </div>
     <div class="tabs" id="tabs"></div>
     <div class="subtabs" id="subtabs"></div>
+    <div class="namebar">
+      <span class="lbl">✍️ Teste com o seu nome</span>
+      <input id="nameA" type="text" maxlength="22" placeholder="Seu nome aqui" autocomplete="off">
+      <input id="nameB" type="text" maxlength="22" placeholder="Nome do par (casamento)" autocomplete="off">
+      <span class="hint">Digite e veja a prévia mudar na hora — é assim que o seu convite vai ficar 💕</span>
+    </div>
     <div class="panel-head" id="panelHead"></div>
     <div class="grid-models" id="gallery"></div>
   </div>
@@ -889,7 +1049,18 @@ footer b{color:var(--ink)}
     <button class="modal-close" id="mClose" type="button" aria-label="Fechar">✕</button>
     <div class="modal-phone">
       <div class="notch"></div>
-      <div class="screen" id="mScreen"></div>
+      <div class="screen">
+        <div class="demo-stage" id="mStage"></div>
+        <div class="demo-bar"><i id="mBar"></i></div>
+        <div class="demo-dots" id="mDots"></div>
+        <div class="demo-cap" id="mCap"><img src="mascote-oi.webp" alt=""><span></span></div>
+      </div>
+      <div class="demo-ctrl">
+        <button type="button" id="mPrev">◀</button>
+        <button type="button" class="playactive" id="mPlay">⏸ pausar</button>
+        <button type="button" id="mNext">▶</button>
+        <button type="button" id="mSound">🔊 som</button>
+      </div>
     </div>
     <div class="modal-info">
       <h3 id="mTitle">Modelo</h3>
@@ -897,13 +1068,8 @@ footer b{color:var(--ink)}
       <p id="mDesc"></p>
       <ul class="feat" id="mFeat"></ul>
       <div class="demo">
-        <b>Experimente aqui 👇</b>
-        <div class="row">
-          <button type="button" id="mYes">Vou comparecer</button>
-          <button type="button" id="mNo">Não vou poder</button>
-        </div>
-        <div class="count" id="mCount"></div>
-        <div class="gal"><i></i><i></i><i></i></div>
+        <b>Tudo isso já vem no convite 👇</b>
+        <div class="chips2" id="mChips"></div>
       </div>
       <div class="tip">
         <img src="mascote-apresenta.webp" alt="">
@@ -1025,6 +1191,12 @@ footer b{color:var(--ink)}
   };
 
   var current = { cat:"casamento", sub:null };
+  var custom = { a:"", b:"" };
+  function firstName(m){ return (custom.a && custom.a.trim()) || m.nomeA || "Seu nome"; }
+  function secondName(m){
+    if (current.cat !== "casamento" && current.cat !== "bodas") return "";
+    return (custom.b && custom.b.trim()) || m.nomeB || "";
+  }
 
   /* =========================================================
      RENDER: abas e galeria
@@ -1048,8 +1220,8 @@ footer b{color:var(--ink)}
 
   function invHTML(m, extraClass){
     var p = m.pal, tagData = catData(), s = subData();
-    var nomeA = m.nomeA || tagData.nomeA;
-    var nomeB = m.nomeB || tagData.nomeB;
+    var nomeA = firstName(m);
+    var nomeB = secondName(m);
     var e = m.e !== undefined ? m.e : tagData.e;
     var kick = m.kicker || (s && s.kicker) || tagData.kicker;
     var data = m.data || (s && s.data) || tagData.data;
@@ -1071,12 +1243,30 @@ footer b{color:var(--ink)}
     '</div>';
   }
 
+  var POOLS = {
+    casamento:[0,1,5,4,2,3],
+    bodas:[5,1,0,4,2],
+    infantil:[2,3,0,1],
+    infantojuvenil:[1,6,2,0],
+    adolescente:[6,1,0,3],
+    adulto:[5,4,2,1],
+    "15":[0,1,5,2],
+    "18":[5,6,1,0],
+    reunioes:[2,3,1,0],
+    eventos:[0,2,3,1]
+  };
+  var OFFSET = { casamento:0, bodas:1, aniversario:2, reunioes:5, eventos:7 };
+
   function modelsFor(){
     var base = NOMES[current.cat] || NOMES.eventos;
     var s = subData();
     var nomes = (s && NOMES[s.id]) ? NOMES[s.id] : base;
+    var pool = POOLS[(s && s.id) || current.cat] || [0,1,2,3,4,5,6,7];
+    var off = OFFSET[current.cat] || 0;
     return TPLS.map(function(t, i){
-      var p = PALETTES[(i + (current.cat === "casamento" ? 0 : (s ? 2 : 4))) % PALETTES.length];
+      var ix = (i + off) % TPLS.length;
+      t = TPLS[ix];
+      var p = PALETTES[pool[i % pool.length]];
       var anim = t.id === 0 ? "a-shine" : t.id === 3 ? "a-blink" : t.id === 5 ? "a-shine" : t.id === 7 ? "a-pulse" : t.id === 9 ? "a-pulse" : "a-blink";
       return {
         tpl: t.id, pal: p, nome: nomes[i] || ("Modelo " + (i + 1)),
@@ -1125,9 +1315,17 @@ footer b{color:var(--ink)}
   function renderGallery(){
     var html = modelsFor().map(function(m, i){
       var badge = m.tipo === "Interativo" ? "inter" : (m.tipo === "Animado" ? "anim" : "");
+      var isConf = (m.tpl === 0 || m.tpl === 2 || m.tpl === 9);
+      var fx = '<span class="card-fx' + (isConf ? ' cf' : '') + '">' + Array.from({length:5}).map(function(_, k){
+        var cor = [m.pal.c1, m.pal.c5, '#ffffff'][k % 3];
+        return isConf
+          ? '<i style="left:' + (12 + k * 18) + '%;background:' + cor + ';animation-duration:' + (3 + k * .5) + 's;animation-delay:' + (k * .6) + 's"></i>'
+          : '<i style="left:' + (12 + k * 18) + '%;color:' + cor + ';animation-duration:' + (3.4 + k * .5) + 's;animation-delay:' + (k * .7) + 's">' + (m.tpl === 5 || m.tpl === 6 ? '✦' : '♥') + '</i>';
+      }).join('') + '</span>';
       return '<article class="model" data-i="' + i + '" tabindex="0" role="button" aria-label="Ver modelo ' + m.nome + '">' +
         '<span class="badge ' + badge + '">' + m.tipo + '</span>' +
-        '<div class="thumb">' + invHTML(m) + '</div>' +
+        '<span class="vid">vídeo</span>' +
+        '<div class="thumb">' + invHTML(m) + fx + '</div>' +
         '<div class="meta"><div><b>' + m.nome + '</b><small>' + TPLS[m.tpl].nome + ' · ' + m.pal.n + '</small></div><span style="color:var(--pink);font-weight:800">→</span></div>' +
       '</article>';
     }).join("");
@@ -1148,6 +1346,13 @@ footer b{color:var(--ink)}
 
   function renderAll(){
     renderTabs(); renderPanel(); renderGallery();
+    var nb = document.getElementById("nameB");
+    if (nb){
+      var casal = (current.cat === "casamento" || current.cat === "bodas");
+      nb.style.display = casal ? "" : "none";
+      var na = document.getElementById("nameA");
+      if (na) na.placeholder = casal ? "Seu nome" : "Seu nome aqui";
+    }
   }
 
   /* =========================================================
@@ -1191,53 +1396,199 @@ footer b{color:var(--ink)}
      MODAL DO MODELO
      ========================================================= */
   var modal = $("#modal"), mTimer = null;
+  /* ---------- monta as cenas do "vídeo" ---------- */
+  function scenesFor(m){
+    var p = m.pal;
+    var A = firstName(m), B = secondName(m);
+    var t = catData();
+    var data = (subData() && subData().data) || t.data;
+    var local = t.local;
+    var capa = '<div class="scene" data-sc><div class="inv t' + m.tpl + ' ' + (m.anim || '') + '" style="--c1:' + p.c1 + ';--c2:' + p.c2 + ';--c3:' + p.c3 + ';--c4:' + p.c4 + ';--c5:' + p.c5 + '">' +
+      '<span class="deco d1"></span><span class="deco d2"></span>' +
+      '<div class="in"><div class="kick">' + (m.kicker || 'Convite') + '</div>' +
+      '<span class="nm">' + A + (B ? '<em>' + (m.e || '&') + '</em>' + B : '') + '</span>' +
+      '<div class="orn"><span>✦</span></div>' +
+      '<div class="sub">' + data + ' · ' + t.hora + '</div>' +
+      '<div class="place">' + local + '</div>' +
+      '<div class="cta">Confirmar presença</div></div></div></div>';
+
+    var env = '<div class="scene"><div class="sc sc-env">' +
+      '<div class="env"><div class="seal">L</div></div>' +
+      '<p>toque no selo para abrir</p></div></div>';
+
+    var cd = '<div class="scene"><div class="sc" style="background:linear-gradient(160deg,' + p.c3 + ',' + p.c1 + ')">' +
+      '<div class="kk">Faltam só</div>' +
+      '<div class="ccc"><i>37<span>dias</span></i><i>12<span>horas</span></i><i>30<span>min</span></i><i>08<span>seg</span></i></div>' +
+      '<div class="rule"></div><div class="sml">' + data + ' · ' + t.hora + '</div>' +
+      '<div class="sml" style="opacity:.65;margin-top:1.4cqw">' + local + '</div></div></div>';
+
+    var ehRomance = (current.cat === "casamento" || current.cat === "bodas");
+    var f1 = ehRomance ? "foto-1.webp" : "foto-2.webp";
+    var f2 = ehRomance ? "foto-2.webp" : "foto-1.webp";
+    var gal = '<div class="scene"><div class="sc sc-gal">' +
+      '<div class="kk">Nossa galeria</div>' +
+      '<div class="ph"><img src="' + f1 + '" alt=""></div>' +
+      '<div class="thumbs"><i class="on" style="background-image:url(' + f1 + ')"></i>' +
+      '<i style="background-image:url(' + f2 + ')"></i>' +
+      '<i style="background-image:url(' + f1 + ')"></i></div>' +
+      '<div class="sml" style="margin-top:2.4cqw">fotos que contam a nossa história</div></div></div>';
+
+    var rsvp = '<div class="scene"><div class="sc" style="background:linear-gradient(160deg,' + p.c2 + ',' + p.c5 + ');color:#2a1436">' +
+      '<div class="kk" style="opacity:.6">Confirme sua presença</div>' +
+      '<div class="ttl" style="font-size:8cqw">' + A + (B ? ' & ' + B : '') + '</div>' +
+      '<div class="fld">✍️ Seu nome</div>' +
+      '<div style="margin-top:3cqw"><button class="btn-demo" style="background:' + p.c1 + ';color:#fff" data-rsvp="yes">Vou comparecer</button>' +
+      '<button class="btn-demo alt" style="border-color:rgba(0,0,0,.25);color:#2a1436" data-rsvp="no">Não vou poder</button></div>' +
+      '<div class="okmsg">✓ Presença confirmada! Já está no painel da anfitriã.</div></div></div>';
+
+    var extraTit = current.cat === "casamento" || current.cat === "bodas" ? "Presentes & votos" : (current.cat === "reunioes" ? "Pauta & local" : "Presentes & local");
+    var gift = '<div class="scene"><div class="sc sc-gift">' +
+      '<div class="kk">' + extraTit + '</div>' +
+      '<div class="cards2"><i>🎁<b>Lista de presentes</b></i><i>📍<b>Como chegar</b></i></div>' +
+      '<div class="rule"></div><div class="sml">' + (current.cat === "casamento" || current.cat === "bodas" ? "votos dos padrinhos e familiares" : "tudo com um clique, sem perdido") + '</div></div></div>';
+
+    var mus = '<div class="scene"><div class="sc sc-mus">' +
+      '<div class="kk">Trilha do convite</div>' +
+      '<div class="disc"><img src="' + f1 + '" alt=""></div>' +
+      '<div class="eq">' + Array.from({length:9}).map(function(_, k){ return '<i style="animation-delay:' + (k * .12) + 's;height:' + (30 + (k % 4) * 18) + '%"></i>'; }).join('') + '</div>' +
+      '<div class="now">tocando agora</div><div class="song">Nossa música 💕</div>' +
+      '<div class="sml" style="margin-top:3cqw;opacity:.7">o convite pode ter a música de vocês</div></div></div>';
+
+    return [
+      {h:env,  c:'<b>Lenny:</b> o convite chega assim, tipo carta lacrada. O convidado toca no selo e abre — igual àquele que você já viu funcionando.'},
+      {h:capa, c:'<b>Lenny:</b> capa com o nome ' + (B ? A + ' & ' + B : A) + ' animado, data, local e o botão de confirmar. Muda a cor e a fonte na hora que você quiser.'},
+      {h:cd,   c:'<b>Lenny:</b> contagem regressiva ao vivo. O convidado vê quanto falta, sem precisar calcular nada.'},
+      {h:gal,  c:'<b>Lenny:</b> galeria de fotos com slide automático — aqui você coloca as fotos de vocês, do bebê ou do evento.'},
+      {h:rsvp, c:'<b>Lenny:</b> confirmação de presença de verdade: o nome e os acompanhantes caem no painel de quem organiza.'},
+      {h:gift, c:'<b>Lenny:</b> ' + (extraTit.toLowerCase()) + ' e local com botão que abre o mapa. Nada de convidado perdido.'},
+      {h:mus,  c:'<b>Lenny:</b> e a trilha sonora: a música escolhida toca no convite. Esse é um dos nossos diferenciais.'}
+    ];
+  }
+
+  var demo = { scenes:[], ix:0, playing:true, start:0, dur:4200, raf:null, m:null };
+
+  function paintDots(){
+    var d = $("#mDots");
+    d.innerHTML = demo.scenes.map(function(_, i){ return '<b class="' + (i === demo.ix ? 'on' : '') + '"></b>'; }).join("");
+  }
+  function showScene(i){
+    var st = $("#mStage");
+    var list = st.querySelectorAll(".scene");
+    if (!list.length) return;
+    demo.ix = (i + list.length) % list.length;
+    list.forEach(function(el, k){ el.classList.toggle("on", k === demo.ix); });
+    var cap = demo.scenes[demo.ix];
+    var capBox = $("#mCap");
+    capBox.querySelector("span").innerHTML = cap.c;
+    capBox.style.animation = "none"; void capBox.offsetWidth; capBox.style.animation = "";
+    paintDots();
+    // interações dentro da cena
+    var yes = st.querySelectorAll(".scene.on [data-rsvp]");
+    yes.forEach(function(b){
+      b.onclick = function(){
+        var ok = st.querySelector(".scene.on .okmsg");
+        if (ok){ ok.style.display = "block"; }
+        b.textContent = "✓ " + (b.getAttribute("data-rsvp") === "yes" ? "Confirmado" : "Avisado");
+        spawn("conf", "", 18);
+      };
+    });
+    demo.start = performance.now();
+  }
+  function loopDemo(){
+    if (!demo.playing) return;
+    var pct = Math.min(100, (performance.now() - demo.start) / demo.dur * 100);
+    $("#mBar").style.width = pct + "%";
+    if (pct >= 100) showScene(demo.ix + 1);
+    demo.raf = requestAnimationFrame(loopDemo);
+  }
+  function playDemo(on){
+    demo.playing = on;
+    var b = $("#mPlay");
+    b.textContent = on ? "⏸ pausar" : "▶ play";
+    b.classList.toggle("playactive", on);
+    cancelAnimationFrame(demo.raf);
+    if (on){ demo.start = performance.now(); loopDemo(); }
+  }
+
   function openModel(i){
     var m = modelsFor()[i];
     if (!m) return;
-    var p = m.pal;
-    $("#mScreen").innerHTML = invHTML(m, "lg") +
-      (m.tpl === 3 || m.tpl === 6 || m.tpl === 8
-        ? '<div class="hearts">' + Array.from({length:7}).map(function(_,k){
-            return '<i style="left:' + (8 + k*13) + '%;animation-delay:' + (k*0.55) + 's;font-size:' + (10 + (k%3)*4) + 'px">♥</i>';
-          }).join("") + '</div>'
-        : '<div class="conf">' + Array.from({length:12}).map(function(_,k){
-            return '<i style="left:' + (5 + k*8) + '%;animation-delay:' + (k*0.3) + 's;background:' + PALETTES[k % PALETTES.length].c1 + '"></i>';
-          }).join("") + '</div>');
+    demo.m = m;
     $("#mTitle").textContent = m.nome;
     $("#mSub").textContent = (m.kicker || "Convite") + " · " + TPLS[m.tpl].nome + " · " + m.tipo;
     var t = catData();
-    $("#mDesc").textContent = (m.msg ? m.msg + ". " : "") + "Modelo " + TPLS[m.tpl].nome.toLowerCase() + " na paleta " + m.pal.n + ". Tudo é personalizável: nomes, data, local, cores, fontes e as animações. " + (t.sub || "");
+    $("#mDesc").textContent = (m.msg ? m.msg + ". " : "") + "Prévia em vídeo do modelo " + TPLS[m.tpl].nome.toLowerCase() + " na paleta " + m.pal.n + ". " + (t.sub || "") + " Tudo personalizável: nome, data, local, cores, fontes, animações, música e painel de confirmação.";
     $("#mFeat").innerHTML = TPLS[m.tpl].feat.concat([
-      m.tipo === "Interativo" ? "Confirmação de presença integrada" : "Versão digital + opção impressa",
-      "Nome, data e local do seu evento"
+      "Nome e dados do seu evento (teste no campo acima)",
+      "Abertura tipo carta + capa animada",
+      "Contagem regressiva e galeria de fotos",
+      "Confirmação de presença com painel",
+      "Trilha sonora escolhida por você"
     ]).map(function(f){ return "<li>" + f + "</li>"; }).join("");
-    $("#mWpp").href = "https://wa.me/?text=" + encodeURIComponent("Oi, Lenny! Gostei do modelo " + m.nome + " (" + TPLS[m.tpl].nome + "). Quero fazer um parecido pro meu evento 💕");
+    $("#mWpp").href = "https://wa.me/?text=" + encodeURIComponent("Oi, Lenny! Gostei do modelo " + m.nome + " e quero uma prévia personalizada com o meu nome 💕");
     $("#mBack").onclick = closeModel;
-    $("#mYes").classList.remove("ok"); $("#mNo").classList.remove("ok");
-    $("#mYes").textContent = "Vou comparecer"; $("#mNo").textContent = "Não vou poder";
-    var alvo = new Date(Date.now() + 1000*60*60*24*37);
-    $("#mCount").innerHTML = '<i>' + Math.ceil((alvo - Date.now())/86400000) + '<span>dias</span></i><i>12<span>horas</span></i><i>30<span>min</span></i><i>00<span>seg</span></i>';
+
+    var chips = [
+      "Abertura carta", "Capa animada", "Nome ao vivo", "Contagem regressiva",
+      "Galeria de fotos", "Confirmação de presença", "Painel da anfitriã",
+      "Local com mapa", "Lista de presentes", "Trilha sonora"
+    ];
+    $("#mChips").innerHTML = chips.map(function(c){ return "<span>✓ " + c + "</span>"; }).join("");
+
+    var sc = scenesFor(m);
+    demo.scenes = sc;
+    demo.ix = 0;
+    $("#mStage").innerHTML = sc.map(function(x){ return x.h; }).join("");
+    paintDots();
     modal.hidden = false;
     requestAnimationFrame(function(){ modal.classList.add("on"); });
     document.body.style.overflow = "hidden";
-    say("Olha só esse <b>" + m.nome + "</b>! É só uma base: eu monto do zero com a sua ideia 💕");
+    playDemo(true);
+    showScene(0);
+    say("Olha o <b>" + m.nome + "</b> em ação! É assim que o convidado vê — e no final eu ainda te explico cada detalhe 💕");
   }
+
+  function rebuildDemo(){
+    if (modal.hidden || !demo.m) return;
+    var ix = demo.ix, playing = demo.playing;
+    var sc = scenesFor(demo.m);
+    demo.scenes = sc;
+    $("#mStage").innerHTML = sc.map(function(x){ return x.h; }).join("");
+    showScene(Math.min(ix, sc.length - 1));
+    playDemo(playing);
+  }
+
   function closeModel(){
+    demo.playing = false;
+    cancelAnimationFrame(demo.raf);
     modal.classList.remove("on");
     document.body.style.overflow = "";
     setTimeout(function(){ modal.hidden = true; }, 280);
   }
   $("#mClose").addEventListener("click", closeModel);
+  $("#mPrev").addEventListener("click", function(){ showScene(demo.ix - 1); });
+  $("#mNext").addEventListener("click", function(){ showScene(demo.ix + 1); });
+  $("#mPlay").addEventListener("click", function(){ playDemo(!demo.playing); });
+  $("#mSound").addEventListener("click", function(){ $("#sound").click(); });
   modal.addEventListener("click", function(e){ if (e.target === modal) closeModel(); });
   document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !modal.hidden) closeModel(); });
-  $("#mYes").addEventListener("click", function(){
-    this.classList.add("ok"); this.textContent = "✓ Presença confirmada";
-    spawn("conf", "", 26); say("Uhuu! Presença confirmada 🎉 No convite real isso cai direto no painel da anfitriã.");
-  });
-  $("#mNo").addEventListener("click", function(){
-    this.classList.add("ok"); this.textContent = "✓ Avisado";
-    say("Tudo bem! O importante é avisar com carinho 💕");
-  });
+
+
+  /* =========================================================
+     NOME AO VIVO
+     ========================================================= */
+  function bindNames(){
+    var a = $("#nameA"), b = $("#nameB");
+    if (!a) return;
+    function apply(){
+      custom.a = a.value;
+      custom.b = b.value;
+      renderGallery();
+      rebuildDemo();
+    }
+    a.addEventListener("input", apply);
+    b.addEventListener("input", apply);
+  }
 
   /* =========================================================
      PARTÍCULAS
@@ -1402,6 +1753,7 @@ footer b{color:var(--ink)}
   });
 
   /* inicia */
+  bindNames();
   if (window.innerWidth < 720){
     var mm = document.getElementById("mascot");
     if (mm) mm.classList.add("quiet");
