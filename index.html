@@ -185,6 +185,51 @@ h1,h2,h3,h4{font-family:"Baloo 2",sans-serif;margin:0;line-height:1.06}
 .chip-float.b{left:2%;bottom:16%;animation-delay:-3.5s}
 
 /* =========================================================
+   FILMES — experiências espetaculares
+   ========================================================= */
+.filmes{padding:44px 0 6px}
+.film-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.film-card{
+  position:relative;border-radius:24px;overflow:hidden;background:#140a18;color:#fff;
+  box-shadow:0 24px 50px rgba(60,10,60,.25);display:flex;min-height:290px;cursor:pointer;
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+.film-card:hover{transform:translateY(-4px);box-shadow:0 32px 60px rgba(60,10,60,.32)}
+.film-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+.film-card::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,4,20,.94) 0 46%,rgba(15,4,20,.15) 78%,transparent)}
+.film-info{position:relative;z-index:3;padding:24px;max-width:62%;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.film-tag{font-size:9px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#ffd166;display:flex;align-items:center;gap:6px}
+.film-tag i{width:6px;height:6px;border-radius:50%;background:#ff3d8b;display:inline-block;animation:pulseDot 1.6s infinite}
+.film-info h3{font-family:"Playfair Display",serif;font-size:clamp(22px,2.5vw,32px);line-height:1.02;margin:6px 0 6px}
+.film-info p{margin:0;font-size:11.8px;line-height:1.5;color:rgba(255,255,255,.8)}
+.film-play{
+  position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:4;
+  width:64px;height:64px;border-radius:50%;border:2px solid rgba(255,255,255,.7);
+  background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:grid;place-items:center;
+  font-size:20px;color:#fff;transition:.25s;
+}
+.film-play::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(255,255,255,.35);animation:ringp 2s infinite}
+@keyframes ringp{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.film-card:hover .film-play{background:#fff;color:#8a2050;transform:translateY(-50%) scale(1.06)}
+.film-time{font-size:10px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.65);margin-top:8px}
+
+/* overlay do filme */
+#videoBox{position:fixed;inset:0;z-index:220;display:grid;place-items:center;padding:18px;background:rgba(10,2,14,.85);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s}
+#videoBox.on{opacity:1;pointer-events:auto}
+#videoBox[hidden]{display:none}
+.video-card{position:relative;width:min(420px,100%);border-radius:22px;overflow:hidden;background:#000;box-shadow:0 40px 80px rgba(0,0,0,.6)}
+#vPlayer{width:100%;display:block;aspect-ratio:9/16;background:#000}
+.video-x{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:15px;cursor:pointer}
+.video-cap{padding:10px 14px;background:#fff;color:#3a2440;font-size:11.5px;font-weight:700;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.video-cap b{color:#b3266e}
+
+@media(max-width:900px){
+  .film-grid{grid-template-columns:1fr}
+  .film-card{min-height:250px}
+  .film-info{max-width:66%}
+}
+
+/* =========================================================
    COLEÇÕES — vitrine premium
    ========================================================= */
 .colecoes{padding:38px 0 8px}
@@ -1144,6 +1189,18 @@ footer b{color:var(--ink)}
   </div>
 </section>
 
+<!-- ================= FILMES ================= -->
+<section class="filmes" id="filmes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">experiências espetaculares</div>
+      <h2>Um modelo assinatura por coleção — em vídeo</h2>
+      <p>Os nossos modelos exclusivos: abertura própria, cenas animadas, música no convite e confirmação de presença. Assista à demonstração de 11 segundos.</p>
+    </div>
+    <div class="film-grid" id="filmGrid"></div>
+  </div>
+</section>
+
 <!-- ================= HUB ================= -->
 <section class="hub">
   <div class="wrap">
@@ -1314,6 +1371,15 @@ footer b{color:var(--ink)}
     Feito com carinho pra deixar o seu evento inesquecível 💕
   </div>
 </footer>
+
+<!-- ================= VÍDEO ================= -->
+<div id="videoBox" hidden>
+  <div class="video-card">
+    <button class="video-x" id="vClose" type="button" aria-label="Fechar vídeo">✕</button>
+    <video id="vPlayer" playsinline controls preload="metadata"></video>
+    <div class="video-cap"><span><b>Demonstração</b> · 11 segundos</span><span>Lenny Personalizados</span></div>
+  </div>
+</div>
 
 <!-- ================= MASCOTE FIXA ================= -->
 <div id="mascot" aria-live="polite">
@@ -1520,6 +1586,60 @@ footer b{color:var(--ink)}
       go:{cat:"aniversario", sub:"infantil"}
     }
   ];
+
+  var FILMS = [
+    {kind:"15", title:"O Baile da Princesa", sub:"Coleção 15 anos · experiência completa",
+     desc:"Portões que se abrem, nome em caligrafia dourada, contagem regressiva, galeria e confirmação de presença.",
+     poster:"poster-15.jpg", video:"demo-15.mp4"},
+    {kind:"18", title:"Black & Gold", sub:"Coleção 18 anos · experiência completa",
+     desc:"Luzes que acendem, 18 em neon, capa preta e dourada, galeria, RSVP e trilha sonora.",
+     poster:"poster-18.jpg", video:"demo-18.mp4"}
+  ];
+
+  function renderFilms(){
+    var box = document.getElementById("filmGrid");
+    if (!box) return;
+    box.innerHTML = FILMS.map(function(f){
+      return '<article class="film-card" data-film="' + f.kind + '" tabindex="0" role="button" aria-label="Assistir demonstração ' + f.title + '">' +
+        '<img src="' + f.poster + '" alt="Demonstração ' + f.title + '">' +
+        '<div class="film-info">' +
+          '<span class="film-tag"><i></i> modelo assinatura</span>' +
+          '<h3>' + f.title + '</h3>' +
+          '<p>' + f.desc + '</p>' +
+          '<div class="film-time">▶ 0:11 · assistir agora</div>' +
+        '</div>' +
+        '<div class="film-play">▶</div>' +
+      '</article>';
+    }).join("");
+    box.querySelectorAll(".film-card").forEach(function(el){
+      function open(){ playFilm(el.getAttribute("data-film")); }
+      el.addEventListener("click", open);
+      el.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+    });
+  }
+
+  var vBox = document.getElementById("videoBox"), vPlayer = document.getElementById("vPlayer");
+  function playFilm(kind){
+    var f = FILMS.filter(function(x){ return x.kind === kind; })[0];
+    if (!f || !vPlayer) return;
+    vPlayer.src = f.video;
+    vBox.hidden = false;
+    requestAnimationFrame(function(){ vBox.classList.add("on"); });
+    document.body.style.overflow = "hidden";
+    vPlayer.play().catch(function(){});
+  }
+  function closeFilm(){
+    if (!vBox) return;
+    vPlayer.pause();
+    vBox.classList.remove("on");
+    document.body.style.overflow = "";
+    setTimeout(function(){ vBox.hidden = true; vPlayer.removeAttribute("src"); }, 300);
+  }
+  if (vBox){
+    document.getElementById("vClose").addEventListener("click", closeFilm);
+    vBox.addEventListener("click", function(e){ if (e.target === vBox) closeFilm(); });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !vBox.hidden) closeFilm(); });
+  }
 
   function renderColecoes(){
     var box = document.getElementById("colGrid");
@@ -2193,6 +2313,7 @@ footer b{color:var(--ink)}
   });
 
   /* inicia */
+  renderFilms();
   renderColecoes();
   bindNames();
   if (window.innerWidth < 720){
