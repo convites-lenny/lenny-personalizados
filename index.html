@@ -1195,7 +1195,7 @@ footer b{color:var(--ink)}
     <div class="sec-head">
       <div class="k">qualidade antes de quantidade</div>
       <h2>Uma experiência assinatura por coleção — em vídeo</h2>
-      <p>Antes de abrir o catálogo inteiro, criamos <b>um modelo de referência para cada coleção</b>: abertura própria, cenas animadas, personalização e confirmação de presença. Assista aos 11 segundos e sinta o produto antes de encomendar.</p>
+      <p>Antes de abrir o catálogo inteiro, criamos <b>um modelo de referência para cada coleção</b>: abertura própria, cenas animadas, música, personalização e confirmação de presença. Assista e sinta o produto antes de encomendar.</p>
     </div>
     <div class="film-grid" id="filmGrid"></div>
     <p style="text-align:center;font-size:12px;color:var(--ink-soft);margin:14px 0 0;font-weight:600">
@@ -1380,7 +1380,7 @@ footer b{color:var(--ink)}
   <div class="video-card">
     <button class="video-x" id="vClose" type="button" aria-label="Fechar vídeo">✕</button>
     <video id="vPlayer" playsinline controls preload="metadata"></video>
-    <div class="video-cap"><span><b>Demonstração</b> · 11 segundos</span><span>Lenny Personalizados</span></div>
+    <div class="video-cap"><span><b>Demonstração</b> · <span id="vDur">11</span> segundos · com música</span><span>Lenny Personalizados</span></div>
   </div>
 </div>
 
@@ -1593,16 +1593,16 @@ footer b{color:var(--ink)}
   var FILMS = [
     {kind:"15", title:"O Baile da Princesa", sub:"Coleção 15 anos",
      desc:"Portões que se abrem, nome em caligrafia dourada, contagem regressiva, galeria e confirmação de presença.",
-     poster:"poster-15.jpg", video:"demo-15.mp4"},
+     poster:"poster-15.jpg", video:"demo-15.mp4", dur:"0:11"},
     {kind:"18", title:"Black & Gold", sub:"Coleção 18 anos",
      desc:"Luzes que acendem, 18 em neon, capa preta e dourada, galeria, RSVP e confirmação de presença.",
-     poster:"poster-18.jpg", video:"demo-18.mp4"},
+     poster:"poster-18.jpg", video:"demo-18.mp4", dur:"0:11"},
     {kind:"casamento", title:"Envelope do Amor", sub:"Coleção casamento",
      desc:"Envelope lacrado que se abre revelando o casal, votos, galeria do casal, mapa e lista de presentes.",
-     poster:"poster-casamento.jpg", video:"demo-casamento.mp4"},
+     poster:"poster-casamento.jpg", video:"demo-casamento.mp4", dur:"0:15"},
     {kind:"kids", title:"Mundo Encantado", sub:"Coleção infantil",
      desc:"Balões que sobem, nome e idade da criança, contagem, galeria, confirmação e clima de festa.",
-     poster:"poster-kids.jpg", video:"demo-kids.mp4"}
+     poster:"poster-kids.jpg", video:"demo-kids.mp4", dur:"0:11"}
   ];
 
   function renderFilms(){
@@ -1615,7 +1615,7 @@ footer b{color:var(--ink)}
           '<span class="film-tag"><i></i> modelo assinatura</span>' +
           '<h3>' + f.title + '</h3>' +
           '<p>' + f.desc + '</p>' +
-          '<div class="film-time">▶ 0:11 · assistir agora</div>' +
+          '<div class="film-time">▶ ' + f.dur + ' · 🎵 com música · assistir</div>' +
         '</div>' +
         '<div class="film-play">▶</div>' +
       '</article>';
@@ -1632,6 +1632,7 @@ footer b{color:var(--ink)}
     var f = FILMS.filter(function(x){ return x.kind === kind; })[0];
     if (!f || !vPlayer) return;
     vPlayer.src = f.video;
+    var vd = document.getElementById("vDur"); if (vd) vd.textContent = f.dur === "0:15" ? "15" : "11";
     vBox.hidden = false;
     requestAnimationFrame(function(){ vBox.classList.add("on"); });
     document.body.style.overflow = "hidden";
