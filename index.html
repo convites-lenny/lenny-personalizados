@@ -1080,6 +1080,74 @@ section[id]{scroll-margin-top:82px}
 .story.gold .story-lenny b{color:#f3d79c}
 .story .s-quote{font-family:"Caveat",cursive;font-size:16px;color:#8a3a2f;line-height:1.2}
 
+/* ===== Pergaminho encantado ===== */
+.story.parchment{background:#1a0f10;padding:0}
+.story.parchment .p-bg{position:sticky;top:0;height:0;z-index:0;overflow:visible}
+.story.parchment .p-bg img{position:absolute;top:0;left:0;width:100%;height:100svh;object-fit:cover;opacity:.92}
+.story.parchment .p-bg::after{content:"";position:absolute;top:0;left:0;width:100%;height:100svh;
+  background:linear-gradient(180deg,rgba(20,8,10,.25),rgba(20,8,10,.55))}
+.story.parchment .p-fire{position:sticky;top:0;height:0;z-index:1;overflow:visible;pointer-events:none}
+.story.parchment .p-fire i{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffd98a;
+  box-shadow:0 0 10px 3px rgba(255,205,120,.7);animation:firefly 7s ease-in-out infinite}
+@keyframes firefly{0%,100%{opacity:0;transform:translateY(0) scale(.6)}30%{opacity:.9}60%{opacity:.5;transform:translateY(-26px) scale(1.1)}}
+
+.story.parchment .p-wrap{position:relative;z-index:2;padding:24px 12px 44px}
+.story.parchment .p-paper{
+  position:relative;background:#f8ecd6;
+  background-image:radial-gradient(rgba(150,110,60,.09) 1px,transparent 1px);
+  background-size:14px 14px;
+  border-radius:4px;padding:30px 20px 26px;
+  box-shadow:0 30px 60px rgba(0,0,0,.55), inset 0 0 40px rgba(160,120,60,.18);
+  transform-origin:top center;
+}
+.story.parchment .p-paper::before,.story.parchment .p-paper::after{
+  content:"";position:absolute;left:-7px;right:-7px;height:20px;border-radius:10px;
+  background:linear-gradient(180deg,#6f4522,#c9955c 45%,#8a5a2b 100%);
+  box-shadow:0 4px 10px rgba(0,0,0,.45), inset 0 2px 3px rgba(255,225,180,.35);
+}
+.story.parchment .p-paper::before{top:-10px}
+.story.parchment .p-paper::after{bottom:-10px}
+.story.parchment .p-in{position:relative;z-index:2}
+.story.parchment .p-k{font-size:8px;letter-spacing:.42em;text-transform:uppercase;color:#a3823f;text-align:center;font-weight:700}
+.story.parchment .p-names{font-family:"Great Vibes",cursive;font-size:38px;line-height:1;color:#6b3a2a;text-align:center;margin:10px 0 2px}
+.story.parchment .p-names i{font-style:normal;display:block;font-size:22px;color:#a3823f;margin:2px 0}
+.story.parchment .p-orn{text-align:center;color:#b99045;font-size:13px;margin:10px 0}
+.story.parchment .p-txt{font-family:"Playfair Display",serif;font-size:10.5px;line-height:1.75;color:#5c4432;text-align:center;margin:0 0 10px;font-style:italic}
+.story.parchment .p-h{font-family:"Playfair Display",serif;font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:#a3823f;text-align:center;margin:16px 0 6px}
+.story.parchment .p-date{font-family:"Playfair Display",serif;font-size:26px;color:#5d2f22;text-align:center;line-height:1.05}
+.story.parchment .p-small{font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:#a3823f;text-align:center;margin-top:3px}
+.story.parchment .p-cd{display:flex;justify-content:center;gap:5px;margin:10px 0 4px}
+.story.parchment .p-cd i{font-style:normal;background:rgba(120,80,40,.12);border:1px solid rgba(150,110,60,.3);
+  border-radius:6px;padding:6px 5px;min-width:30px;text-align:center;font-family:"Baloo 2",sans-serif;font-size:13px;font-weight:800;color:#6b3a2a}
+.story.parchment .p-cd i span{display:block;font-size:5px;letter-spacing:.08em;opacity:.7;font-weight:700;font-family:"Fredoka"}
+.story.parchment .p-btn{display:block;width:fit-content;margin:8px auto 0;border:1px solid #a3823f;background:transparent;
+  color:#8a5a2b;border-radius:99px;padding:6px 12px;font-size:7.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.story.parchment .p-card{background:rgba(255,255,255,.5);border:1px solid rgba(150,110,60,.3);border-radius:8px;padding:10px;margin-top:8px;text-align:center}
+.story.parchment .p-card b{font-family:"Playfair Display",serif;font-size:12px;color:#5d2f22;display:block}
+.story.parchment .p-card span{font-size:8px;color:#7a5a44;display:block;margin-top:3px;line-height:1.5}
+.story.parchment .p-wit{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.story.parchment .p-wit div{background:rgba(255,255,255,.45);border:1px solid rgba(150,110,60,.25);border-radius:7px;padding:7px;text-align:center}
+.story.parchment .p-wit span{font-size:5.8px;letter-spacing:.14em;text-transform:uppercase;color:#a3823f}
+.story.parchment .p-wit b{display:block;font-size:8.5px;color:#4a2a1c;margin-top:2px}
+.story.parchment .p-fld{width:100%;border:1px solid rgba(150,110,60,.35);border-radius:7px;padding:7px;font-size:9px;
+  font-family:inherit;background:rgba(255,255,255,.7);margin-bottom:5px;outline:none;color:#4a2a1c}
+.story.parchment .p-ok{display:none;background:rgba(120,180,110,.18);border:1px solid rgba(80,140,70,.5);
+  color:#3d6b32;border-radius:7px;padding:8px;font-size:8.5px;font-weight:700;margin-top:6px;text-align:center}
+.story.parchment .p-foot{text-align:center;font-size:6.5px;letter-spacing:.3em;text-transform:uppercase;color:#a3823f;margin-top:18px}
+
+/* capa selada */
+.story.parchment .p-sealbox{
+  position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 45%,rgba(30,12,14,.18),rgba(20,8,12,.55));backdrop-filter:blur(1px);
+  text-align:center;transition:opacity .6s ease;
+}
+.story.parchment .p-sealbox .s-seal{width:104px;height:104px;font-size:34px;margin-bottom:14px}
+.story.parchment .p-sealbox p{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:#f6e6c8;opacity:.85}
+.story.parchment.opened .p-sealbox{opacity:0;pointer-events:none}
+.story.parchment.sealed .p-paper{filter:blur(.6px) brightness(.94)}
+.story.parchment.opened .p-paper{animation:pUnroll .9s cubic-bezier(.2,.8,.3,1) both}
+@keyframes pUnroll{from{transform:scaleY(.82);opacity:.6}to{transform:scaleY(1);opacity:1}}
+
 /* Lenny viva */
 #mascot .who img{transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
 #mascot.pop .who img{animation:mascotPop .6s cubic-bezier(.2,1.5,.4,1)}
@@ -1727,7 +1795,9 @@ footer b{color:var(--ink)}
     {id:22, nome:"Laço de Fita",        tipo:"Interativo", feat:["Abertura com laço que se desfaz","Foto em tela cheia estilo cinema","Revelação dos nomes em caligrafia"]},
     {id:23, nome:"Reino Encantado",     tipo:"Interativo", feat:["Convite narrado com selo de cera","História do casal em capítulos","Padrinhos, local, contagem e RSVP"]},
     {id:24, nome:"Crônica da Debutante",tipo:"Interativo", feat:["História em capítulos com fotos","Contagem e dress code","Confirmação de presença integrada"]},
-    {id:25, nome:"Legado 18",           tipo:"Interativo", feat:["Selo de cera e capítulos","Testemunhas, mapa e contagem","RSVP integrado ao painel"]}
+    {id:25, nome:"Legado 18",           tipo:"Interativo", feat:["Selo de cera e capítulos","Testemunhas, mapa e contagem","RSVP integrado ao painel"]},
+    {id:26, nome:"Pergaminho Encantado",tipo:"Interativo", feat:["Pergaminho que se desenrola","Floresta encantada e vaga-lumes","História, mapa, padrinhos e RSVP"]},
+    {id:27, nome:"Pergaminho da Meia-Noite",tipo:"Interativo", feat:["Pergaminho noturno dourado","Partículas e brilho","Testemunhas, contagem e RSVP"]}
   ];
 
   var NOMES = {
@@ -2038,16 +2108,18 @@ footer b{color:var(--ink)}
 
   var SETS = {
     "15": { tpls:[24,19,10,11,12,13], pals:[0,1,5,2] },
-    "18": { tpls:[25,20,14,15,16,17], pals:[5,6,1,0] }
+    "18": { tpls:[27,25,20,14,15,16,17], pals:[5,6,1,0] }
   };
   var FEATURED = {
-    casamento: 23,
+    casamento: 26,
     "15": 24,
-    "18": 25,
+    "18": 27,
     infantil: 21
   };
   var LENNY_SAY = {
     23: "Esse é o <b>Reino Encantado</b>: o convite vem lacrado, o convidado rompe o selo e entra numa história em capítulos — com padrinhos, local, contagem e confirmação.",
+    26: "Esse é o <b>Pergaminho Encantado</b>: a floresta ao fundo, o pergaminho se desenrola e a história aparece conforme você rola — com selo, mapa, padrinhos e RSVP.",
+    27: "O <b>Pergaminho da Meia-Noite</b>: mesma experiência, agora em preto e dourado, com partículas e brilho pra combinar com a festa de 18.",
     25: "Esse é o <b>Legado 18</b>: selo de cera, capítulos da sua história, testemunhas, mapa, contagem e confirmação — tudo em um só convite pra ler até o fim.",
     24: "A <b>Crônica da Debutante</b>: a história dela em capítulos, com fotos, contagem, dress code e confirmação. Um convite pra ler e guardar.",
     22: "Esse é o <b>Laço de Fita</b>: o convite chega com um laço, o convidado desfaz e os nomes aparecem sobre a foto — inspirado nos convites cinematográficos que você viu.",
@@ -2336,9 +2408,66 @@ footer b{color:var(--ink)}
   /* =========================================================
      EXPERIÊNCIA NARRADA (rolagem dentro do celular)
      ========================================================= */
+  function parchmentHTML(m){
+    var A = firstName(m), B = secondName(m);
+    var is18 = m.tpl === 27;
+    var bg = is18 ? "bg-noite.webp" : "bg-encanto.webp";
+    var dataTxt = is18 ? "29 DE NOVEMBRO DE 2027" : "06 DE JUNHO DE 2028";
+    var horaTxt = is18 ? "segunda · 22h" : "sábado · 19h";
+    var alvo = is18 ? "2027-11-29T22:00:00" : "2028-06-06T19:00:00";
+    var cap = is18
+      ? ['<p class="p-txt">Aos 18 a gente acha que sabe tudo. Eu achei também — até descobrir que o melhor da vida é o que não estava no plano.</p>' +
+         '<div class="p-orn">✦</div>' +
+         '<p class="p-txt">Foram anos de escola, amigos que viraram irmãos e uma família que segurou minha mão em cada virada.</p>' +
+         '<div class="p-orn">✦</div>' +
+         '<p class="p-txt">Agora abre um capítulo novo — e eu quero começar celebrando com quem fez parte de todos os anteriores.</p>']
+      : ['<p class="p-txt">Nem todo encontro começa com um olhar certeiro. O nosso começou com uma piada sem graça e um café que esfriou de tanto a gente rir.</p>' +
+         '<div class="p-orn">❦</div>' +
+         '<p class="p-txt">Depois vieram os domingos, as viagens curtas, os planos no papel e a certeza de que a vida fica melhor dividida em dois.</p>' +
+         '<div class="p-orn">❦</div>' +
+         '<p class="p-txt">Agora é o nosso sim — e a gente quer você lá, do jeitinho que sempre estivemos: em roda, comendo bem e rindo alto.</p>'];
+
+    var wit = is18
+      ? '<div class="p-wit"><div><span>amigo</span><b>Rafael Lima</b></div><div><span>amiga</span><b>Kamila Andrade</b></div><div><span>amigo</span><b>Thiago Mendes</b></div><div><span>amiga</span><b>Beatriz Rocha</b></div></div>'
+      : '<div class="p-wit"><div><span>madrinha</span><b>Kamila Andrade</b></div><div><span>padrinho</span><b>Rafael Lima</b></div><div><span>madrinha</span><b>Beatriz Rocha</b></div><div><span>padrinho</span><b>Thiago Mendes</b></div></div>';
+
+    return '<div class="story parchment' + (is18 ? " pela-noite" : "") + ' sealed" id="storyBox">' +
+      '<div class="p-bg"><img src="' + bg + '" alt=""></div>' +
+      '<div class="p-fire">' + Array.from({length: 14}).map(function(_, k){
+        return '<i style="left:' + (6 + (k * 6.6) % 88) + '%;top:' + (10 + (k * 37) % 78) + '%;animation-delay:-' + (k * .7) + 's"></i>';
+      }).join("") + '</div>' +
+      '<div class="p-wrap">' +
+        '<div class="p-paper"><div class="p-in">' +
+          '<div class="p-k">' + (is18 ? "18 anos" : "Casamento") + '</div>' +
+          '<div class="p-names">' + A + (B ? '<i>&</i>' + B : '') + '</div>' +
+          '<div class="p-orn">❦</div>' +
+          cap.join("") +
+          '<div class="p-h">o grande dia</div>' +
+          '<div class="p-date">' + dataTxt + '</div>' +
+          '<div class="p-small">' + horaTxt + '</div>' +
+          '<div class="p-cd" id="sCd" data-alvo="' + alvo + '"></div>' +
+          '<button class="p-btn" id="sIcs" type="button">📅 salvar na agenda</button>' +
+          '<div class="p-h">onde</div>' +
+          '<div class="p-card"><b>' + (is18 ? "Rooftop Aurora" : "Rancho das Rosas") + '</b>' +
+            '<span>' + (is18 ? "São Mateus — Ocidental<br>18+ · black & gold" : "São Mateus — Ocidental<br>entrada pelo jardim") + '</span></div>' +
+          '<a class="p-btn" href="https://share.google/6CiNVlNzMdrltsbcU" target="_blank" rel="noopener">📍 abrir no mapa</a>' +
+          '<div class="p-h">' + (is18 ? "testemunhas" : "padrinhos e madrinhas") + '</div>' + wit +
+          '<div class="p-h">confirme sua presença</div>' +
+          '<input class="p-fld" id="sNome" placeholder="Seu nome">' +
+          '<input class="p-fld" id="sQtd" type="number" min="1" max="10" value="1" placeholder="Pessoas">' +
+          '<button class="p-btn" id="sOk" type="button">✓ confirmar</button>' +
+          '<div class="p-ok" id="sMsg">Presença confirmada! Já está no painel 💕</div>' +
+          '<div class="p-foot">Lenny Personalizados</div>' +
+        '</div></div>' +
+      '</div>' +
+      '<div class="p-sealbox"><div class="s-seal" id="sSeal"><span>' + (A.charAt(0) || "L") + '</span></div><p>toque no selo para abrir</p></div>' +
+      '<div class="story-lenny" id="sLenny"><img src="' + (is18 ? "mascote-18.webp" : "mascote-noiva.webp") + '" alt=""><span><b>Lenny:</b> toque no selo e role o pergaminho que eu explico cada parte.</span></div>' +
+    '</div>';
+  }
+
   function storyHTML(m){
     var A = firstName(m), B = secondName(m);
-    var is18 = m.tpl === 25;
+    var is18 = (m.tpl === 25 || m.tpl === 27);
     var casal = !!(B);
     var data = { a: A, b: B };
 
@@ -2604,7 +2733,7 @@ footer b{color:var(--ink)}
     var isStory = (m.tpl >= 23);
     if (isStory){
       demo.playing = false; cancelAnimationFrame(demo.raf);
-      $("#mStage").innerHTML = storyHTML(m);
+      $("#mStage").innerHTML = (m.tpl === 26 || m.tpl === 27) ? parchmentHTML(m) : storyHTML(m);
       var ctrl = document.querySelector(".demo-ctrl"); if (ctrl) ctrl.style.display = "none";
       var bar = document.querySelector(".demo-bar"); if (bar) bar.style.display = "none";
       var dots = document.querySelector(".demo-dots"); if (dots) dots.style.display = "none";
