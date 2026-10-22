@@ -967,11 +967,56 @@ section[id]{scroll-margin-top:82px}
 .story .s-names{font-family:"Playfair Display",serif;font-size:34px;line-height:1.05;margin:8px 0 4px}
 .story .s-names i{font-style:normal;display:block;font-family:"Great Vibes",cursive;font-size:26px;color:#d9b46a}
 .story .s-seal{
-  width:88px;height:88px;border-radius:50%;margin:16px 0 10px;
-  background:radial-gradient(circle at 34% 28%,#c23a3f,#6f1218 70%);
-  display:grid;place-items:center;color:#ffeede;font-family:"Playfair Display",serif;font-size:30px;
-  box-shadow:0 10px 24px rgba(0,0,0,.45), inset 0 0 0 3px rgba(255,220,190,.3);cursor:pointer;
+  position:relative;width:96px;height:96px;margin:16px 0 10px;cursor:pointer;
+  display:grid;place-items:center;color:#ffeede;font-family:"Playfair Display",serif;font-size:32px;
+  border-radius:47% 53% 52% 48% / 51% 46% 54% 49%;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='7'/><feColorMatrix type='saturate' values='0'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.55'/></svg>"),
+    radial-gradient(circle at 32% 26%, #d1494a 0%, #a3232a 38%, #6d1116 72%, #4d090d 100%);
+  background-size:120px 120px, 100% 100%;
+  background-blend-mode:overlay, normal;
+  box-shadow:
+    0 1.2cqw 3cqw rgba(0,0,0,.5),
+    inset 0 .35cqw .8cqw rgba(255,210,190,.35),
+    inset 0 -.5cqw 1.2cqw rgba(40,0,0,.55),
+    0 0 0 1px rgba(255,220,190,.18);
+  text-shadow:0 1px 0 rgba(255,220,190,.35), 0 -1px 1px rgba(40,0,0,.7), 0 2px 4px rgba(0,0,0,.45);
   animation:sealPulse2 2.6s ease-in-out infinite;
+}
+.story .s-seal::before{
+  content:"";position:absolute;inset:13%;border-radius:50%;
+  border:1.5px dashed rgba(255,220,190,.42);
+  box-shadow:inset 0 0 6px rgba(60,0,0,.5);
+}
+.story .s-seal::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(circle at 70% 78%, rgba(255,190,170,.18), transparent 55%),
+             radial-gradient(circle at 25% 20%, rgba(255,255,255,.22), transparent 45%);
+  mix-blend-mode:screen;
+}
+.story .s-seal span{position:relative;z-index:2;transform:translateY(-1px)}
+.story.gold .s-seal{background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='11'/><feColorMatrix type='saturate' values='0'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.5'/></svg>"),
+    radial-gradient(circle at 32% 26%, #e2c374 0%, #b98c2c 40%, #7d5a12 74%, #4a3406 100%);
+  background-size:120px 120px, 100% 100%;
+  background-blend-mode:overlay, normal;
+  color:#2a1c05;
+  text-shadow:0 1px 0 rgba(255,245,210,.5), 0 -1px 1px rgba(40,25,0,.6);
+}
+
+/* pétalas douradas */
+.s-petals{position:sticky;top:0;height:0;overflow:visible;z-index:7;pointer-events:none}
+.s-petals i{
+  position:absolute;top:-24px;width:13px;height:9px;border-radius:64% 36% 58% 42%;
+  background:linear-gradient(140deg,#fff3c4,#f0c96a 55%,#b98c2c);
+  box-shadow:0 1px 4px rgba(120,80,20,.35), inset 0 0 2px rgba(255,255,255,.6);
+  opacity:0;animation:sFall linear infinite;
+}
+@keyframes sFall{
+  0%{transform:translate3d(0,-30px,0) rotate(0deg);opacity:0}
+  8%{opacity:.95}
+  50%{transform:translate3d(18px,240px,0) rotate(180deg)}
+  100%{transform:translate3d(-16px,560px,0) rotate(380deg);opacity:.15}
 }
 .story .s-hint{font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(246,230,200,.75);margin-top:6px}
 .story.opened .s-cover{display:none}
@@ -2297,12 +2342,20 @@ footer b{color:var(--ink)}
     var casal = !!(B);
     var data = { a: A, b: B };
 
+    var petals = '<div class="s-petals" aria-hidden="true">' + Array.from({length: 16}).map(function(_, k){
+      var left = 4 + (k * 6.2) % 92;
+      var dur = 7 + (k % 5) * 1.7;
+      var delay = -(k * 0.9);
+      var scale = .7 + (k % 4) * .16;
+      return '<i style="left:' + left + '%;animation-duration:' + dur + 's;animation-delay:' + delay + 's;transform:scale(' + scale + ')"></i>';
+    }).join("") + '</div>';
+
     var cover =
       '<div class="s-cover">' +
-        '<div class="s-orn">❦</div>"' +
+        '<div class="s-orn">❦</div>' +
         '<div class="s-k" style="margin-top:8px">' + (is18 ? "18 anos" : (m.kicker || "Convite")) + '</div>' +
         '<div class="s-names">' + A + (casal ? ' <i>&</i> ' + B : '') + '</div>' +
-        '<div class="s-seal" id="sSeal">' + (A.charAt(0) || "L") + '</div>' +
+        '<div class="s-seal" id="sSeal"><span>' + (A.charAt(0) || "L") + '</span></div>' +
         '<div class="s-hint">rompa o selo e abra o convite</div>' +
       '</div>';
 
@@ -2340,7 +2393,7 @@ footer b{color:var(--ink)}
         '<div class="s-h">' + (is18 ? "a noite" : "o grande dia") + '</div>' +
         '<div class="s-date">' + (m.tpl === 23 ? "06 DE JUNHO DE 2026" : is18 ? "29 DE NOVEMBRO DE 2027" : "12 DE OUTUBRO DE 2027") + '</div>' +
         '<div class="s-small">' + (m.tpl === 23 ? "sábado · 19h" : is18 ? "segunda · 22h" : "domingo · 20h") + '</div>' +
-        '<div class="s-cd" id="sCd"></div>' +
+        '<div class="s-cd" id="sCd" data-alvo="' + (is18 ? "2027-11-29T22:00:00" : m.tpl === 23 ? "2026-06-06T19:00:00" : "2027-10-12T20:00:00") + '"></div>' +
         '<button class="s-btn" id="sIcs" type="button">📅 adicionar ao calendário</button>' +
       '</section>';
 
@@ -2401,7 +2454,7 @@ footer b{color:var(--ink)}
       '</section>' +
       '<div class="s-foot">Lenny Personalizados · ' + (is18 ? "2027" : m.tpl === 23 ? "2026" : "2027") + '</div>';
 
-    return '<div class="story' + (is18 ? " gold" : "") + ' sealed" id="storyBox">' + cover + '<div class="s-body">' + historia + dataSec + local + rsvp + '<div class="story-lenny" id="sLenny"><img src="' + (is18 ? "mascote-18.webp" : m.tpl === 24 ? "mascote-15.webp" : "mascote-noiva.webp") + '" alt=""><span><b>Lenny:</b> toque no selo para abrir. Depois role a tela que eu vou te explicando cada parte.</span></div></div></div>';
+    return '<div class="story' + (is18 ? " gold" : "") + ' sealed" id="storyBox">' + petals + cover + '<div class="s-body">' + historia + dataSec + local + rsvp + '<div class="story-lenny" id="sLenny"><img src="' + (is18 ? "mascote-18.webp" : m.tpl === 24 ? "mascote-15.webp" : "mascote-noiva.webp") + '" alt=""><span><b>Lenny:</b> toque no selo para abrir. Depois role a tela que eu vou te explicando cada parte.</span></div></div></div>';
   }
 
   function initStory(){
@@ -2430,13 +2483,14 @@ footer b{color:var(--ink)}
     // contagem real
     var cd = document.getElementById("sCd");
     if (cd){
-      var alvo = new Date(Date.now() + 1000*60*60*24*37 + 1000*3600*5 + 1000*60*42);
+      var alvo = cd.getAttribute("data-alvo") ? new Date(cd.getAttribute("data-alvo")) : new Date(2027, 10, 29, 22, 0, 0);
       var upd = function(){
-        var d = Math.max(0, alvo - Date.now());
-        var dias = Math.floor(d/86400000), hrs = Math.floor(d/3600000)%24, min = Math.floor(d/60000)%60;
-        cd.innerHTML = '<i>' + dias + '<span>dias</span></i><i>' + hrs + '<span>horas</span></i><i>' + min + '<span>min</span></i>';
+        var d = Math.max(0, alvo.getTime() - Date.now());
+        var dias = Math.floor(d/86400000), hrs = Math.floor(d/3600000)%24, min = Math.floor(d/60000)%60, seg = Math.floor(d/1000)%60;
+        cd.innerHTML = '<i>' + dias + '<span>dias</span></i><i>' + String(hrs).padStart(2,'0') + '<span>horas</span></i>' +
+                       '<i>' + String(min).padStart(2,'0') + '<span>min</span></i><i>' + String(seg).padStart(2,'0') + '<span>seg</span></i>';
       };
-      upd(); setInterval(upd, 30000);
+      upd(); setInterval(upd, 1000);
     }
     // calendário
     var icsBtn = document.getElementById("sIcs");
@@ -2515,7 +2569,10 @@ footer b{color:var(--ink)}
     $("#mTitle").textContent = m.nome;
     $("#mSub").textContent = (m.kicker || "Convite") + " · " + TPLS[m.tpl].nome + " · " + m.tipo;
     var t = catData();
-    $("#mDesc").textContent = (m.msg ? m.msg + ". " : "") + "Prévia em vídeo do modelo " + TPLS[m.tpl].nome.toLowerCase() + " na paleta " + m.pal.n + ". " + (t.sub || "") + " Tudo personalizável: nome, data, local, cores, fontes, animações, música e painel de confirmação.";
+    var storyMode = (m.tpl >= 23);
+    $("#mDesc").textContent = storyMode
+      ? (m.msg ? m.msg + ". " : "") + "Convite narrado: toque no selo e role a tela dentro do celular, exatamente como o convidado faz. Tem capítulos da história, contagem regressiva, local com mapa, testemunhas e confirmação de presença — tudo personalizável com o seu nome."
+      : (m.msg ? m.msg + ". " : "") + "Prévia em vídeo do modelo " + TPLS[m.tpl].nome.toLowerCase() + " na paleta " + m.pal.n + ". " + (t.sub || "") + " Tudo personalizável: nome, data, local, cores, fontes, animações, música e painel de confirmação.";
     $("#mFeat").innerHTML = TPLS[m.tpl].feat.concat([
       "Nome e dados do seu evento (teste no campo acima)",
       "Abertura tipo carta + capa animada",
