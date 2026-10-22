@@ -2470,22 +2470,30 @@ footer b{color:var(--ink)}
           '<div class="p-k">' + (is18 ? "18 anos" : is15 ? "15 anos" : "Casamento") + '</div>' +
           '<div class="p-names">' + A + (B ? '<i>&</i>' + B : '') + '</div>' +
           '<div class="p-orn">❦</div>' +
-          cap.join("") +
+          '<div data-say="Os capítulos da história: o convidado vai rolando e lendo, como num pergaminho de verdade.">' + cap.join("") + '</div>' +
+          '<div data-say="O grande dia com contagem ao vivo em dias, horas, minutos e segundos — e botão que salva na agenda.">' +
           '<div class="p-h">o grande dia</div>' +
           '<div class="p-date">' + dataTxt + '</div>' +
           '<div class="p-small">' + horaTxt + '</div>' +
           '<div class="p-cd" id="sCd" data-alvo="' + alvo + '"></div>' +
           '<button class="p-btn" id="sIcs" type="button">📅 salvar na agenda</button>' +
+          '</div>' +
+          '<div data-say="Local com endereço e botão que abre o mapa no celular do convidado.">' +
           '<div class="p-h">onde</div>' +
           '<div class="p-card"><b>' + (is18 ? "Rooftop Aurora" : is15 ? "Españço Villa Rosa".replace('ñ','') : "Rancho das Rosas") + '</b>' +
             '<span>' + (is18 ? "São Mateus — Ocidental<br>18+ · black & gold" : is15 ? "São Mateus — Ocidental<br>traje: festa · sem branco" : "São Mateus — Ocidental<br>entrada pelo jardim") + '</span></div>' +
           '<a class="p-btn" href="https://share.google/6CiNVlNzMdrltsbcU" target="_blank" rel="noopener">📍 abrir no mapa</a>' +
+          '</div>' +
+          '<div data-say="As madrinhas (ou testemunhas) com nome — do jeito que você escolher.">' +
           '<div class="p-h">' + (is18 ? "testemunhas" : is15 ? "madrinhas" : "padrinhos e madrinhas") + '</div>' + wit +
+          '</div>' +
+          '<div data-say="Confirmação de presença: o convidado escreve o nome, a quantidade e pronto — cai no painel de quem organiza.">' +
           '<div class="p-h">confirme sua presença</div>' +
           '<input class="p-fld" id="sNome" placeholder="Seu nome">' +
           '<input class="p-fld" id="sQtd" type="number" min="1" max="10" value="1" placeholder="Pessoas">' +
           '<button class="p-btn" id="sOk" type="button">✓ confirmar</button>' +
           '<div class="p-ok" id="sMsg">Presença confirmada! Já está no painel 💕</div>' +
+          '</div>' +
           '<div class="p-foot">Lenny Personalizados</div>' +
         '</div></div>' +
       '</div>' +
@@ -2619,7 +2627,7 @@ footer b{color:var(--ink)}
     var box = document.getElementById("storyBox");
     if (!box) return;
     var ln = document.getElementById("sLenny");
-    var secs = box.querySelectorAll("section[data-say]");
+    var secs = box.querySelectorAll("[data-say]");
     if (ln && secs.length && "IntersectionObserver" in window){
       var io = new IntersectionObserver(function(entries){
         entries.forEach(function(en){
