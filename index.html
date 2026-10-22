@@ -163,7 +163,25 @@ h1,h2,h3,h4{font-family:"Baloo 2",sans-serif;margin:0;line-height:1.06}
   background:radial-gradient(circle at 34% 26%,#fff 0%,#ffe9f3 46%,#ecdcff 100%);
   box-shadow:0 30px 70px rgba(150,60,130,.18), inset 0 0 0 1px rgba(255,255,255,.9);
 }
-.mascote{position:relative;z-index:3;height:min(560px,62vh);width:auto;filter:drop-shadow(0 24px 30px rgba(120,40,100,.22));animation:float 5s ease-in-out infinite}
+.mascote{position:relative;z-index:3;height:min(560px,62vh);width:auto;filter:drop-shadow(0 24px 30px rgba(120,40,100,.22));animation:float 5s ease-in-out infinite;transition:opacity .3s ease, transform .45s cubic-bezier(.2,1.4,.4,1)}
+.mascote.swap-out{opacity:0;transform:translateY(10px) scale(.92) rotate(-8deg)}
+.mascote.spin{animation:mascoteSpin 1s cubic-bezier(.3,1,.4,1)}
+@keyframes mascoteSpin{0%{transform:rotate(0) scale(1)}55%{transform:rotate(380deg) scale(1.06)}100%{transform:rotate(720deg) scale(1)}}
+.mascote-tag{
+  position:absolute;z-index:6;left:50%;bottom:8%;transform:translateX(-50%);
+  background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:999px;
+  padding:7px 14px;font-size:11px;font-weight:800;letter-spacing:.04em;color:#7a2e5f;
+  box-shadow:var(--shadow-sm);white-space:nowrap;backdrop-filter:blur(6px);transition:.25s;
+}
+.hero-conf{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.hero-conf i{position:absolute;top:-12%;width:8px;height:12px;border-radius:2px;opacity:0;animation:hFall linear infinite}
+@keyframes hFall{0%{transform:translateY(-10%) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translateY(130%) rotate(520deg);opacity:0}}
+#mascot .who{animation:bob 5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.col-masc{animation:sway 8s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+.contato-box .masc{animation:sway 7s ease-in-out infinite}
+#mascot.pop .who{animation:mascotPop .6s cubic-bezier(.2,1.5,.4,1), bob 5s ease-in-out .6s infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .bubble{
   position:absolute;z-index:4;background:#fff;border:1.5px solid var(--line);
@@ -1496,7 +1514,9 @@ footer b{color:var(--ink)}
     <div class="stage">
       <div class="ring"></div>
       <div class="circle"></div>
-      <img class="mascote" src="mascote-oi.webp" alt="Lenny virtual acenando">
+      <div class="hero-conf" id="heroConf"></div>
+      <img class="mascote" id="heroMascot" src="mascote-oi.webp" alt="Lenny virtual acenando">
+      <div class="mascote-tag" id="mascoteTag">Lenny · apresentadora</div>
       <div class="bubble"><b>Oi, eu sou a Lenny virtual!</b> Vou te mostrar cada detalhe dos modelos — é só clicar em um deles 💕</div>
       <div class="chip-float a">✨ +10 modelos por categoria</div>
       <div class="chip-float b">💌 prévia na hora</div>
@@ -3004,6 +3024,79 @@ footer b{color:var(--ink)}
     el.style.transition = "opacity .55s ease " + Math.min(i*40, 300) + "ms, transform .55s cubic-bezier(.2,.9,.3,1) " + Math.min(i*40, 300) + "ms";
     revealObs.observe(el);
   });
+
+  /* =========================================================
+     LENNY VIVA — troca de roupa, giro e confetes na home
+     ========================================================= */
+  var HERO_LOOKS = [
+    { src:"mascote-oi.webp",       tag:"Lenny · apresentadora",  say:"Oi! Sou a Lenny virtual 💕" },
+    { src:"mascote-15.webp",       tag:"Lenny · princesa dos 15", say:"Nos 15 anos eu viro princesa 👑" },
+    { src:"mascote-18.webp",       tag:"Lenny · glamour 18",      say:"Nos 18 eu chego de black & gold 🥂" },
+    { src:"mascote-noiva.webp",    tag:"Lenny · noiva",           say:"No casamento eu sou a anfitriã 💍" },
+    { src:"mascote-kids.webp",     tag:"Lenny · guia da criançada", say:"Na festa infantil eu vou brincar 🎈" }
+  ];
+  var heroIx = 0, heroTimer = null, heroBusy = false;
+
+  function heroConfetti(n){
+    var box = document.getElementById("heroConf");
+    if (!box) return;
+    var cores = ["#ff3d8b","#ffd166","#a855f7","#38bdf8","#7ed957"];
+    for (var i = 0; i < (n || 18); i++){
+      var el = document.createElement("i");
+      el.style.left = (Math.random()*100) + "%";
+      el.style.background = cores[Math.floor(Math.random()*cores.length)];
+      el.style.animationDuration = (2.4 + Math.random()*2.4) + "s";
+      el.style.animationDelay = (Math.random()*.8) + "s";
+      el.style.width = (5 + Math.random()*6) + "px";
+      el.style.height = (8 + Math.random()*8) + "px";
+      box.appendChild(el);
+      (function(e){ setTimeout(function(){ e.remove(); }, 6000); })(el);
+    }
+  }
+
+  function heroLook(ix, opts){
+    var img = document.getElementById("heroMascot");
+    var tag = document.getElementById("mascoteTag");
+    if (!img || heroBusy) return;
+    heroBusy = true;
+    opts = opts || {};
+    img.classList.add("swap-out");
+    setTimeout(function(){
+      heroIx = (ix + HERO_LOOKS.length) % HERO_LOOKS.length;
+      var L = HERO_LOOKS[heroIx];
+      img.src = L.src;
+      img.classList.remove("swap-out");
+      if (tag) tag.textContent = L.tag;
+      if (opts.spin){
+        img.classList.remove("spin"); void img.offsetWidth; img.classList.add("spin");
+        setTimeout(function(){ img.classList.remove("spin"); }, 1050);
+      }
+      heroConfetti(opts.confetti === undefined ? 16 : opts.confetti);
+      if (opts.say !== false) say(L.say);
+      setTimeout(function(){ heroBusy = false; }, 420);
+    }, 300);
+  }
+
+  var heroImg = document.getElementById("heroMascot");
+  if (heroImg){
+    heroImg.style.cursor = "pointer";
+    heroImg.addEventListener("click", function(){
+      heroLook(heroIx + 1, { spin:true, confetti: 30 });
+      try { navigator.vibrate && navigator.vibrate(18); } catch(e){}
+    });
+    heroConfetti(24);
+    heroTimer = setInterval(function(){
+      if (document.hidden) return;
+      heroLook(heroIx + (Math.random() < .35 ? -1 : 1), { spin: Math.random() < .5, confetti: 12 });
+    }, 5200);
+  }
+
+  /* confete solto também nas trocas de coleção */
+  var _setTheme = setTheme;
+  setTheme = function(t){
+    _setTheme(t);
+    heroConfetti(10);
+  };
 
   /* inicia */
   renderFilms();
